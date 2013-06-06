@@ -2,7 +2,16 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'pg'
+#sqlite for dev
+group :development do
+  gem 'sqlite3'
+end
+
+#PG for Heroku
+
+group :production do
+  gem 'pg'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
