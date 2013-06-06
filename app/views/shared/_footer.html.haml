@@ -1,9 +1,9 @@
-.footer_content
-  .footer_text
-    = image_tag("/assets/system/logo_foot.png", :height=>"20px", :style=>"vertical-align:bottom; margin-bottom:-2px;")
+.footer_content.clearfix
+  .footer_text.pull-left
+    .logo.pull-left.margin-right-10
     Copyright © 2010, Huntington Beach Surfer Field Hockey Club, All rights reserved.
 
-  .foot_nav
+  .foot_nav.pull-right
     = link_to "About", about_path
     |
     = link_to "Contact", contact_path
