@@ -1,4 +1,13 @@
 Surfers::Application.routes.draw do
+
+  root to: 'welcome#index'
+
+  # routes for static pages
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+
+  get 'welcome', to: 'welcome#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

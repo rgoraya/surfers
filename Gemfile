@@ -9,6 +9,35 @@ gem 'sqlite3'
 
 gem 'json'
 
+# view templates. replacement for ERB.
+# http://haml-lang.com/
+gem 'haml'
+# needed for using haml in rails generators
+gem 'haml-rails'
+
+# https://github.com/thomas-mcdonald/bootstrap-sass
+gem 'bootstrap-sass', '~> 2.3.1.2'
+
+gem 'jquery-rails'
+gem 'underscore-rails'
+
+
+# Heroku gem for producing and syncing error pages
+gem 'trackman'
+
+# New Relic is a performance management system, developed by New Relic, Inc (http://www.newrelic.com). It provides
+# you with deep information about the performance of your Rails or Ruby application as it runs in production.
+# The New Relic Ruby Agent is dual-purposed as a either a Rails plugin or a Gem, hosted on github.
+# https://github.com/newrelic/rpm
+gem 'newrelic_rpm'
+
+# https://github.com/gregbell/active_admin
+# Docs: http://activeadmin.info/documentation.html
+# Active Admin is a framework for creating administration style interfaces. It abstracts common business
+# application patterns to make it simple for developers to implement beautiful and elegant interfaces with
+# very little effort.
+gem 'activeadmin'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +51,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg', '0.12.2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
