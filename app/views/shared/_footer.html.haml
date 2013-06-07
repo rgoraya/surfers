@@ -1,9 +1,9 @@
-.footer_content.clearfix
-  .footer_text.pull-left
-    .logo.pull-left.margin-right-10
-    Copyright © 2010, Huntington Beach Surfer Field Hockey Club, All rights reserved.
+#footer.width100p
+  .footer_content.clearfix.center-aligned.full-width.padding-vertical-10
+    .footer_text.pull-left
+      %a.link-to-root.pull-left.margin-right-10{ :href => root_url}
+        .logo
+      Copyright © 2010, Huntington Beach Surfer Field Hockey Club, All rights reserved.
 
-  .foot_nav.pull-right
-    = link_to "About", about_path
-    |
-    = link_to "Contact", contact_path
+    .foot_nav.pull-right
+      #{link_to "About", about_path} | #{link_to "Contact", contact_path}
