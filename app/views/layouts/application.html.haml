@@ -10,7 +10,9 @@
     #container.clearfix
       = render "shared/header"
 
-      #content.center-aligned.full-width
-        = yield
+      #content.center-aligned.full-width.clearfix
+        = render "shared/navigation"
+        .yielded-content.pull-left.padding-top-20
+          = yield
 
       = render "shared/footer"
