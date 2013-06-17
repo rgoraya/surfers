@@ -5,6 +5,7 @@ Surfers::Application.routes.draw do
   # routes for static pages
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
+  match '/play-with-us', :to => 'pages#play', :as => 'play'
 
   get 'welcome', to: 'welcome#index'
 
