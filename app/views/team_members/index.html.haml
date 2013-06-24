@@ -1,0 +1,7 @@
+- @team_members.each do |member|
+  .margin-bottom-20
+    %h4
+      = "#{member.first_name} #{member.last_name}"
+    %p
+      = member.position
+      %br

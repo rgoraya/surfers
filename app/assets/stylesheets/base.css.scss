@@ -95,9 +95,7 @@ body {
         @include box-shadow(inset 1px -1px 3px 1px rgba(0, 0, 0, 0.2));
       }
       #name {
-        margin-left: 220px;
-        position: absolute;
-        bottom: 20px;
+        text-align: right;
         .title {
           line-height: 100%;
           text-shadow: 0px 1px 0px #fcfcfc;

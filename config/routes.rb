@@ -7,7 +7,9 @@ Surfers::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/play-with-us', :to => 'pages#play', :as => 'play'
 
+  match '/team-members', :to => 'team_members#index'
   get 'welcome', to: 'welcome#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
