@@ -1,0 +1,28 @@
+.row.margin-bottom-20
+  .span7
+    %h4 Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as "Surfers".
+    %p.font-16 We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
+
+  .promo.span4
+
+
+.panel.padding-10
+  #welcome_wrapper
+
+%script#carouselTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  #carousel.carousel.slide.margin-bottom-0
+    %ol.carousel-indicators
+      {{#entry}}
+      %li{:class => "{{active_class}}", "data-slide-to" => "{{index}}", "data-target" => "#carousel"}
+      {{/entry}}
+    .carousel-inner
+      {{#entry}}
+      .item{:class => "{{active_class}}"}
+        .photo.text-center
+          %img{:alt => "", :src => "{{content.src}}"}/
+        .carousel-caption
+          %h4 {{title.$t}}
+          %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      {{/entry}}
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel"} ‹
+    %a.right.carousel-control{"data-slide" => "next", :href => "#carousel"} ›

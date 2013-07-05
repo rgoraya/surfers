@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require bootstrap
 //= require_tree .
+//= require hogan.js
+//= require surfers_base

@@ -58,6 +58,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'hogan_assets'
 end
 
 gem 'jquery-rails'

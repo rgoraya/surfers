@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def page_title
-
+  def body_class_name
+    "#{controller_name}_#{action_name}"
   end
 
 end
