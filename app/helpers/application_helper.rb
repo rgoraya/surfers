@@ -12,4 +12,12 @@ module ApplicationHelper
     end
   end
 
+  def page_title
+    "#{@page_title ? @page_title + " | " : ""}Surfers Field Hockey"
+  end
+
+  def meta_description
+    "Huntington Beach Field Hockey Club, fondly known as SURFERS, we are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County"
+  end
+
 end

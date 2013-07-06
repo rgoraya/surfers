@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @constant = "came here"
+    @page_title = "Welcome"
   end
 
 end

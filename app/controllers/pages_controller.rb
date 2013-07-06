@@ -1,23 +1,23 @@
 class PagesController < ApplicationController
 
   def contact
-    @title = "Contact us"
+    @page_title = "Contact us"
   end
 
   def about
-    @title = "About us"
+    @page_title = "About us"
   end
 
   def history
-    @title = "History of the game"
+    @page_title = "History of the game"
   end
 
   def play
-    @title = "Play with us"
+    @page_title = "Play with us"
   end
 
   def tournament
-    @title = "Surfers Tournament"
+    @page_title = "Surfers Tournament"
   end
 
 end
