@@ -15,10 +15,10 @@
     %h4 Rules
     %p Download the 2013 Surfers Field Hockey Tournament Rules #{link_to "here", "/forms/tournament_rules_2013.pdf"}.
 
-  .span8
+  .span8.well
     .panel.dark.padding-10
       .map-container.margin-bottom-10
-        %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "520"}
+        %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
       %a.margin-top-10.color-white{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=A"} View Larger Map
 
 %h4 About the venue
@@ -84,5 +84,5 @@
   We are a registered non-profit organization. The club has been in existence since 1987 and has been
   making useful contribution towards development of Field Hockey as a sport in Southern California.
   You can catch us on web #{link_to "www.surfersfieldhockey.com", root_url}.
-%p
+%p.well
   = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook'), 'https://www.facebook.com/groups/115374325161195/')
