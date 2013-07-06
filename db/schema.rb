@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620171430) do
+ActiveRecord::Schema.define(:version => 20130705223040) do
+
+  create_table "helpful_links", :force => true do |t|
+    t.string   "link_text",  :null => false
+    t.string   "link_href",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "team_members", :force => true do |t|
     t.string   "first_name", :null => false

@@ -3,3 +3,16 @@
     = nav_link 'About us', about_path
     = nav_link 'Contacts', contact_path
     = nav_link 'History of the game', history_path
+
+  .promo.panel.dark.padding-10.margin-top-20.margin-bottom-20
+    %a.btn.btn-success.font-16.padding-20.text-center
+      %i.icon-fire.icon-white
+      Surfers Field Hockey Annual 6X6 Tournament 2013
+
+  - links = HelpfulLink.find(:all)
+  - if !links.nil?
+    %ul.links.panel.unstyled.margin-bottom-20
+      - links.each do |l|
+        %li.padding-10
+          %a{:href => l.link_href, :target => "_blank"}
+            = l.link_text
