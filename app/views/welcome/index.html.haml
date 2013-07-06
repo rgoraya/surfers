@@ -1,11 +1,12 @@
 .well
   = render 'shared/carousel_template'
 
-.row-fluid.margin-top-20
-  .span8
-    %h4
-      Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as
-      %span.serif "Surfers".
-    %p.font-16 We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
-  .span4.promo.well
-    = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook'), 'https://www.facebook.com/groups/115374325161195/')
+.well
+  .row-fluid
+    .span8
+      %h4.margin-top-0
+        Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as
+        %span.serif "Surfers".
+      %p.font-16 We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
+    .span4.promo.text-right
+      = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook', :class => "well bg-pale-white"), 'https://www.facebook.com/groups/115374325161195/')
