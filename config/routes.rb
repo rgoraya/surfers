@@ -6,6 +6,7 @@ Surfers::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/history',   :to => 'pages#history'
+  match '/upcoming-tournament',   :to => 'pages#tournament', :as => 'tournament'
   match '/play-with-us', :to => 'pages#play', :as => 'play'
 
   match '/team-members', :to => 'team_members#index'
