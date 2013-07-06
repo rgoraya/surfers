@@ -1,0 +1,19 @@
+.panel.dark.padding-10
+  #carousel_wrapper
+
+%script#carouselTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  #carousel.carousel.slide.margin-bottom-0
+    %ol.carousel-indicators
+      {{#entry}}
+      %li{:class => "{{active_class}}", "data-slide-to" => "{{index}}", "data-target" => "#carousel"}
+      {{/entry}}
+    .carousel-inner
+      {{#entry}}
+      .item{:class => "{{active_class}}"}
+        .photo.text-center
+          %img{:alt => "", :src => "{{content.src}}"}/
+        .carousel-caption
+          %h4 {{title.$t}}
+      {{/entry}}
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel"} ‹
+    %a.right.carousel-control{"data-slide" => "next", :href => "#carousel"} ›

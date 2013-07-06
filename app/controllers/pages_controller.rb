@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     @title = "About us"
   end
 
+  def history
+    @title = "History of the game"
+  end
+
   def play
     @title = "Play with us"
   end
