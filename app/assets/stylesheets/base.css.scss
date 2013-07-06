@@ -34,7 +34,6 @@ body {
     .navigation {
       width: 200px;
       padding-top: 100px;
-      position: fixed;
       ul.nav-members {
         overflow: hidden;
         li {
@@ -64,7 +63,6 @@ body {
     }
     .yielded-content {
       width: 860px;
-      margin-left: 220px;
       &.panel {
         @include border-radius(0px);
         @include border-bottom-radius(4px)
