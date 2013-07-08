@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def tournament
-    @page_title = "Surfers Tournament"
+    @page_title = "Tournament 2013"
   end
 
 end

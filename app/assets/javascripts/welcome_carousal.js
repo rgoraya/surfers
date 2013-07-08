@@ -35,9 +35,7 @@ S.welcomeCarousel = (function($, _) {
         },
 
         _initialize_carousel : function() {
-//            $('.carousel').carousel({
-//                interval: 5000
-//            })
+            $('.carousel').carousel()
         }
     };
 
