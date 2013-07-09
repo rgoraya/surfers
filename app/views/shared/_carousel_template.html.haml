@@ -2,11 +2,14 @@
   #carousel_wrapper
 
 %script#carouselTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  %h3 {{title.$t}}
   #carousel.carousel.slide.margin-bottom-0
+    {{#show_carousel_indicators}}
     %ol.carousel-indicators
       {{#entry}}
       %li{:class => "{{active_class}}", "data-slide-to" => "{{index}}", "data-target" => "#carousel"}
       {{/entry}}
+    {{/show_carousel_indicators}}
     .carousel-inner
       {{#entry}}
       .item{:class => "{{active_class}}"}

@@ -9,10 +9,14 @@ $(document).ready(function() {
         carousel$el = $('#carousel_wrapper');
 
     if (isWelcomePage()) {
-        var welcomeCarousel = new S.welcomeCarousel(carousel$el, "5897074641148382273");
+        var albumID = "5898663168003572401",
+            userID  = "108613443650075185421",
+            welcomeCarousel = new S.picasaCarousel(carousel$el, albumID, userID);
     }
     if (isHistoryPage()) {
-        var aboutCarousel = new S.welcomeCarousel(carousel$el, "5897342069983516161");
+        var albumID = "5897342069983516161",
+            userID  = "114202720155216332234",
+            aboutCarousel = new S.picasaCarousel(carousel$el, albumID ,userID);
     }
 
     // Bound events:
