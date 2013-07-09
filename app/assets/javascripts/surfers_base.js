@@ -1,14 +1,17 @@
 $(document).ready(function() {
 
     var isWelcomePage = function() {
-            return $('body.welcome_index').length > 0
+            return $('body.welcome_index').length > 0;
+        },
+        isTournamentPage = function() {
+            return $('body.pages_tournament').length > 0;
         },
         isHistoryPage = function() {
-            return $('body.pages_history').length > 0
+            return $('body.pages_history').length > 0;
         },
         carousel$el = $('#carousel_wrapper');
 
-    if (isWelcomePage()) {
+    if (isWelcomePage() || isTournamentPage()) {
         var albumID = "5898663168003572401",
             userID  = "108613443650075185421",
             welcomeCarousel = new S.picasaCarousel(carousel$el, albumID, userID);
