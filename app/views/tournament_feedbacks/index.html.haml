@@ -1,6 +1,6 @@
 - if !@tournament_feedback.nil?
   %h3 2013 Tournament Feedback
-  - if @tournament_feedback.length
+  - if @tournament_feedback.length > 0
     - @tournament_feedback.each do |f|
       .well
         %h5 #{f.team_name}
@@ -28,4 +28,5 @@
             = f.suggestion
 
   - else
-    %p No feedback entries to show yet.
+    .alert.alert-error
+      %h5 No feedback entries to show yet.
