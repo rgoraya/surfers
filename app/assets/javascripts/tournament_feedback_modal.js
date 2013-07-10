@@ -20,7 +20,7 @@ S.tournamentFeedbackModal = (function($, _) {
         _submit_feedback : function(e) {
             e.preventDefault();
             var $form   = $(e.target).closest('#tournamentFeedbackModal').find('form'),
-                $inputs = $form.find('input'),
+                $inputs = $form.find('input, textarea'),
                 that    = this,
                 data    = {};
 

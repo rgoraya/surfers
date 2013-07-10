@@ -1,31 +1,31 @@
 - if !@tournament_feedback.nil?
-  .well
-    %h4 2013 Tournament Feedback
-    - if @tournament_feedback.length
-      %table.table.table-striped.margin-0.table-bordered
-        %tr
-          %th Team
-          %th Manager
-          %th Captain
-          %th Management
-          %th Umpiring
-          %th Competition
-          %th Suggestions
-        - @tournament_feedback.each do |f|
+  %h3 2013 Tournament Feedback
+  - if @tournament_feedback.length
+    - @tournament_feedback.each do |f|
+      .well
+        %h5 #{f.team_name}
+        %p
+          Manager: #{f.manager_name}
+          %br
+          Captain: #{f.captain_name}
+        %table.table.table-striped.margin-0.table-bordered
           %tr
-            %td
-              = f.team_name
-            %td
-              = f.captain_name
-            %td
-              = f.manager_name
-            %td
-              = f.management_score
-            %td
-              = f.umpiring_score
-            %td
-              = f.competition_level_score
-            %td
-              = f.suggestion
-    - else
-      %p No feedback entries to show yet.
+            %th Management
+            %th Umpiring
+            %th Competition Level
+            %th Will Recommend
+            %th Will Play Again
+          %tr
+            %td #{f.management_score}
+            %td #{f.umpiring_score}
+            %td #{f.competition_level_score}
+            %td #{f.will_recommend ? "Yes" : "No"}
+            %td #{f.will_play_again ? "Yes" : "No"}
+
+        - if ! f.suggestion.nil?
+          %h5 Suggestions:
+          %p
+            = f.suggestion
+
+  - else
+    %p No feedback entries to show yet.
