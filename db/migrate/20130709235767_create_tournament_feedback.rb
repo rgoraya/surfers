@@ -1,6 +1,6 @@
 class CreateTournamentFeedback < ActiveRecord::Migration
   def self.up
-    create_table :tournament_feedback do |t|
+    create_table :tournament_feedbacks do |t|
       t.string  :team_name     , :null => false
       t.string  :captain_name
       t.string  :manager_name
@@ -14,7 +14,7 @@ class CreateTournamentFeedback < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :tournament_feedback
+    drop_table :tournament_feedbacks
   end
 
 end

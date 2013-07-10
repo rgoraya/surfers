@@ -9,6 +9,9 @@ Surfers::Application.routes.draw do
   match '/tournament-2013',   :to => 'pages#tournament', :as => 'tournament'
   match '/play-with-us', :to => 'pages#play', :as => 'play'
 
+  resources :tournament_feedbacks
+  match '/tournament-feedback', :to => 'tournament_feedbacks#index'
+
   match '/team-members', :to => 'team_members#index'
   get 'welcome', to: 'welcome#index'
 

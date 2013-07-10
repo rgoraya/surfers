@@ -1,0 +1,28 @@
+- if !@tournament_feedback.nil?
+  .well
+    %h4 2013 Tournament Feedback
+    %table.table.table-striped.margin-0.table-bordered
+      %tr
+        %th Team
+        %th Manager
+        %th Captain
+        %th Management
+        %th Umpiring
+        %th Competition
+        %th Suggestions
+      - @tournament_feedback.each do |f|
+        %tr
+          %td
+            = f.team_name
+          %td
+            = f.captain_name
+          %td
+            = f.manager_name
+          %td
+            = f.management_score
+          %td
+            = f.umpiring_score
+          %td
+            = f.competition_level_score
+          %td
+            = f.suggestion

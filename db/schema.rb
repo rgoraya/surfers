@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20130709235767) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "tournament_feedback", :force => true do |t|
+  create_table "tournament_feedbacks", :force => true do |t|
     t.string   "team_name",               :null => false
     t.string   "captain_name"
     t.string   "manager_name"
