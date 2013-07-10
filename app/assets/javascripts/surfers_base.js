@@ -9,6 +9,9 @@ $(document).ready(function() {
         isHistoryPage = function() {
             return $('body.pages_history').length > 0;
         },
+        initTournamentFeedback = function() {
+            return $('#tournamentFeedbackModal').length > 0;
+        },
         carousel$el = $('#carousel_wrapper');
 
     if (isWelcomePage() || isTournamentPage()) {
@@ -20,6 +23,9 @@ $(document).ready(function() {
         var albumID = "5897342069983516161",
             userID  = "114202720155216332234",
             aboutCarousel = new S.picasaCarousel(carousel$el, albumID ,userID);
+    }
+    if (initTournamentFeedback) {
+        var tournamentFeedback = new S.tournamentFeedbackModal();
     }
 
     // Bound events:

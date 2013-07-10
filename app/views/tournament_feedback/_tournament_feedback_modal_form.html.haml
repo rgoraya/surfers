@@ -1,0 +1,46 @@
+#tournamentFeedbackModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h4#myModalLabel We'd appreciate your feedback
+  .modal-body
+    .well.margin-0
+      %form#tournamentFeedbackForm.margin-0
+        %h5.margin-top-0 Your information
+        .row-fluid
+          .span4.control-group.margin-0
+            .controls
+              %input.span12#inputTeam{:name => "team_name", :placeholder => "Team Name", :type => "text"}/
+          .span4.control-group.margin-0
+            .controls
+              %input.span12#inputManager{:name => "manager_name", :placeholder => "Manager\'s Name", :type => "text"}/
+          .span4.control-group.margin-0
+            .controls
+              %input.span12#inputCaptain{:name => "captain_name", :placeholder => "Captain\'s Name", :type => "text"}/
+
+        %h5.margin-top-0 Feedback
+        .control-group
+          .controls
+            %input#inputManagement{:name => "management_score", :type => "hidden"}/
+            .row-fluid.margin-bottom-10
+              %label.span3.padding-top-5 Management
+              = render :partial => "tournament_feedback/feedback_radio_buttons"
+        .control-group
+          .controls
+            %input#inputManagement{:name => "umpiring_score", :type => "hidden"}/
+            .row-fluid.margin-bottom-10
+              %label.span3.padding-top-5 Umpiring
+              = render :partial => "tournament_feedback/feedback_radio_buttons"
+        .control-group
+          .controls
+            %input#inputManagement{:name => "competition_level_score", :type => "hidden"}/
+            .row-fluid.margin-bottom-10
+              %label.span3.padding-top-5 Competition Level
+              = render :partial => "tournament_feedback/feedback_radio_buttons"
+        %h5.margin-top-0 Suggestions
+        .control-group.margin-bottom-0
+          .controls.row-fluid
+            %textarea.span12.margin-0{:rows => 3, :name => "suggestion"}
+
+  .modal-footer
+    %button.btn.btn-large{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    %button.btn.btn-info.btn-large#submitTournamentFeedback Leave feedback

@@ -5,9 +5,12 @@
     = nav_link 'History of the game', history_path
 
   .promo.well.padding-10.margin-top-20.margin-bottom-20
-    %a.btn.btn-success.font-16.padding-20.text-center{ :href => tournament_path }
+    %a.btn.btn-success.padding-10.text-center{ :href => tournament_path }
       %i.icon-fire.icon-white
       Surfers Field Hockey Annual 6X6 Tournament 2013
+    %a.btn.btn-info.padding-10.margin-top-10{"data-toggle" => "modal", :href => "#tournamentFeedbackModal", :role => "button"}
+      %i.icon-comment.icon-white
+      Tournament 2013 feedback
 
   - links = HelpfulLink.find(:all)
   - if !links.nil?
@@ -16,3 +19,5 @@
         %li.padding-10
           %a{:href => l.link_href, :target => "_blank"}
             = l.link_text
+
+  = render :partial => "tournament_feedback/tournament_feedback_modal_form"

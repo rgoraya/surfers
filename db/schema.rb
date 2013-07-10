@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705223040) do
+ActiveRecord::Schema.define(:version => 20130709235767) do
 
   create_table "helpful_links", :force => true do |t|
     t.string   "link_text",  :null => false
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(:version => 20130705223040) do
     t.text     "bio"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tournament_feedback", :force => true do |t|
+    t.string   "team_name",               :null => false
+    t.string   "captain_name"
+    t.string   "manager_name"
+    t.integer  "management_score"
+    t.integer  "umpiring_score"
+    t.integer  "competition_level_score"
+    t.text     "suggestion"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
 end
