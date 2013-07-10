@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709235767) do
+ActiveRecord::Schema.define(:version => 20130710133534) do
 
   create_table "helpful_links", :force => true do |t|
     t.string   "link_text",  :null => false
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20130709235767) do
     t.text     "suggestion"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.boolean  "will_play_again"
+    t.boolean  "will_recommend"
   end
 
 end

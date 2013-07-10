@@ -7,7 +7,7 @@
       %form#tournamentFeedbackForm.margin-0
         %h5.margin-top-0
           Your information
-          %span.label * required
+          %span.label.pull-right * required
         .row-fluid
           .span4.control-group.margin-0
             .controls
@@ -21,7 +21,7 @@
 
         %h5.margin-top-0
           Feedback
-          %span.label * required
+          %span.label.pull-right * required
         .control-group
           .controls
             %input#inputManagement{:name => "management_score", :type => "hidden", :'data-required' => "true"}/
@@ -30,16 +30,28 @@
               = render :partial => "tournament_feedbacks/feedback_radio_buttons"
         .control-group
           .controls
-            %input#inputManagement{:name => "umpiring_score", :type => "hidden", :'data-required' => "true"}/
+            %input#inputUmpiring{:name => "umpiring_score", :type => "hidden", :'data-required' => "true"}/
             .row-fluid.margin-bottom-10
               %label.span3.padding-top-5.control-label Umpiring
               = render :partial => "tournament_feedbacks/feedback_radio_buttons"
         .control-group
           .controls
-            %input#inputManagement{:name => "competition_level_score", :type => "hidden", :'data-required' => "true"}/
+            %input#inputCompetition{:name => "competition_level_score", :type => "hidden", :'data-required' => "true"}/
             .row-fluid.margin-bottom-10
-              %label.span3.padding-top-5.control-label Competition level
+              %label.span3.padding-top-5.control-label Competition
               = render :partial => "tournament_feedbacks/feedback_radio_buttons"
+        .control-group
+          .controls
+            %input#inputRecommend{:name => "will_recommend", :type => "hidden", :'data-required' => "true"}/
+            .row-fluid.margin-bottom-10
+              %label.span7.padding-top-5.control-label Will you recommend others to compete?
+              = render :partial => "tournament_feedbacks/feedback_radio_buttons_true_false"
+        .control-group
+          .controls
+            %input#inputPlayAgain{:name => "will_play_again", :type => "hidden", :'data-required' => "true"}/
+            .row-fluid.margin-bottom-10
+              %label.span7.padding-top-5.control-label Will you participate again?
+              = render :partial => "tournament_feedbacks/feedback_radio_buttons_true_false"
         %h5.margin-top-0 Suggestions
         .control-group.margin-bottom-0
           .controls.row-fluid
