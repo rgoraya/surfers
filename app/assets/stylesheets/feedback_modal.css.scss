@@ -1,0 +1,21 @@
+#tournamentFeedbackModal {
+  #submittedMessage {
+    display: none;
+  }
+  &.submitted {
+    .modal-footer {
+      #submitTournamentFeedback {
+        display: none;
+      }
+    }
+
+    .modal-body {
+      form#tournamentFeedbackForm {
+        display :none;
+      }
+    }
+    #submittedMessage {
+      display: block;
+    }
+  }
+}

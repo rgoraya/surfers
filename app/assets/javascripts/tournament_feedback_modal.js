@@ -39,7 +39,8 @@ S.tournamentFeedbackModal = (function($, _) {
                     type    : "POST",
                     data    : {feedback : data},
                     success : function(resp){
-                        console.log('success');
+                        $('#tournamentFeedbackModal')
+                            .addClass('submitted');
                     }
             });
             } else {
@@ -86,6 +87,8 @@ S.tournamentFeedbackModal = (function($, _) {
                     .first()
                     .focus()
                     .end();
+            $('#tournamentFeedbackModal')
+                .removeClass('submitted');
         },
 
         _bind_events : function() {
