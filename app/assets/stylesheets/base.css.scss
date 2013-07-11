@@ -169,6 +169,13 @@ body {
   }
 }
 
+.header {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  @include border-top-radius(4px);
+}
+
+
 .carousel {
   background-color: #2f2f2f;
   .carousel-inner {
