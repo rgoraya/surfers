@@ -28,7 +28,7 @@ gem 'haml-rails'
 # https://github.com/thomas-mcdonald/bootstrap-sass
 gem 'bootstrap-sass', '~> 2.3.1.2'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'
 gem 'underscore-rails'
 
 
@@ -47,6 +47,7 @@ gem 'newrelic_rpm'
 # application patterns to make it simple for developers to implement beautiful and elegant interfaces with
 # very little effort.
 gem 'activeadmin'
+gem 'meta_search',    '>= 1.1.0.pre'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -60,8 +61,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'hogan_assets'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

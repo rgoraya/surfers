@@ -2,6 +2,9 @@ Surfers::Application.routes.draw do
 
   root to: 'welcome#index'
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   # routes for static pages
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
