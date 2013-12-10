@@ -1,9 +1,5 @@
-.well
-  = render 'shared/carousel_template'
-
-%h3 Surfers Tournament 2013
-= render 'shared/points_table'
-= render 'shared/tournament_schedule'
+//.well
+//  = render 'shared/carousel_template'
 
 .well
   .row-fluid
@@ -14,3 +10,25 @@
       %p.font-16 We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
     .span4.promo.text-right
       = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook', :class => "well bg-pale-white"), 'https://www.facebook.com/groups/115374325161195/')
+
+.well
+  .row-fluid
+    .span4.text-center.well.bg-pale-white.margin-bottom-0
+      %img{ :src => image_path('static/ajit_randhawa.jpg'), :alt => 'Ajit Singh Randhawa', :style => "width: 210px" }
+      .margin-top-10.font-12
+        Ajit Singh Randhava (1944-2013)
+        Friend of Many, Revered by All
+
+    .span8.pull-right
+      %p.font-16
+        We are deeply saddened to hear about demise of
+        %span{:style => "font-weight: bold;"}
+          Sardar Ajit Randhawa
+        &#45; our club's friend and supporter for many years, and a pillar of the community.
+      %p.font-16
+        During this difficult moment our thoughts and prayers are with Randhawa and Kahlon families.
+
+
+%h3 Surfers Tournament 2013
+= render 'shared/points_table'
+= render 'shared/tournament_schedule'
