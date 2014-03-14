@@ -1,0 +1,95 @@
+%h3 Surfers Tournament 2013
+.well
+  .row-fluid
+    .span4
+      %h4
+        Dear Hockey Lovers,
+      %p
+        Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their 8th annual
+        6x6 Surfers Field Hockey tournament to be held at
+        %br
+        %b Arena Soccer Park of Orange, 2190 North Canal Street, Orange, CA 92865.
+
+      %h4 Dates
+      %p Saturday July 6 and Sunday July 7, 2013
+
+      %h4 Rules
+      %p Download the 2013 Surfers Field Hockey Tournament Rules #{link_to "here", "/forms/tournament_rules_2013.pdf"}.
+
+    .span8
+      .panel.dark.padding-10
+        .map-container.margin-bottom-10
+          %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "495"}
+        %a.margin-top-10.color-white{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=A"} View Larger Map
+
+.well
+  = render 'shared/carousel_template'
+
+= render 'shared/points_table'
+= render 'shared/tournament_schedule'
+
+%h4 About the venue
+%p
+  The field is a
+  %b regulation sized indoor soccer field with full sized goals,
+  plus a small field for youth play. The two turf fields are walled so the ball is in play all the time (no side-line
+  or corner hits). The venue allows a unique fast/indoor hockey experience in an outdoor setting.
+  There is ample parking available at the front and back of the park. There are many
+%p
+  options for lodging available as the venue is close to Disneyland, Knotts Berry Farm, Beaches, Nixon Presidential Library
+  & Museum, and many other attractions in the area.
+
+%h4 Division
+%p
+  %ul
+    %li Competition
+    %li Social/Mixed
+  Social or Mixed Division teams should have at least two women on the field OR each player must be above 45 years of age.
+  The teams will play approximately 4 games each.
+
+%h4 Format
+%p
+  %ul
+    %li 6x6 for Competition including a goalkeeper
+    %li 7x7 for Social Division including a goalkeeper
+
+%h4 Registration Fee
+%p
+  Team registration fee is
+  %ul
+    %li $300 for Competition
+    %li $300 for Social
+  You can have up to 11 players on the roster for adult division.
+
+%h4 Deadlines
+%p
+  You can register your team by emailing us at #{link_to("HBSurfers@hotmail.com", "mailto:HBSurfers@hotmail.com")}.
+  The Microsoft Word registration form can be downloaded #{link_to "here", "/forms/registration_form_2013.doc"} or
+  a pdf version #{link_to "here", "/forms/registration_form_2013.pdf"}.
+%p
+  Deadline is
+  %b Monday June 24th, 2013.
+  You may call
+  %b Manjot Sandhu at +1 714 585 2511 or Harkirat Guron at +1 949 295 9242
+  for more information.
+
+%h4 Misc
+%p The host club will provide refreshments and snacks for guest team members (and their guests) throughout the tournament, and a casual dinner event is planned for Saturday night.
+
+%h4 Social Mixer
+%p
+  Saturday 6th evening (7:30PM)
+  %br
+  Lampost Pizza
+  %br
+  17391 17th Street, Tustin, CA
+  %br
+  Phone: (714) 669-1111
+
+%h4 About HB Field Hockey Club
+%p
+  We are a registered non-profit organization. The club has been in existence since 1987 and has been
+  making useful contribution towards development of Field Hockey as a sport in Southern California.
+  You can catch us on web #{link_to "www.surfersfieldhockey.com", root_url}.
+%p.well
+  = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook'), 'https://www.facebook.com/groups/115374325161195/')

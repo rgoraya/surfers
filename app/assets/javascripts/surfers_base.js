@@ -4,7 +4,7 @@ $(document).ready(function() {
             return $('body.welcome_index').length > 0;
         },
         isTournamentPage = function() {
-            return $('body.pages_tournament').length > 0;
+            return $('body.tournaments_show').length > 0;
         },
         isHistoryPage = function() {
             return $('body.pages_history').length > 0;

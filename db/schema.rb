@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712162728) do
+ActiveRecord::Schema.define(:version => 20140314121900) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -82,6 +82,12 @@ ActiveRecord::Schema.define(:version => 20130712162728) do
     t.datetime "updated_at",              :null => false
     t.boolean  "will_play_again"
     t.boolean  "will_recommend"
+  end
+
+  create_table "tournaments", :force => true do |t|
+    t.string   "slug",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
