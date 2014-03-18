@@ -26,7 +26,7 @@ gem 'haml'
 gem 'haml-rails'
 
 # https://github.com/thomas-mcdonald/bootstrap-sass
-gem 'bootstrap-sass', '~> 2.3.1.2'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'jquery-rails', '2.3.0'
 gem 'underscore-rails'

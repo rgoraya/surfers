@@ -2,34 +2,65 @@
 //  = render 'shared/carousel_template'
 
 .well
-  .row-fluid
-    .span8
+  .container-fluid.padding-0
+    .col-xs-12.col-md-8
       %h4.margin-top-0
         Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as
         %span.serif "Surfers".
       %p.font-16 We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
-    .span4.promo.text-right
+    .col-xs-6.col-md-4.promo.text-right
       = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook', :class => "well bg-pale-white"), 'https://www.facebook.com/groups/115374325161195/')
 
+.well#welcomeBanner
+  .well.bg-pale-white.margin-bottom-0
+    %a.text-center{ :href => '/annual-6-x-6-tournament-2014' }
+      %h3.btn.btn-danger.padding-15.margin-top-0.font-26.width100p
+        = image_tag('surfers_logo_36.png')
+        10th annual 6x6 Surfers Field Hockey tournament
+
+%h3 Come play with us
+.container-fluid.padding-0.margin-bottom-20
+  .col-xs-6.col-md-4.padding-0
+    .padding-right-20
+      %h4 Arena Soccer Park of Orange (behind Orange mall)
+      %h5 2190 N Canal St, Orange, Ca 92865
+      %p Ph: 714-974-1993
+      %p Fax: 714-974-0809
+
+      %h4.margin-top-20 Timings
+      %p Wednesdays ( 8:30 - 10 PM )
+      %p Sundays ( 10:30 - 12:00 PM )
+
+      %h4.margin-top-20 More about the arena
+      %p.font-14
+        The fields are located in the heart of Orange County. Small field at Canal St. is used for Wednesday practice and
+        mid-sized field for Sunday practice. Plenty of parking available both in front and back of the fields
+  .col-xs-12.col-md-8.padding-0.pull-right
+    .panel.dark.padding-10
+      .map-container.margin-bottom-10
+        %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "520"}
+      %a.margin-top-10.color-white{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=A"} View Larger Map
+
+
 .well
-  .row-fluid
-    .span4.text-center.well.bg-pale-white.margin-bottom-0
+  .container-fluid.padding-0
+    .col-xs-6.col-md-4.text-center.well.bg-pale-white.margin-bottom-0
       %img{ :src => image_path('static/ajit_randhawa.jpg'), :alt => 'Ajit Singh Randhawa', :style => "width: 210px" }
       .margin-top-10.font-12
         Ajit Singh Randhava (1944-2013)
         Friend of Many, Revered by All
+    .col-xs-12.col-md-8.padding-0
+      .padding-left-20
+        %p
+          We are deeply saddened to hear about demise of
+          %span{:style => "font-weight: bold;"}
+            Sardar Ajit Randhawa
+          &#45; our club's friend and supporter for many years, and a pillar of the community.
+        %p During this difficult moment our thoughts and prayers are with Randhawa and Kahlon families.
+        %p &#45; HB Field Hockey Club
 
-    .span6.font-16
-      %p
-        We are deeply saddened to hear about demise of
-        %span{:style => "font-weight: bold;"}
-          Sardar Ajit Randhawa
-        &#45; our club's friend and supporter for many years, and a pillar of the community.
-      %p During this difficult moment our thoughts and prayers are with Randhawa and Kahlon families.
-      %p &#45; HB Field Hockey Club
 
 
-
-%h3 Surfers Tournament 2013
-= render 'shared/points_table'
-= render 'shared/tournament_schedule'
+//%h3 Surfers Tournament 2013
+//= render 'shared/points_table'
+//= render 'shared/tournament_schedule'

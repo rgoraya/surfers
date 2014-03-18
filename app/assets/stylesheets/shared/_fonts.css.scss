@@ -7,7 +7,7 @@ $i: 11;
 
 /* spits out classes with "even" font-size 20px to font-size 36px */
 $j: 20;
-  @while $j <= 40 {
+  @while $j <= 50 {
     .font-#{$j} {font-size: #{$j}px;}
     $j: $j + 2;
   }

@@ -1,21 +1,21 @@
 .navigation.pull-left.margin-right-20
   .well.padding-10.margin-top-20
-    %ul.nav-members.unstyled.font-15.panel.margin-bottom-10
+    %ul.nav-members.list-unstyled.font-15.panel.margin-bottom-10
       = nav_link 'About us', about_path
       = nav_link 'Contacts', contact_path
       = nav_link 'History of the game', history_path
 
-    .promo.margin-bottom-10
-      %a.btn.btn-info.padding-10.text-center{ :href => '/annual-6-x-6-tournament-2014' }
-        %i.icon-fire.icon-white
-        Surfers Field Hockey Annual 6X6 Tournament 2014
-      %a.btn.btn-info.padding-10.margin-top-10{"data-toggle" => "modal", :href => "#tournamentFeedbackModal", :role => "button"}
-        %i.icon-comment.icon-white
-        Tournament 2013 feedback
+    -#.promo.margin-bottom-10
+    -#  %a.btn.btn-info.padding-10.text-center{ :href => '/annual-6-x-6-tournament-2014' }
+    -#    %i.icon-fire.icon-white
+    -#    Surfers Field Hockey Annual 6X6 Tournament 2014
+    -#  %a.btn.btn-info.padding-10.margin-top-10{"data-toggle" => "modal", :href => "#tournamentFeedbackModal", :role => "button"}
+    -#    %i.icon-comment.icon-white
+    -#    Tournament 2013 feedback
 
     - sponsors = Sponsor.find(:all)
     - if !sponsors.nil?
-      %ul.links.panel.unstyled.margin-bottom-10
+      %ul.links.panel.list-unstyled.margin-bottom-10
         .header.dark.padding-10
           %i.icon-briefcase
           Our sponsors
@@ -26,7 +26,7 @@
 
     - links = HelpfulLink.find(:all)
     - if !links.nil?
-      %ul.links.panel.unstyled.margin-bottom-0
+      %ul.links.panel.list-unstyled.margin-bottom-0
         .header.dark.padding-10
           %i.icon-share
           Useful Hockey sites
