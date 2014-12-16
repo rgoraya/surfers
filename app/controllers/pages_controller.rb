@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     @page_title = "About us"
   end
 
+  def events
+    @page_title = "Surfer Events"
+  end
+
   def history
     @page_title = "History of the game"
   end
