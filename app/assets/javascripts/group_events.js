@@ -1,59 +1,58 @@
-$("#fb-root").bind("facebook:init", function() {
-    S.groupEvents = (function($, _) {
+if (!window.S) { window.S = {}; }
 
-        var groupEvents = function(group_id) {
-            this._group_id = group_id;
+S.groupEvents = (function($, _) {
 
-            // Request for questionnaire
-            this.get_events();
-        };
+    var groupEvents = function(group_id) {
+        this._group_id = group_id;
 
-        groupEvents.prototype = {
+        // Request for questionnaire
+        this.get_events();
+    };
 
-            get_events : function() {
-                var that = this;
+    groupEvents.prototype = {
 
-                console.log("came here");
+        get_events : function() {
+            var that = this;
 
-                if (FB) {
-                    FB.getLoginStatus(function(response) {
-                        that._login_status_changed(response)
-                    });
-                }
-            },
+            console.log("came here");
 
-            _login_status_changed : function(response) {
-                var that = this;
-                if (response.status == "connected"){
-                    that._make_events_request();
-                } else {
-                    FB.login(function(response) {
-                        if (response.status === 'connected') {
-                            console.log("Logged into your app and Facebook.");
-                            that._make_events_request();
-                        };
-                    });
-                }
-            },
-
-            _make_events_request : function () {
-                var that = this;
-                FB.api(
-                    "/" + that._group_id + "/events",
-                    function (response) {
-                        if (response && !response.error) {
-                            console.log(response);
-                        }
-                    }
-                );
+            if (FB) {
+                FB.getLoginStatus(function(response) {
+                    that._login_status_changed(response)
+                });
             }
+        },
 
-        };
+        _login_status_changed : function(response) {
+            var that = this;
+            if (response.status == "connected"){
+                that._make_events_request();
+            } else {
+                FB.login(function(response) {
+                    if (response.status === 'connected') {
+                        console.log("Logged into your app and Facebook.");
+                        that._make_events_request();
+                    };
+                });
+            }
+        },
 
-        return groupEvents;
+        _make_events_request : function () {
+            var that = this;
+            FB.api(
+                "/" + that._group_id + "/events",
+                function (response) {
+                    if (response && !response.error) {
+                        console.log(response);
+                    }
+                }
+            );
+        }
 
-    })(window.jQuery, window._);
+    };
 
-    var group_events = new S.groupEvents("115374325161195");
+    return groupEvents;
 
-});
+})(window.jQuery, window._);
+
+

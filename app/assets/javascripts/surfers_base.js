@@ -9,11 +9,20 @@ $(document).ready(function() {
         isHistoryPage = function() {
             return $('body.pages_history').length > 0;
         },
+        isEventsPage = function() {
+            return $('body.pages_surfer_events').length > 0;
+        },
+
         initTournamentFeedback = function() {
             return $('#tournamentFeedbackModal').length > 0;
         },
         carousel$el = $('#carousel_wrapper');
 
+    if (isWelcomePage() || isEventsPage()) {
+        $("#fb-root").bind("facebook:init", function() {
+            var group_events = new S.groupEvents("115374325161195");
+        });
+    }
     if (isHistoryPage()) {
         var albumID = "5897342069983516161",
             userID  = "114202720155216332234",
