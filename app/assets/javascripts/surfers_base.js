@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     if (isWelcomePage() || isEventsPage()) {
         $("#fb-root").bind("facebook:init", function() {
-            var group_events = new S.groupEvents("115374325161195");
+            var group_events = new S.groupEvents("115374325161195", isWelcomePage(), isEventsPage());
         });
     }
     if (isHistoryPage()) {

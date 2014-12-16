@@ -2,8 +2,10 @@ if (!window.S) { window.S = {}; }
 
 S.groupEvents = (function($, _) {
 
-    var groupEvents = function(group_id) {
+    var groupEvents = function(group_id, is_welcome_page, is_events_page) {
         this._group_id = group_id;
+        this._is_welcome_page = is_welcome_page;
+        this._is_events_page = is_events_page;
 
         // Request for questionnaire
         this.get_events();
@@ -13,8 +15,6 @@ S.groupEvents = (function($, _) {
 
         get_events : function() {
             var that = this;
-
-            console.log("came here");
 
             if (FB) {
                 FB.getLoginStatus(function(response) {
@@ -26,14 +26,15 @@ S.groupEvents = (function($, _) {
         _login_status_changed : function(response) {
             var that = this;
             if (response.status == "connected"){
-                that._make_events_request();
+                this._make_events_request();
             } else {
-                FB.login(function(response) {
-                    if (response.status === 'connected') {
-                        console.log("Logged into your app and Facebook.");
-                        that._make_events_request();
-                    };
-                });
+                if (this._is_events_page) {
+                    FB.login(function(response) {
+                        if (response.status === 'connected') {
+                            that._make_events_request();
+                        };
+                    });
+                }
             }
         },
 
