@@ -6,7 +6,6 @@ S.groupEvents = (function($, _) {
         this._group_id = group_id;
         this._is_welcome_page = is_welcome_page;
         this._is_events_page = is_events_page;
-
         // Request for questionnaire
         this.get_events();
     };
