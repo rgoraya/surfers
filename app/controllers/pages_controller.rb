@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @page_title = "About us"
   end
 
-  def events
+  def surfer_events
     @page_title = "Surfer Events"
   end
 

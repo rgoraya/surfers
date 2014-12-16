@@ -14,11 +14,6 @@ $(document).ready(function() {
         },
         carousel$el = $('#carousel_wrapper');
 
-    if (isWelcomePage() || isTournamentPage()) {
-        var albumID = "5898663168003572401",
-            userID  = "108613443650075185421",
-            welcomeCarousel = new S.picasaCarousel(carousel$el, albumID, userID);
-    }
     if (isHistoryPage()) {
         var albumID = "5897342069983516161",
             userID  = "114202720155216332234",

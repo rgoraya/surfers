@@ -9,7 +9,7 @@ Surfers::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/history', :to => 'pages#history'
-  match '/events',  :to => 'pages#events'
+  match '/surfer-events',  :to => 'pages#surfer_events', :as => "surfer_events"
   match '/tournament-2014',   :to => 'pages#tournament', :as => 'tournament'
   match '/play-with-us', :to => 'pages#play', :as => 'play'
   match '/:slug', :to => 'tournaments#show', :as => 'show'
