@@ -38,7 +38,9 @@ S.groupEvents = (function($, _) {
         },
 
         _make_events_request : function () {
-            var that = this;
+            var that = this,
+                now = _.now();
+
             FB.api(
                 "/" + that._group_id + "/events",
                 function (response) {
@@ -46,8 +48,8 @@ S.groupEvents = (function($, _) {
                         console.log(response.data);
                         console.log(response.data.length);
                         if (response.data && response.data.length)  {
-                            that._upcoming_events = _.filter(response.data, function(event){ return event.start_time > _.now(); });
-                            that._past_events = _.reject(response.data, function(event){ return event.start_time > _.now(); });
+                            that._upcoming_events = _.filter(response.data, function(event){ return (new Date(event.start_time)).getTime() > now; });
+                            that._past_events = _.reject(response.data, function(event){ return (new Date(event.start_time)).getTime() > now; });
                             console.log(that._upcoming_events);
                             console.log(that._past_events);
                         }
