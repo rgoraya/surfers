@@ -18,7 +18,7 @@ $(document).ready(function() {
         },
         carousel$el = $('#carousel_wrapper');
 
-    if (isWelcomePage() || isEventsPage()) {
+    if (isEventsPage()) {
         $("#fb-root").bind("facebook:init", function() {
             var group_events = new S.groupEvents("115374325161195", isWelcomePage(), isEventsPage());
         });

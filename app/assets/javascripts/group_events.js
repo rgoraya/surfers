@@ -43,7 +43,14 @@ S.groupEvents = (function($, _) {
                 "/" + that._group_id + "/events",
                 function (response) {
                     if (response && !response.error) {
-                        console.log(response);
+                        console.log(response.data);
+                        console.log(response.data.length);
+                        if (response.data && response.data.length)  {
+                            that._upcoming_events = _.filter(response.data, function(event){ return event.start_time > _.now(); });
+                            that._past_events = _.reject(response.data, function(event){ return event.start_time > _.now(); });
+                            console.log(that._upcoming_events);
+                            console.log(that._past_events);
+                        }
                     }
                 }
             );
