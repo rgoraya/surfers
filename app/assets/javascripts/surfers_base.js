@@ -18,11 +18,15 @@ $(document).ready(function() {
         },
         carousel$el = $('#carousel_wrapper');
 
-    if (isEventsPage()) {
-        $("#fb-root").bind("facebook:init", function() {
-            var group_events = new S.groupEvents("115374325161195", isWelcomePage(), isEventsPage());
-        });
-    }
+    $("#fb-root").bind("facebook:init", function() {
+        var group_events = new S.groupEvents("115374325161195");
+        if (isEventsPage()) {
+            group_events.all_events();
+        } else {
+            group_events.first_upcoming_event();
+        }
+    });
+
     if (isHistoryPage()) {
         var albumID = "5897342069983516161",
             userID  = "114202720155216332234",

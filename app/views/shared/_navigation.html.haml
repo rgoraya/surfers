@@ -3,8 +3,9 @@
     %ul.nav-members.list-unstyled.font-15.panel.margin-bottom-10
       = nav_link 'About us', about_path
       = nav_link 'Contacts', contact_path
-      = nav_link 'Events', surfer_events_path
       = nav_link 'History of the game', history_path
+      = nav_link 'Events', surfer_events_path
+      #upcomingEventContainer
 
     -#.promo.margin-bottom-10
     -#  %a.btn.btn-info.padding-10.text-center{ :href => '/annual-6-x-6-tournament-2014' }
@@ -37,3 +38,4 @@
               = l.link_text
 
   = render :partial => "tournament_feedbacks/tournament_feedback_modal_form"
+  = render :partial => "shared/events_templates"

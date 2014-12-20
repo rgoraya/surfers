@@ -188,6 +188,19 @@ body {
   }
 }
 
+.surfer-loader {
+  background-image: image_url('icons/loader.GIF');
+  height: 24px;
+  width: 84px;
+  background-repeat: none;
+  background-size: contain;
+  &.small {
+    height: 12px;
+    width: 36px;
+  }
+
+}
+
 .modal-body {
   max-height: 600px;
 }

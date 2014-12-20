@@ -1,0 +1,35 @@
+%script#eventContainerTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  .well{ :id => "{{id}}" }
+    .center-block.surfer-loader.small
+
+%script#upcomingEventContainerTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  .padding-10{ :id => "{{id}}" }
+    .center-block.surfer-loader.small
+
+%script#upcomingEventTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  %img{ :src => "{{picture.url}}", :height => "50px", :width => "50px" }
+  %a.h4.margin-top-0.margin-left-5{ :href => "https://www.facebook.com/events/{{id}}", :target => "_blank" }
+    {{name}}
+  %p.font-11.margin-top-10
+    %span.glyphicon.glyphicon-calendar
+    {{date_time.formatted_date}} at {{date_time.formatted_time}}
+
+%script#eventTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
+  .container-fluid.padding-0
+    .col-xs-10.col-md-7.padding-0.padding-right-15
+      .h3.margin-top-0 {{name}}
+      %p
+        %span.glyphicon.glyphicon-calendar
+        {{date_time.formatted_date}} at {{date_time.formatted_time}}
+      %p {{description}}
+    .col-xs-8.col-md-5.padding-0
+      {{#venue}}
+      .panel.dark.padding-10
+        .map-container.margin-bottom-10
+          %iframe{:frameborder => "0", :height => "240", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q={{url_encoded_address}}&z=14&iwloc=near&output=embed", :width => "302"}
+        .margin-top-10.color-white
+          %p.font-14.margin-0
+            %span.glyphicon.glyphicon-map-marker
+            {{location}}
+          %p.font-12 {{street}}, {{city}}, {{state}} {{zip}}
+      {{/venue}}
