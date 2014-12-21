@@ -17,7 +17,9 @@
 %script#eventTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
   .container-fluid.padding-0
     .col-xs-10.col-md-7.padding-0.padding-right-15
-      .h3.margin-top-0 {{name}}
+      %img{ :src => "{{picture.url}}", :height => "50px", :width => "50px" }
+      %a.h3.margin-top-0.margin-left-5{ :href => "https://www.facebook.com/events/{{id}}", :target => "_blank", :title => "view on facebook" }
+        {name}}
       %p
         %span.glyphicon.glyphicon-calendar
         {{date_time.formatted_date}} at {{date_time.formatted_time}}
