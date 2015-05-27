@@ -1,0 +1,112 @@
+.well.tournament-flyer.padding-0
+  .well.invite
+  .invite-text.padding-15.text-right
+    %h3
+      Surfers Field Hockey
+    %h4
+      Annual 6x6 Tournament 2015
+    %h3.margin-top-30
+      July 11-12, 2015
+    %h4
+      Orange, California
+    %h4.margin-top-30
+      Register Your Team Now
+    %p
+      %span.glyphicon.glyphicon-envelope
+      #{link_to("HBSurfers@hotmail.com", "mailto:HBSurfers@hotmail.com")}
+      %br
+      %span.glyphicon.glyphicon-earphone
+      (714) 585-2511
+
+.well
+  .margin-top-20
+    %h4
+      You are invited
+    %p
+      Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their
+      %b 10th annual 6x6 Surfers Field Hockey tournament
+      to be held on July 11th – July 12th in Orange, CA.
+
+  .margin-top-20
+    .container-fluid.padding-0
+      .col-xs-6.col-md-4.padding-0
+        .padding-right-20
+          %h4 About the venue
+          %p
+            %b Arena Soccer Park of Orange, 2190 North Canal Street, Orange, CA 92865.
+          %p
+            The field is a regulation sized indoor soccer
+            field with full sized goals. The turf field is
+            walled so the ball is in play all the time (no
+            side-line or corner hits). The venue allows a
+            unique fast/indoor hockey experience in an
+            outdoor setting.
+      .col-xs-12.col-md-8.padding-0
+        .panel.dark.padding-10
+          .map-container.margin-bottom-10
+            %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "495"}
+          %a.margin-top-10.color-white{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=A"} View Larger Map
+
+  .margin-top-0
+    %h4 Divisions
+    %p
+      %table.table.table-striped.table-bordered
+        %tr
+          %th Division
+          %th Players
+          %th Notes
+        %tr
+          %td Men/Competition
+          %td 6X6
+          %td There is no minimum in Men/Competition Div.
+        %tr
+          %td Social/Mixed
+          %td 7X7
+          %td must have at least 3 women players on the field or the team would play short of women player(s)
+
+  .margin-top-20
+    %h4 Registration
+    %p
+      Deadline to register your team is
+      %b Friday June 26th, 2015.
+    %p
+      You can register your team by emailing us at #{link_to("HBSurfers@hotmail.com", "mailto:HBSurfers@hotmail.com")}.
+      The Microsoft Word registration form can be downloaded #{link_to "here", "/forms/registration_form_2015.doc"} or
+      a pdf version #{link_to "here", "/forms/registration_form_2015.pdf"}.
+    %p
+      %b Team registration fee is $350
+      for both Divisions. You can have up to 11 players on the roster.
+
+  .margin-top-20
+    %h4 Rules
+    %p
+      Download the 2015 Surfers Field Hockey Tournament Rules #{link_to "here", "/forms/tournament_rules_2015.doc"}, or
+      a pdf version #{link_to "here", "/forms/tournament_rules_2015.pdf"}.
+
+  .margin-top-20
+    %h4 Contacts
+    %p
+      For more information, you may call
+      %ul
+        %li
+          %b Harkirat Guron at +1 949 295 9242
+        %li
+          %b Manjot Sandhu at +1 714 585 2511
+        %li
+          %b Manmohan Singh at +1 949 212 2979
+
+  .margin-top-20
+    %h4 Note
+    %p
+      The host club will provide refreshments and food for guest team members throughout the tournament, and a casual dinner is planned
+      for Saturday night. Dinner event participation is free for registered team members. Additional persons are $15 each.
+
+  .margin-top-20
+    %h4 About HB Field Hockey Club
+    %p
+      We are a registered non-profit organization. The club has been in existence since 1987 and has been
+      making useful contribution towards development of Field Hockey as a sport in Southern California.
+      You can catch us on web #{link_to "www.surfersfieldhockey.com", root_url}.
+
+%p.well
+  = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook'), 'https://www.facebook.com/groups/115374325161195/')

@@ -150,7 +150,7 @@ body {
           width: 36px;
           height: 36px;
           background-repeat: no-repeat;
-          background-image: image_url('surfers_logo_36.png');
+          background-image: image_url('surfers_logo_original_36.png');
           border-radius: 50%;
         }
       }
@@ -208,5 +208,28 @@ body {
 #welcomeBanner {
   .btn-danger {
     @include box-sizing(border-box);
+  }
+}
+
+
+.tournaments_show{
+  .tournament-flyer {
+    width: 818px;
+    height: 631px;
+    background-image: image_url('tournament_flyer.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    .invite, .invite-text {
+      position: absolute; right: 10px; top: 10px; width: 280px; height: 310px; background-color: #fcfcfc;
+    }
+    .invite {
+      opacity: 0.8;
+    }
+    .invite-text {
+      background-color: transparent;
+      .logo {
+
+      }
+    }
   }
 }
