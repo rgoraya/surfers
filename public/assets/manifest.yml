@@ -19,10 +19,10 @@ surfers_logo_200.png: surfers_logo_200-8e8b6f7685b02d57a866a20efc949337.png
 surfers_logo_200/index.png: surfers_logo_200-8e8b6f7685b02d57a866a20efc949337.png
 surfers_logo_36.png: surfers_logo_36-0eaf53e618e3386018363b7036f1b841.png
 surfers_logo_36/index.png: surfers_logo_36-0eaf53e618e3386018363b7036f1b841.png
-surfers_logo_original_200.png: surfers_logo_original_200-086c8e13a470cddf1c7a0ff653732067.png
-surfers_logo_original_200/index.png: surfers_logo_original_200-086c8e13a470cddf1c7a0ff653732067.png
-surfers_logo_original_36.png: surfers_logo_original_36-88a358297dfbbba00d966554613394b4.png
-surfers_logo_original_36/index.png: surfers_logo_original_36-88a358297dfbbba00d966554613394b4.png
+surfers_logo_original_200.png: surfers_logo_original_200-10cc06722567fcd7766f322abfd18abe.png
+surfers_logo_original_200/index.png: surfers_logo_original_200-10cc06722567fcd7766f322abfd18abe.png
+surfers_logo_original_36.png: surfers_logo_original_36-25ee7d2a4126e0079830282d6bb006cf.png
+surfers_logo_original_36/index.png: surfers_logo_original_36-25ee7d2a4126e0079830282d6bb006cf.png
 tournament_flyer.jpg: tournament_flyer-f8e8514ff8d18d3365b03f49386e001d.jpg
 tournament_flyer/index.jpg: tournament_flyer-f8e8514ff8d18d3365b03f49386e001d.jpg
 active_admin.js: active_admin-da1bfe85a1d3d3bee66acfbb6e4e19ea.js
@@ -31,8 +31,8 @@ application.js: application-f5a9331af5b5d0325e73f3e34169d402.js
 application/index.js: application-f5a9331af5b5d0325e73f3e34169d402.js
 active_admin.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 active_admin/index.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
-application.css: application-b3fa1b1ba8cae9e4df21591b460d9c46.css
-application/index.css: application-b3fa1b1ba8cae9e4df21591b460d9c46.css
+application.css: application-a50ede6f0c2e99ca3f4ad01fc09512fd.css
+application/index.css: application-a50ede6f0c2e99ca3f4ad01fc09512fd.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png
 active_admin/admin_notes_icon/index.png: active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-6f0baad739953cb1a0413c031841e82f.png
