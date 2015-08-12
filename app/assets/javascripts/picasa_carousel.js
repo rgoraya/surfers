@@ -20,7 +20,6 @@ S.picasaCarousel = (function($, _) {
 
             $.getJSON(albumURL, function(data) {
                 var feed = that._extended_feed(data.feed);
-                console.log(feed);
                 that._$el.html(that._template().render(feed));
             });
         },

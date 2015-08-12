@@ -27,8 +27,8 @@ $(document).ready(function() {
         }
     });
 
-    if (picasa_album_id && picasa_user_id) {
-        if (picasa_content_template) {
+    if (typeof picasa_album_id !== 'undefined' && typeof picasa_user_id !== 'undefined') {
+        if (typeof picasa_content_template !== 'undefined') {
             aboutCarousel = new S.picasaCarousel(picasa_content_wrapper, picasa_album_id ,picasa_user_id, picasa_content_template);
         }
         var albumID = "5897342069983516161",

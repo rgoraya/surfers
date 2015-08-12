@@ -1,6 +1,5 @@
 %script#eventContainerTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
-  .well{ :id => "{{id}}" }
-    .center-block.surfer-loader.small
+  .padding-top-0{ :id => "{{id}}" }
 
 %script#upcomingEventContainerTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
   .padding-10{ :id => "{{id}}" }
@@ -15,23 +14,22 @@
     {{date_time.formatted_date}} at {{date_time.formatted_time}}
 
 %script#eventTemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
-  .row.padding-vertical-20
-    .col-sm-6.col-md-7.padding-vertical-20
-      %img{ :src => "{{picture.url}}", :height => "50px", :width => "50px" }
-      %a.h3.margin-top-0.margin-left-5{ :href => "https://www.facebook.com/events/{{id}}", :target => "_blank", :title => "view on facebook" }
-        {{name}}
-      %p.margin-top-10
-        %span.glyphicon.glyphicon-calendar
-        {{date_time.formatted_date}} at {{date_time.formatted_time}}
-      %p.margin-bottom-0 {{description}}
-    .col-sm-6.col-md-5.padding-vertical-20
-      {{#venue}}
-      .panel.dark.padding-10
-        .map-container.margin-bottom-10
-          %iframe{:frameborder => "0", :height => "240", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q={{url_encoded_address}}&z=14&iwloc=near&output=embed", :width => "302"}
-        .margin-top-10.color-white
-          %p.font-14.margin-0
-            %span.glyphicon.glyphicon-map-marker
-            {{location}}
-          %p.font-12.padding-vertical-20 {{street}}, {{city}}, {{state}} {{zip}}
-      {{/venue}}
+  .col-sm-6.col-md-7.padding-vertical-20
+    %img{ :src => "{{picture.url}}", :height => "50px", :width => "50px" }
+    %a.h3.margin-top-0.margin-left-5{ :href => "https://www.facebook.com/events/{{id}}", :target => "_blank", :title => "view on facebook" }
+      {{name}}
+    %p.margin-top-10
+      %span.glyphicon.glyphicon-calendar
+      {{date_time.formatted_date}} at {{date_time.formatted_time}}
+    %p.margin-bottom-0 {{description}}
+  .col-sm-6.col-md-5.padding-vertical-20
+    {{#venue}}
+    .panel.dark.padding-10
+      .map-container.margin-bottom-10
+        %iframe{:frameborder => "0", :height => "240", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q={{url_encoded_address}}&z=14&iwloc=near&output=embed", :width => "302"}
+      .margin-top-10.color-white
+        %p.font-14.margin-bottom-5
+          %span.glyphicon.glyphicon-map-marker
+          {{location}}
+        %p.font-12.margin-0 {{street}}, {{city}}, {{state}} {{zip}}
+    {{/venue}}

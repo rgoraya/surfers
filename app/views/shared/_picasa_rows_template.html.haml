@@ -1,9 +1,9 @@
 %script#picasarowstemplate{:charset => "utf-8", :type => "text/x-mustache-template"}
   .row.padding-vertical-20
     .col-sm-12.padding-20-40
-      %h2.margin-top-20 {{title.$t}}
+      %h2.margin-top-20 #{"{{title.$t}}"}
     {{#entry}}
     .col-sm-3.padding-vertical-20
       %img.max-width-100{ :src => "{{content.src}}" }
-      %p.font-16.margin-bottom-0.margin-top-10 {{title.$t}}
+      %p.font-16.margin-bottom-0.margin-top-10 #{"{{title.$t}}"}
     {{/entry}}

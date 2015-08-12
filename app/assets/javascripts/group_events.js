@@ -78,6 +78,7 @@ S.groupEvents = (function($, _) {
             FB.api(
                 "/" + that._group_id + "/events",
                 function (response) {
+                    console.log(response);
                     if (response && !response.error) {
                         console.log(response.data);
                         console.log(response.data.length);
