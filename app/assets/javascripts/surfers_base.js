@@ -28,8 +28,12 @@ $(document).ready(function() {
     });
 
     $(".carousel")
-        .on("swiperight", function() { $(this).carousel('prev'); })
-        .on("swipeleft", function() { $(this).carousel('next'); });
+        .on("swiperight", function() {
+            $(this).carousel('prev');
+        })
+        .on("swipeleft", function() {
+            $(this).carousel('next');
+        });
 
     if (typeof picasa_album_id !== 'undefined' && typeof picasa_user_id !== 'undefined') {
         if (typeof picasa_content_template !== 'undefined') {

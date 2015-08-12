@@ -33,8 +33,8 @@ tournament_flyer.jpg: tournament_flyer-f8e8514ff8d18d3365b03f49386e001d.jpg
 tournament_flyer/index.jpg: tournament_flyer-f8e8514ff8d18d3365b03f49386e001d.jpg
 active_admin.js: active_admin-da1bfe85a1d3d3bee66acfbb6e4e19ea.js
 active_admin/index.js: active_admin-da1bfe85a1d3d3bee66acfbb6e4e19ea.js
-application.js: application-d9e064f24153bc66588a7ba6d7a8a005.js
-application/index.js: application-d9e064f24153bc66588a7ba6d7a8a005.js
+application.js: application-062b3e3151757fcba984321de813b7f3.js
+application/index.js: application-062b3e3151757fcba984321de813b7f3.js
 active_admin.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 active_admin/index.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 application.css: application-44482309404657cee3196f660d99a31d.css
@@ -73,6 +73,16 @@ active_admin/pages/application.js: active_admin/pages/application-933a377407f68b
 active_admin/pages/application/index.js: active_admin/pages/application-933a377407f68bbb2ce7f673d7feca0a.js
 active_admin/print.css: active_admin/print-e2186aeecceb677443527e791ac876ed.css
 active_admin/print/index.css: active_admin/print-e2186aeecceb677443527e791ac876ed.css
+jquery-mobile/ajax-loader.gif: jquery-mobile/ajax-loader-cad1a448fe000d9643c57860e5493861.gif
+jquery-mobile/ajax-loader/index.gif: jquery-mobile/ajax-loader-cad1a448fe000d9643c57860e5493861.gif
+jquery-mobile/icons-18-black.png: jquery-mobile/icons-18-black-9b086cfc182f1f308150450ad71720e4.png
+jquery-mobile/icons-18-black/index.png: jquery-mobile/icons-18-black-9b086cfc182f1f308150450ad71720e4.png
+jquery-mobile/icons-18-white.png: jquery-mobile/icons-18-white-3bfb31af83b6099bb3e1e3d31e9cbf6e.png
+jquery-mobile/icons-18-white/index.png: jquery-mobile/icons-18-white-3bfb31af83b6099bb3e1e3d31e9cbf6e.png
+jquery-mobile/icons-36-black.png: jquery-mobile/icons-36-black-9ced6614f5b8048fc6f64eddb64fb5b3.png
+jquery-mobile/icons-36-black/index.png: jquery-mobile/icons-36-black-9ced6614f5b8048fc6f64eddb64fb5b3.png
+jquery-mobile/icons-36-white.png: jquery-mobile/icons-36-white-62263c46c22cc8a5e1bbbf94d9d80e7a.png
+jquery-mobile/icons-36-white/index.png: jquery-mobile/icons-36-white-62263c46c22cc8a5e1bbbf94d9d80e7a.png
 jquery.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
 jquery/index.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
 bootstrap/glyphicons-halflings-regular.eot: bootstrap/glyphicons-halflings-regular-34c3e2fce2eed3de1bb998bae0e4e0de.eot
