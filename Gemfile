@@ -29,6 +29,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'jquery-rails', '2.3.0'
+gem "jquery_mobile_rails", "1.3.2"
 gem 'underscore-rails'
 
 

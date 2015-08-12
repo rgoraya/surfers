@@ -27,6 +27,10 @@ $(document).ready(function() {
         }
     });
 
+    $(".carousel")
+        .on("swiperight", function() { $(this).carousel('prev'); })
+        .on("swipeleft", function() { $(this).carousel('next'); });
+
     if (typeof picasa_album_id !== 'undefined' && typeof picasa_user_id !== 'undefined') {
         if (typeof picasa_content_template !== 'undefined') {
             aboutCarousel = new S.picasaCarousel(picasa_content_wrapper, picasa_album_id ,picasa_user_id, picasa_content_template);
