@@ -7,12 +7,11 @@
     = render "shared/meta"
   %body{ :class => body_class_name }
     = render "shared/fb_setup"
-    #container.clearfix
+    #container.clearfix.container-fluid.padding-0
       = render "shared/header"
 
-      #content.center-aligned.full-width.clearfix
-        = render "shared/navigation"
-        .yielded-content.pull-left.padding-20.panel.margin-bottom-20
+      #content
+        .yielded-content
           = yield
 
       = render "shared/footer"

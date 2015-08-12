@@ -1,10 +1,12 @@
 #footer.width100p
-  .footer_content.clearfix.center-aligned.full-width.padding-vertical-10
-    .footer_text.pull-left
-      %a.link-to-root.pull-left.margin-right-10{ :href => root_url}
+  .footer_content.clearfix.row.padding-vertical-10.center-aligned.container
+    .footer_text.text-center
+      %a.link-to-root.margin-right-10{ :href => root_url}
         .logo
-      Copyright © 2013, Huntington Beach Surfer Field Hockey Club, All rights reserved.
-      Thanks to  #{link_to "Bootstrap", "http://twitter.github.io/bootstrap"} & #{link_to "Glyphicons", "http://glyphicons.com/"}
-
-    .foot_nav.pull-right
-      #{link_to "About", about_path} | #{link_to "Contacts", contact_path}
+      Copyright © 2013
+      %span.hide-at-400
+        HB Surfer Field Hockey Club.
+      %span.hide-at-400.hide-at-768
+        All rights reserved.
+      %span.hide-at-400.hide-at-768.hide-at-992
+        Thanks to  #{link_to "Bootstrap", "http://twitter.github.io/bootstrap"} & #{link_to "Glyphicons", "http://glyphicons.com/"}.

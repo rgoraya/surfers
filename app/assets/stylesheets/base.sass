@@ -1,0 +1,224 @@
+/*
+ * Application Wide styles:
+
+@import shared/fonts
+@import shared/colors_and_backgrounds
+@import shared/spacing
+
+html
+  margin: 0px
+  padding: 0px
+  height: 100%
+
+body
+  margin: 0px
+  padding: 0px
+  height: 100%
+  -webkit-font-smoothing: antialiased
+
+#container
+  min-height: 100%
+  position: relative
+  margin: 0 auto
+  background-image: image_url("grey.png") // Background pattern from subtlepatterns.com
+  #content
+    padding-bottom: 55px
+    padding-top: 70px
+    .navigation
+      width: 200px
+      padding-top: 100px
+      ul.nav-members
+        overflow: hidden
+        li
+          border-bottom: 1px solid #e5e5e5
+          a
+            display: block
+            color: #434343
+            text-decoration: none
+            padding: 10px
+            &:visited
+              color: #434343
+              text-decoration: none
+            &:hover
+              color: #434343
+              background-color: #fafafa
+              text-decoration: none
+          &.active
+            a, a:hover, a:active
+              background-color: #dff0d8
+
+  #header
+    width: 100%
+    position: fixed
+    z-index: +2
+    height: auto
+    +box-sizing(border-box)
+    +box-shadow(0 2px 3px 0px rgba(0, 0, 0, 0.1))
+    background-image: image_url("grey.png") // Background pattern from subtlepatterns.com
+    .top-border
+      height: 3px
+    .headnav
+      text-decoration: none
+      text-align: left
+      #surfersNavbar
+        ul.navbar-nav
+          li
+            padding: 10px
+            a
+              padding: 5px
+              color: #333
+              text-decoration: none
+              border-bottom: 4px solid transparent
+              &:visited
+                color: #333
+                text-decoration: none
+              &:hover, &:active
+                text-decoration: none
+                border-bottom: 4px solid #333
+                background-color: transparent
+            &.active
+              a
+                border-bottom: 4px solid #333
+                background-color: transparent
+      .navbar-brand
+        height: auto
+      .navbar-toggle
+        .icon-bar
+          background-color: #333
+      #logo
+        background-color: #ffffff
+        border-radius: 50%
+        height: auto
+        img
+          height: 65px
+          width: 65px
+          +box-shadow(0px 0px 100px 5px #fff)
+          +box-sizing(border-box)
+          opacity: 0.7
+          margin: 0 auto
+          &:hover
+            opacity: 1
+      #name
+        margin-left: 10px
+        .title, .subtitle
+          line-height: 100%
+          text-shadow: 0px 1px 0px #fcfcfc
+          filter: dropshadow(color = #fcfcfc, offX = 0, offY = 1)
+  #footer
+    position: absolute
+    bottom: 0px
+    font-size: 13px
+    color: #434343
+    a
+      color: #434343
+      text-decoration: none
+      &:visited
+        color: #434343
+        text-decoration: none
+      &:hover
+        color: #434343
+        text-decoration: underline
+    .footer_content
+      line-height: 36px
+      height: 55px
+      a.link-to-root
+        overflow: hidden
+        display: inline-block
+        vertical-align: middle
+        +box-shadow(inset 0 0 4px 0 rgba(0, 0, 0, 0.05))
+        width: 36px
+        height: 36px
+        background-repeat: no-repeat
+        background-image: image_url("surfers_logo_original_36.png")
+        border-radius: 50%
+
+.panel
+  background-color: white
+  +box-sizing(border-box)
+  border-radius: 4px
+  +box-shadow(0 1px 4px rgba(0, 0, 0, 0.065))
+  &.dark
+    background-color: #2f2f2f
+    color: #ffffff
+
+.header
+  background-color: #eee
+  border: 1px solid #ddd
+  +border-top-radius(4px)
+
+.carousel
+  background-color: #2f2f2f
+  .carousel-inner
+    width: auto
+    .photo
+      img
+        width: auto
+        height: 450px
+  &#welcome_carousel
+    background-color: transparent
+    .carousel-indicators
+      bottom: -40px
+    .carousel-inner
+      width: 210px
+      border-radius: 50%
+      .photo
+        img
+          width: 200px
+          height: 200px
+
+.surfer-loader
+  background-image: image_url("icons/loader.GIF")
+  height: 24px
+  width: 84px
+  background-repeat: none
+  background-size: contain
+  &.small
+    height: 12px
+    width: 36px
+
+.modal-body
+  max-height: 600px
+
+#welcomeBanner
+  .btn-danger
+    +box-sizing(border-box)
+
+.map-container
+  position: relative
+  padding-bottom: 90%
+  // (450 ÷ 500 = 0.9 = 90%)
+  height: 0
+  overflow: hidden
+
+.map-container iframe
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+@media (max-width: 400px)
+  #container
+    #content
+      padding-top: 55px
+    #header
+      .subtitle
+        display: none
+      .headnav #logo
+        img
+          width: 50px
+          height: 50px
+    #footer
+      .hide-at-400
+        display: none
+
+@media (max-width: 768px)
+  #container
+    #footer
+      .hide-at-768
+        display: none
+@media (max-width: 992px)
+  #container
+    #footer
+      .hide-at-992
+        display: none

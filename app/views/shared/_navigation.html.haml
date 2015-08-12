@@ -1,41 +1,72 @@
-.navigation.pull-left.margin-right-20
-  .well.padding-10.margin-top-20
-    %ul.nav-members.list-unstyled.font-15.panel.margin-bottom-10
-      = nav_link 'About us', about_path
-      = nav_link 'Contacts', contact_path
-      = nav_link 'History of the game', history_path
-      = nav_link 'Events', surfer_events_path
-      #upcomingEventContainer
+-#.navigation.pull-left.margin-right-20
+-#  .well.padding-10.margin-top-20
+-#    %ul.nav-members.list-unstyled.font-15.panel.margin-bottom-10
+-#      = nav_link 'About us', about_path
+-#      = nav_link 'Contacts', contact_path
+-#      = nav_link 'History of the game', history_path
+-#      = nav_link 'Events', surfer_events_path
+-#      #upcomingEventContainer
+-#
+-#    -#.promo.margin-bottom-10
+-#    -#  %a.btn.btn-info.padding-10.text-center{ :href => '/annual-6-x-6-tournament-2014' }
+-#    -#    %i.icon-fire.icon-white
+-#    -#    Surfers Field Hockey Annual 6X6 Tournament 2014
+-#    -#  %a.btn.btn-info.padding-10.margin-top-10{"data-toggle" => "modal", :href => "#tournamentFeedbackModal", :role => "button"}
+-#    -#    %i.icon-comment.icon-white
+-#    -#    Tournament 2013 feedback
+-#
+-#    - sponsors = Sponsor.find(:all)
+-#    - if !sponsors.nil?
+-#      %ul.links.panel.list-unstyled.margin-bottom-10
+-#        .header.dark.padding-10
+-#          %span.glyphicon.glyphicon-briefcase
+-#          Our sponsors
+-#        - sponsors.each do |l|
+-#          %li.padding-10
+-#            %a{:href => l.link_href, :target => "_blank"}
+-#              = l.link_text
+-#
+-#    - links = HelpfulLink.find(:all)
+-#    - if !links.nil?
+-#      %ul.links.panel.list-unstyled.margin-bottom-0
+-#        .header.dark.padding-10
+-#          %span.glyphicon.glyphicon-share
+-#          Useful Hockey sites
+-#        - links.each do |l|
+-#          %li.padding-10
+-#            %a{:href => l.link_href, :target => "_blank"}
+-#              = l.link_text
 
-    -#.promo.margin-bottom-10
-    -#  %a.btn.btn-info.padding-10.text-center{ :href => '/annual-6-x-6-tournament-2014' }
-    -#    %i.icon-fire.icon-white
-    -#    Surfers Field Hockey Annual 6X6 Tournament 2014
-    -#  %a.btn.btn-info.padding-10.margin-top-10{"data-toggle" => "modal", :href => "#tournamentFeedbackModal", :role => "button"}
-    -#    %i.icon-comment.icon-white
-    -#    Tournament 2013 feedback
+-#= render :partial => "tournament_feedbacks/tournament_feedback_modal_form"
+-#= render :partial => "shared/events_templates"
 
-    - sponsors = Sponsor.find(:all)
-    - if !sponsors.nil?
-      %ul.links.panel.list-unstyled.margin-bottom-10
-        .header.dark.padding-10
-          %span.glyphicon.glyphicon-briefcase
-          Our sponsors
-        - sponsors.each do |l|
-          %li.padding-10
-            %a{:href => l.link_href, :target => "_blank"}
-              = l.link_text
+%ul.nav.navbar-nav.navbar-right.margin-0
+  = nav_link 'Home', root_path
+  = nav_link 'About', about_path
+  = nav_link 'Contacts', contact_path
+  = nav_link 'Events', surfer_events_path
+  = nav_link 'History', history_path
 
-    - links = HelpfulLink.find(:all)
-    - if !links.nil?
-      %ul.links.panel.list-unstyled.margin-bottom-0
-        .header.dark.padding-10
-          %span.glyphicon.glyphicon-share
-          Useful Hockey sites
-        - links.each do |l|
-          %li.padding-10
-            %a{:href => l.link_href, :target => "_blank"}
-              = l.link_text
-
-  = render :partial => "tournament_feedbacks/tournament_feedback_modal_form"
-  = render :partial => "shared/events_templates"
+  -#- sponsors = Sponsor.find(:all)
+  -#- unless sponsors.nil?
+  -#  %li.dropdown
+  -#    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+  -#      Sponsors
+  -#      %span.caret
+  -#    %ul.dropdown-menu
+  -#      - sponsors.each do |l|
+  -#        %li
+  -#          %a{:href => l.link_href, :target => "_blank"}
+  -#            = l.link_text
+  -#
+  -#- links = HelpfulLink.find(:all)
+  -#- if !links.nil?
+  -#  %li.dropdown
+  -#    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+  -#      Links
+  -#      %span.caret
+  -#    %ul.dropdown-menu
+  -#      - links.each do |l|
+  -#        %li
+  -#          %a{:href => l.link_href, :target => "_blank"}
+  -#            = l.link_text

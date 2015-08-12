@@ -2,10 +2,11 @@ if (!window.S) { window.S = {}; }
 
 S.picasaCarousel = (function($, _) {
 
-    var carousel = function(element, albumid, userid) {
-        this._$el = element;
+    var carousel = function(element, albumid, userid, template) {
+        this._$el = $(element);
         this._album_id = albumid;
         this._user_id  = userid;
+        this._$template  = $(template);
 
         // Request for questionnaire
         this.get_photos();
@@ -19,8 +20,8 @@ S.picasaCarousel = (function($, _) {
 
             $.getJSON(albumURL, function(data) {
                 var feed = that._extended_feed(data.feed);
+                console.log(feed);
                 that._$el.html(that._template().render(feed));
-                that._initialize_carousel();
             });
         },
 
@@ -34,11 +35,7 @@ S.picasaCarousel = (function($, _) {
         },
 
         _template : function() {
-            return Hogan.compile($('#carouselTemplate').html());
-        },
-
-        _initialize_carousel : function() {
-            $('.carousel').carousel()
+            return Hogan.compile(this._$template.html());
         }
     };
 

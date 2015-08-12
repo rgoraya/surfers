@@ -1,36 +1,40 @@
-%h3 History of Surfers
-%p
-  Huntington Beach Field Hockey Club was
-  %b founded in 1987 by Olympian Kuldip Bhogal.
-  Kuldip was not only a founder of the club, but also an inspiration to his friends that later joined the club. What gave this club its edge over the other local clubs was the involvement of the member’s families. It was not a ‘boys only’ club. As the members matured, their children took up the sport and it was not long before the club had its own children’s teams participating and winning the leagues and competitions. In fact, over the last few years, the United States National team has always had a HBFHC member as part of its squad.
+.container-fluid.bg-astroturf.padding-0
+  .container.color-ghost-white
+    .row.padding-vertical-20
+      .col-sm-12.padding-vertical-20
+        %h1.margin-top-0
+          About the Club
+        %p.font-16
+          Huntington Beach Field Hockey Club was
+          %b founded in 1987 by Olympian Kuldip Bhogal.
+          Kuldip was not only a founder of the club, but also an inspiration to his friends that later joined the club. What gave this club its edge over the other local clubs was the involvement of the member’s families. It was not a ‘boys only’ club. As the members matured, their children took up the sport and it was not long before the club had its own children’s teams participating and winning the leagues and competitions. In fact, over the last few years, the United States National team has always had a HBFHC member as part of its squad.
 
-%p
-  Eight players who began their early years with the Surfers youth field hockey program have made it to Senior or Junior USA inter-national squads, playing for their country.
+        %p.font-16
+          Eight players who began their early years with the Surfers youth field hockey program have made it to Senior or Junior USA inter-national squads, playing for their country.
 
-%p
-  Players of all ability and ages are welcome!
+        %p.margin-bottom-0.font-16
+          Players of all ability and ages are welcome!
 
-%h3.margin-top-20 Come play with us
-.well
-  .container-fluid.padding-0
-    .col-xs-6.col-md-4.padding-0
-      %h4 Arena Soccer Park of Orange (behind Orange mall)
-      %h5 2190 N Canal St, Orange, Ca 92865
-      %p Ph: 714-974-1993
-      %p Fax: 714-974-0809
+.container
+  .row.padding-vertical-20
+    - sponsors = Sponsor.find(:all)
+    - if !sponsors.nil?
+      .col-sm-12.padding-vertical-20
+        %h2.margin-top-0
+          Our sponsors
+        %ul.links.list-unstyled.margin-bottom-0
+          - sponsors.each do |l|
+            %li.padding-vertical-10
+              %a.h4{:href => l.link_href, :target => "_blank"}
+                = l.link_text
 
-      %h4.margin-top-20 Timings
-      %p Wednesdays ( 8:30 - 10 PM )
-      %p Sundays ( 10:30 - 12:00 PM )
-
-    .col-xs-12.col-md-8.padding-0
-      .panel.dark.padding-10
-        .map-container.margin-bottom-10
-          %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
-        %a.margin-top-10.color-white{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=A"} View Larger Map
-
-%h4.margin-top-20 More about the arena
-%p.font-14
-  The fields are located in the heart of Orange County. Small field at Canal St. is used for Wednesday practice and
-  mid-sized field for Sunday practice. Plenty of parking available both in front and back of the fields
-
+    - links = HelpfulLink.find(:all)
+    - if !links.nil?
+      .col-sm-12.padding-vertical-20
+        %h2.margin-top-0
+          Useful Hockey sites
+        %ul.links.list-unstyled.margin-bottom-0
+          - links.each do |l|
+            %li.padding-vertical-10
+              %a.h4{:href => l.link_href, :target => "_blank"}
+                = l.link_text

@@ -13,7 +13,9 @@ class PagesController < ApplicationController
   end
 
   def history
-    @page_title = "History of the game"
+    @page_title = "History of Field Hockey"
+    @picasa_album_id = "5897342069983516161"
+    @picasa_user_id = "114202720155216332234"
   end
 
   def play

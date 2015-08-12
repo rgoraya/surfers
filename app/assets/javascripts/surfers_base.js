@@ -27,7 +27,10 @@ $(document).ready(function() {
         }
     });
 
-    if (isHistoryPage()) {
+    if (picasa_album_id && picasa_user_id) {
+        if (picasa_content_template) {
+            aboutCarousel = new S.picasaCarousel(picasa_content_wrapper, picasa_album_id ,picasa_user_id, picasa_content_template);
+        }
         var albumID = "5897342069983516161",
             userID  = "114202720155216332234",
             aboutCarousel = new S.picasaCarousel(carousel$el, albumID ,userID);

@@ -1,183 +1,70 @@
-//.well
-//  = render 'shared/carousel_template'
+.container-fluid.bg-astroturf.padding-0
+  .container
+    .row.padding-vertical-20
+      .col-sm-6.col-md-3.text-center.padding-vertical-20
+        #welcome_carousel.carousel.slide.margin-bottom-0{ "data-ride" => "carousel" }
+          %ol.carousel-indicators
+            %li.active{ "data-slide-to" => "0", "data-target" => "#welcome_carousel" }
+            %li{ "data-slide-to" => "1", "data-target" => "#welcome_carousel" }
+            %li{ "data-slide-to" => "2", "data-target" => "#welcome_carousel" }
+            %li{ "data-slide-to" => "3", "data-target" => "#welcome_carousel" }
+          .carousel-inner.center-aligned
+            .item.active
+              .photo.text-center
+                = image_tag('surfers_logo_original_200.png', :class => "img-circle bg-ghost-white padding-5 max-width-100 ")
+            .item
+              .photo.text-center
+                = image_tag('static/Phoenix_2005_Action.JPG', :class => "img-circle bg-ghost-white padding-5 max-width-100 ")
+            .item
+              .photo.text-center
+                = image_tag('static/Social_Champs.jpg', :class => "img-circle bg-ghost-white padding-5 max-width-100 ")
+            .item
+              .photo.text-center
+                = image_tag('static/2011_Mixed_Champs.jpg', :class => "img-circle bg-ghost-white padding-5 max-width-100 ")
+      .col-sm-6.col-md-9.color-ghost-white.padding-vertical-20
+        %h1.margin-top-0
+          Surfers
+        %h3
+          Huntington Beach Field Hockey club
+        %p.font-20
+          Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as Surfers.
+        %p.font-20
+          We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
+        .promo.margin-top-20
+          = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook', :class => "well bg-pale-white margin-bottom-0"), 'https://www.facebook.com/groups/115374325161195/')
 
-.well
-  .container-fluid.padding-0
-    .col-xs-12.col-md-8
-      %h4.margin-top-0
-        Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as
-        %span.serif "Surfers".
-      %p.font-16 We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
-    .col-xs-6.col-md-4.promo.text-right
-      = link_to(image_tag('static/find_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook', :class => "well bg-pale-white"), 'https://www.facebook.com/groups/115374325161195/')
+.container
+  .row.padding-vertical-20
+    .col-sm-6.col-md-7.padding-vertical-20
+      %h2.margin-top-0 Come play with us
+      .margin-top-20
+        %h4.margin-top-0 Arena Soccer Park of Orange (behind Orange mall)
+        %h4 2190 N Canal St, Orange, Ca 92865
+        %table.table.widthAuto.table-bordered.margin-top-10
+          %tr
+            %td Phone
+            %td 714-974-1993
+          %tr
+            %td Fax
+            %td 714-974-0809
 
-.well.container-fluid
+        %h4.margin-top-20 Timings
+        %table.table.widthAuto.table-bordered
+          %tr
+            %td Wednesdays
+            %td 8:30 - 10 PM
+          %tr
+            %td Sundays
+            %td 10:30 - 12:00 PM
 
-  .well#welcomeBanner.bg-pale-white.margin-bottom-15.margin-top-0
-    %a.text-center{ :href => '/annual-6-x-6-tournament-2015' }
-      %h3.btn.btn-primary.padding-15.margin-top-0.font-26.width100p
-        = image_tag('surfers_logo_original_36.png')
-        10th annual 6x6 Surfers Field Hockey tournament
+        %h4.margin-top-20 More about the arena
+        %p.font-14.margin-bottom-0
+          The fields are located in the heart of Orange County. Small field at Canal St. is used for Wednesday practice and
+          mid-sized field for Sunday practice. Plenty of parking available both in front and back of the fields
 
-  .panel.panel-primary
-    .panel-heading.clearfix
-      %h4.pull-left Schedule for Saturday, July 11
-      .pull-right.margin-top-10
-        %span.alert.alert-info.margin-0.padding-5.margin-right-10
-          Competition
-        %span.alert.alert-success.margin-0.padding-5
-          Social
-    .panel-body
-      %table.table.table-bordered.margin-bottom-0
-        %tr
-          %th Game
-          %th Start
-          %th End
-          %th Home
-          %th Guest
-        %tr
-          %td Game # 1
-          %td 8:30
-          %td 9:17
-          %td.bg-success Monarcas
-          %td.bg-success Surfers Blue
-        %tr
-          %td Game # 2
-          %td 9:20
-          %td 10:07
-          %td.bg-success Khalsa Junction
-          %td.bg-success Surfers Red
-        %tr
-          %td Game # 3
-          %td 10:10
-          %td 10:57
-          %td.bg-info LA Tigers
-          %td.bg-info Monarcas
-        %tr
-          %td Game # 4
-          %td 11:00
-          %td 11:47
-          %td.bg-info Surfers
-          %td.bg-info Phoenix
-        %tr
-          %td Game # 5
-          %td 11:50
-          %td 12:37
-          %td.bg-success Khalsa Junction
-          %td.bg-success Monarcas
-        %tr
-          %td Game # 6
-          %td 12:40
-          %td 13:27
-          %td.bg-success Surfers Red
-          %td.bg-success Surfers Blue
-        %tr
-          %td Game # 7
-          %td 13:30
-          %td 14:17
-          %td.bg-info Surfers
-          %td.bg-info LA Tigers
-        %tr
-          %td Game # 8
-          %td 14:20
-          %td 15:07
-          %td.bg-info Phoenix
-          %td.bg-info Monarcas
-        %tr
-          %td Game # 9
-          %td 15:10
-          %td 15:57
-          %td.bg-success Monarcas
-          %td.bg-success Surfers Red
-        %tr
-          %td Game # 10
-          %td 16:00
-          %td 16:47
-          %td.bg-success Surfers Blue
-          %td.bg-success Khalsa Junction
-        %tr
-          %td Game # 11
-          %td 16:50
-          %td 17:37
-          %td.bg-info LA Tigers
-          %td.bg-info Phoenix
-        %tr
-          %td Game # 12
-          %td 17:40
-          %td 18:27
-          %td.bg-info Monarcas
-          %td.bg-info Surfers
-
-  .panel.panel-primary
-    .panel-heading.clearfix
-      %h4.pull-left Schedule for Sunday, July 12
-      .pull-right.margin-top-10
-        %span.alert.alert-info.margin-0.padding-5.margin-right-10
-          Competition
-        %span.alert.alert-success.margin-0.padding-5
-          Social
-    .panel-body
-      %table.table.table-bordered.margin-bottom-0
-        %tr
-          %th Game
-          %th Start
-          %th End
-          %th For
-        %tr
-          %td Game # 13
-          %td 9:00
-          %td 9:47
-          %td.bg-success Social third spot
-        %tr
-          %td Game # 14
-          %td 9:50
-          %td 10:37
-          %td.bg-info Competition third spot
-        %tr
-          %td Game # 15
-          %td 10:40
-          %td 11:27
-          %td.bg-success Social Final
-        %tr
-          %td Game # 16
-          %td 11:30
-          %td 12:17
-          %td.bg-info Competition Final
-        %tr
-          %td
-          %td 12:20
-          %td 13:00
-          %td.bg-warning Prize Distrubution
+    .col-sm-6.col-md-5.padding-vertical-20
+      .panel.dark.padding-10.margin-bottom-0
+        .map-container
+          %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
 
 
-%h3 Come play with us
-.container-fluid.padding-0.margin-bottom-20
-  .col-xs-6.col-md-4.padding-0
-    .padding-right-20
-      %h4 Arena Soccer Park of Orange (behind Orange mall)
-      %h5 2190 N Canal St, Orange, Ca 92865
-      %p Ph: 714-974-1993
-      %p Fax: 714-974-0809
-
-      %h4.margin-top-20 Timings
-      %p Wednesdays ( 8:30 - 10 PM )
-      %p Sundays ( 10:30 - 12:00 PM )
-
-      %h4.margin-top-20 More about the arena
-      %p.font-14
-        The fields are located in the heart of Orange County. Small field at Canal St. is used for Wednesday practice and
-        mid-sized field for Sunday practice. Plenty of parking available both in front and back of the fields
-  .col-xs-12.col-md-8.padding-0.pull-right
-    .panel.dark.padding-10
-      .map-container.margin-bottom-10
-        %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "520"}
-      %a.margin-top-10.color-white{:href => "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=A"} View Larger Map
-
-
-
-
-
-
-//%h3 Surfers Tournament 2013
-//= render 'shared/points_table'
-//= render 'shared/tournament_schedule'

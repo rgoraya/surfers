@@ -1,0 +1,36 @@
+/* spits out classes with font-size 11px to font-size 18px
+$i: 11
+
+@while $i <= 18
+  .font-#{$i}
+    font-size: #{$i}px
+  $i: $i + 1
+
+/* spits out classes with "even" font-size 20px to font-size 36px
+$j: 20
+
+@while $j <= 50
+  .font-#{$j}
+    font-size: #{$j}px
+  $j: $j + 2
+
+.font-light
+  font-weight: 300
+
+.font-normal
+  font-weight: 400
+
+.font-bold
+  font-weight: 700
+
+.georgia_family
+  font-family: Georgia,serif
+
+.font-italic
+  font-style: italic
+
+.color-white
+  color: white
+
+.color-ghost-white
+  color: ghostwhite
