@@ -19,6 +19,8 @@ static/Social_Champs.jpg: static/Social_Champs-05393219765d2de23ad21b13442f207e.
 static/Social_Champs/index.jpg: static/Social_Champs-05393219765d2de23ad21b13442f207e.jpg
 static/find_on_fb.png: static/find_on_fb-3875c13740153aab6d723dee1e6a3fcf.png
 static/find_on_fb/index.png: static/find_on_fb-3875c13740153aab6d723dee1e6a3fcf.png
+static/find_us_on_fb.png: static/find_us_on_fb-a5a6edeac623f2412e8c23e02cbc3158.png
+static/find_us_on_fb/index.png: static/find_us_on_fb-a5a6edeac623f2412e8c23e02cbc3158.png
 static/history.jpg: static/history-291010c89a658305d0e3539968d63cc6.jpg
 static/history/index.jpg: static/history-291010c89a658305d0e3539968d63cc6.jpg
 surfers_logo_200.png: surfers_logo_200-8e8b6f7685b02d57a866a20efc949337.png
@@ -37,8 +39,8 @@ application.js: application-d9e064f24153bc66588a7ba6d7a8a005.js
 application/index.js: application-d9e064f24153bc66588a7ba6d7a8a005.js
 active_admin.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 active_admin/index.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
-application.css: application-41977aa7115b836a67fb1eddd1448b4a.css
-application/index.css: application-41977aa7115b836a67fb1eddd1448b4a.css
+application.css: application-13b2115f344c4acf1b8d5ae93805f7c5.css
+application/index.css: application-13b2115f344c4acf1b8d5ae93805f7c5.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png
 active_admin/admin_notes_icon/index.png: active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-6f0baad739953cb1a0413c031841e82f.png
