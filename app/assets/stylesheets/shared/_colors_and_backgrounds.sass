@@ -10,6 +10,26 @@
 .bg-teal
   background-color: #669999
 
+.bg-shadow
+  background-color: rgba(0,0,0,0.2)
+
+.bg-blurred-full-width
+  background-size: cover
+  background-position: 50% 0%
+  background-repeat: no-repeat
+
+.bg-penalty-corner
+  background-image: image_url("corner.jpg")
+  @extend .bg-blurred-full-width
+
+.bg-hockey-sticks
+  background-image: image_url("hockey_sticks.jpg")
+  @extend .bg-blurred-full-width
+
+.bg-goalie
+  background-image: image_url("goalie.jpg")
+  @extend .bg-blurred-full-width
+
 .bg-astroturf
   background-image: image_url("grass.jpg")
   a

@@ -1,8 +1,9 @@
-.container-fluid.bg-astroturf.padding-0
-  .container
+= render :partial => "shared/annual_tournament"
+.container-fluid.padding-0.bg-goalie.color-ghost-white
+  .container.margin-bottom-20
     .row.padding-vertical-20
       .col-sm-6.col-md-3.text-center.padding-vertical-20
-        #welcome_carousel.carousel.slide.margin-bottom-0{ "data-ride" => "carousel" }
+        #welcome_carousel.carousel.slide.margin-bottom-20{ "data-ride" => "carousel" }
           %ol.carousel-indicators
             %li.active{ "data-slide-to" => "0", "data-target" => "#welcome_carousel" }
             %li{ "data-slide-to" => "1", "data-target" => "#welcome_carousel" }
@@ -21,50 +22,57 @@
             .item
               .photo.text-center
                 = image_tag('static/2011_Mixed_Champs.jpg', :class => "img-circle bg-ghost-white padding-5 max-width-100 ")
-      .col-sm-6.col-md-9.color-ghost-white.padding-vertical-20
-        %h1.margin-top-0
+      .col-sm-6.col-md-9.padding-vertical-20
+        %h1.font-44.font-bold.margin-top-20.margin-bottom-20
           Surfers
-        %h3
+        %h2.font-24.font-bold.margin-bottom-20
           Huntington Beach Field Hockey club
-        %p.font-20
+        %p.font-24
           Welcome to the official website of Huntington Beach Field Hockey Club, fondly known as Surfers.
+
+
+    .row.padding-vertical-20
+      .col-sm-6.col-md-8.padding-vertical-20
+        %h3.font-32.margin-bottom-20
+          Come play with us
+        %p.font-20.margin-top-20.margin-bottom-20
+          We conduct free youth and adult coaching every Saturday. League or Practice games are scheduled every Wednesday and Sunday.
+
+        %p.font-20.margin-top-20.margin-bottom-20
+          Please join us at Arena Soccer Park of Orange (behind Orange mall) 2190 N Canal St, Orange, Ca 92865. #{link_to 'Contact us', contact_url} for more details.
+
+        %p.font-20.margin-top-20.margin-bottom-20
+          The fields are located in the heart of Orange County. Small field at Canal St. is used for Wednesday practice and mid-sized field for Sunday practice. Plenty of parking available both in front and back of the fields
+
         %p.font-20
-          We are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
-        .promo.margin-top-20
-          = link_to(image_tag('static/find_us_on_fb.png', :alt => 'Find us on Facebook', :title =>  'Find us on Facebook', :class => "well bg-pale-white margin-bottom-0 find-us-on-fb"), 'https://www.facebook.com/groups/115374325161195/')
+          %span.glyphicon.glyphicon-time
+          Timings: Wednesdays 8:30 PM - 10 PM, Sundays 10:30 AM - 12:00 PM
 
-.container
-  .row.padding-vertical-20
-    .col-sm-6.col-md-7.padding-vertical-20
-      %h2.margin-top-0 Come play with us
-      .margin-top-20
-        %h4.margin-top-0 Arena Soccer Park of Orange (behind Orange mall)
-        %h4 2190 N Canal St, Orange, Ca 92865
-        %table.table.widthAuto.table-bordered.margin-top-10
-          %tr
-            %td Phone
-            %td 714-974-1993
-          %tr
-            %td Fax
-            %td 714-974-0809
 
-        %h4.margin-top-20 Timings
-        %table.table.widthAuto.table-bordered
-          %tr
-            %td Wednesdays
-            %td 8:30 - 10 PM
-          %tr
-            %td Sundays
-            %td 10:30 - 12:00 PM
+      .col-sm-6.col-md-4.padding-vertical-20
+        .bg-shadow.padding-20
+          .map-container
+            %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
 
-        %h4.margin-top-20 More about the arena
-        %p.font-14.margin-bottom-0
-          The fields are located in the heart of Orange County. Small field at Canal St. is used for Wednesday practice and
-          mid-sized field for Sunday practice. Plenty of parking available both in front and back of the fields
 
-    .col-sm-6.col-md-5.padding-vertical-20
-      .panel.dark.padding-10.margin-bottom-0
-        .map-container
-          %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
+    .row.padding-vertical-20
+      .col-sm-4.text-center.padding-vertical-20
+        .padding-20.border-radius.bg-shadow
+          %h3.font-32.margin-bottom-20 Who are we?
+          .glyphicon.glyphicon-briefcase.font-48
+          %p.font-20.margin-top-20.margin-bottom-20
+            We're a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County.
+      .col-sm-4.text-center.padding-vertical-20
+        .padding-20.border-radius.bg-shadow
+          %h3.font-32.margin-bottom-20 We stand apart
+          .glyphicon.glyphicon-star.font-48
+          %p.font-20.margin-top-20.margin-bottom-20
+            We're a family oriented and not a 'boys only' club since 1987. Players of all ability and ages are welcome!
+      .col-sm-4.text-center.padding-vertical-20
+        .padding-20.border-radius.bg-shadow
+          %h3.font-32.margin-bottom-20 Get in touch
+          .glyphicon.glyphicon-thumbs-up.font-48
+          %p.font-20.margin-top-20.margin-bottom-20
+            #{link_to('Find us on Facebook', 'https://www.facebook.com/groups/115374325161195/')} to keep up with upcoming Surfer events, tournaments, announcements and updates.
 
 

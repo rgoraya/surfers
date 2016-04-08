@@ -1,5 +1,5 @@
 %nav#header
-  .top-border.bg-astroturf
+  .top-border.bg-teal
   .navbar.headnav.container.margin-bottom-0
     .navbar-header
       %button.navbar-toggle{"data-target" => "#surfersNavbar", "data-toggle" => "collapse", :type => "button"}
@@ -9,8 +9,8 @@
       .navbar-brand.padding-bottom-0.padding-top-0
         %a#logo.pull-left{ :href => root_path }
           = image_tag("surfers_logo_original_200.png", :class => "img-circle", :width => "100px")
-        #name.font-700.pull-left
-          .title.margin-bottom-5.font-28.margin-top-10 Surfers
+        #name.font-bold.pull-left
+          .title.margin-bottom-5.font-28.margin-top-10.font-bold Surfers
           .subtitle.font-13 Huntington Beach Field Hockey club
     #surfersNavbar.collapse.navbar-collapse
       = render "shared/navigation"
