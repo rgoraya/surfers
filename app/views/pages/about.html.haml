@@ -39,7 +39,7 @@
           %h3.font-32.margin-bottom-20 Useful Hockey sites
           .glyphicon.glyphicon-link.font-48
           %p.font-20.margin-top-20.margin-bottom-20
-            - links = HelpfulLink.find(:all, :limit => 3)
+            - links = HelpfulLink.find(:all, :limit => 4)
             - if !links.nil?
               %ul.links.list-unstyled.margin-bottom-0
                 - links.each do |l|
