@@ -13,6 +13,8 @@ hockey_sticks.jpg: hockey_sticks-fe0290672b228c5fea586178f993d974.jpg
 hockey_sticks/index.jpg: hockey_sticks-fe0290672b228c5fea586178f993d974.jpg
 icons/loader.GIF: icons/loader-426aa29705e16bc7fa20fac327513d51.GIF
 icons/loader/index.GIF: icons/loader-426aa29705e16bc7fa20fac327513d51.GIF
+kuldip_bhogal.JPG: kuldip_bhogal-a65f15b4ee4ccc91694e4047314563fe.JPG
+kuldip_bhogal/index.JPG: kuldip_bhogal-a65f15b4ee4ccc91694e4047314563fe.JPG
 leather_bg.jpg: leather_bg-87ec09f4504cd21b97dd055fa961b656.jpg
 leather_bg/index.jpg: leather_bg-87ec09f4504cd21b97dd055fa961b656.jpg
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
@@ -29,6 +31,8 @@ static/find_us_on_fb.png: static/find_us_on_fb-a5a6edeac623f2412e8c23e02cbc3158.
 static/find_us_on_fb/index.png: static/find_us_on_fb-a5a6edeac623f2412e8c23e02cbc3158.png
 static/history.jpg: static/history-291010c89a658305d0e3539968d63cc6.jpg
 static/history/index.jpg: static/history-291010c89a658305d0e3539968d63cc6.jpg
+studs.jpg: studs-c8170938ba6d878eaf700c80622347e9.jpg
+studs/index.jpg: studs-c8170938ba6d878eaf700c80622347e9.jpg
 surfers_logo_200.png: surfers_logo_200-8e8b6f7685b02d57a866a20efc949337.png
 surfers_logo_200/index.png: surfers_logo_200-8e8b6f7685b02d57a866a20efc949337.png
 surfers_logo_36.png: surfers_logo_36-0eaf53e618e3386018363b7036f1b841.png
@@ -45,8 +49,8 @@ application.js: application-d9e064f24153bc66588a7ba6d7a8a005.js
 application/index.js: application-d9e064f24153bc66588a7ba6d7a8a005.js
 active_admin.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 active_admin/index.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
-application.css: application-47e9f28797fbd2671427f235835c9716.css
-application/index.css: application-47e9f28797fbd2671427f235835c9716.css
+application.css: application-83b51d08c23faed3b3895548f7195d01.css
+application/index.css: application-83b51d08c23faed3b3895548f7195d01.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png
 active_admin/admin_notes_icon/index.png: active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-6f0baad739953cb1a0413c031841e82f.png

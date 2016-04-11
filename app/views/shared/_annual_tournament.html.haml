@@ -25,4 +25,43 @@
           %p.font-20.margin-top-20.margin-bottom-20
             #{link_to "Arena Soccer Park", "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank" } of Orange (behind Orange mall) 2190 N Canal St, Orange, CA 92865.
 
+  .container.color-ghost-white
+    .row
+      #tournament_register_form.collapse.col-sm-12
+        %form.form-horizontal.bg-shadow.padding-20
+          .form-group
+            %label.col-sm-2.control-label{:for => "teamName"} Team Name
+            .col-sm-10
+              %input#teamName.form-control{:type => "text"}
+          .form-group
+            %label.col-sm-2.control-label{:for => "division"}  Division
+            .col-sm-10
+              %select#division.form-control
+                %option Competitive
+                %option Social
+          .form-group
+            %label.col-sm-2.control-label{:for => "teamManagerName"} Team Manager's Name
+            .col-sm-10
+              %input#teamManagerName.form-control{:type => "text"}
+          .form-group
+            %label.col-sm-2.control-label{:for => "teamManagerAddress"} Team Manager's Address
+            .col-sm-10
+              %input#teamManagerAddress.form-control{:type => "text"}
+          .form-group
+            %label.col-sm-2.control-label{:for => "teamManagerAddress"} Team Manager's Email
+            .col-sm-10
+              %input#teamManagerEmail.form-control{:type => "email"}
+          .form-group
+            %label.col-sm-2.control-label{:for => "teamManagerAddress"} Team Manager's Phone
+            .col-sm-10
+              %input#teamManagerPhone.form-control{:type => "text"}
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              .checkbox
+                %label
+                  %input{:type => "checkbox"}
+                    Remember me
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              %button.btn.btn-default{:type => "submit"} Sign in
 

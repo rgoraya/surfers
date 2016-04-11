@@ -1,40 +1,49 @@
-.container-fluid.bg-astroturf.padding-0
-  .container.color-ghost-white
+.container-fluid.padding-0.bg-studs
+  .container.margin-bottom-20.color-ghost-white
     .row.padding-vertical-20
       .col-sm-12.padding-vertical-20
-        %h1.margin-top-0
+        %h1.font-44.font-bold.margin-top-20.margin-bottom-10
           About the Club
-        %p.font-16
-          Huntington Beach Field Hockey Club was
-          %b founded in 1987 by Olympian Kuldip Bhogal.
-          Kuldip was not only a founder of the club, but also an inspiration to his friends that later joined the club. What gave this club its edge over the other local clubs was the involvement of the member’s families. It was not a ‘boys only’ club. As the members matured, their children took up the sport and it was not long before the club had its own children’s teams participating and winning the leagues and competitions. In fact, over the last few years, the United States National team has always had a HBFHC member as part of its squad.
 
-        %p.font-16
+      .col-sm-6.col-md-8.padding-vertical-20
+        %p.font-20
+          Surfers Huntington Beach Field Hockey Club was founded in 1987 by Olympian Kuldip Bhogal. Kuldip was not only
+          a founder of the club, but also an inspiration to his friends that later joined the club. What gave this club
+          its edge over the other local clubs was the involvement of the member’s families. It was not a 'boys only' club.
+          As the members matured, their children took up the sport and it was not long before the club had its own
+          children’s teams participating and winning the leagues and competitions. In fact, over the last few years,
+          the United States National team has always had a HBFHC member as part of its squad.
+
+        %p.font-20
           Eight players who began their early years with the Surfers youth field hockey program have made it to Senior or Junior USA inter-national squads, playing for their country.
+      .col-sm-6.col-md-4.padding-vertical-20
+        .padding-20.border-radius.bg-shadow
+          = image_tag('kuldip_bhogal.JPG', :class => "max-width-100 ")
+          %p.text-center.font-14.margin-top-5.margin-bottom-0
+            Kuldip against Pakistan at Munich
 
-        %p.margin-bottom-0.font-16
-          Players of all ability and ages are welcome!
+      .col-sm-6.text-center.padding-vertical-20
+        .padding-20.border-radius.bg-shadow
+          %h3.font-32.margin-bottom-20 Our Sponsors
+          .glyphicon.glyphicon-envelope.font-48
+          %p.font-20.margin-top-20.margin-bottom-20
+            - sponsors = Sponsor.find(:all)
+            - if !sponsors.nil?
+              %ul.links.list-unstyled.margin-bottom-0
+                - sponsors.each do |l|
+                  %li.padding-vertical-10
+                    %a.h4{:href => l.link_href, :target => "_blank"}
+                      = l.link_text
+      .col-sm-6.text-center.padding-vertical-20
+        .padding-20.border-radius.bg-shadow
+          %h3.font-32.margin-bottom-20 Useful Hockey sites
+          .glyphicon.glyphicon-earphone.font-48
+          %p.font-20.margin-top-20.margin-bottom-20
+            - links = HelpfulLink.find(:all, :limit => 3)
+            - if !links.nil?
+              %ul.links.list-unstyled.margin-bottom-0
+                - links.each do |l|
+                  %li.padding-vertical-10
+                    %a.h4{:href => l.link_href, :target => "_blank"}
+                      = l.link_text
 
-.container
-  .row.padding-vertical-20
-    - sponsors = Sponsor.find(:all)
-    - if !sponsors.nil?
-      .col-sm-12.padding-vertical-20
-        %h2.margin-top-0
-          Our sponsors
-        %ul.links.list-unstyled.margin-bottom-0
-          - sponsors.each do |l|
-            %li.padding-vertical-10
-              %a.h4{:href => l.link_href, :target => "_blank"}
-                = l.link_text
-
-    - links = HelpfulLink.find(:all)
-    - if !links.nil?
-      .col-sm-12.padding-vertical-20
-        %h2.margin-top-0
-          Useful Hockey sites
-        %ul.links.list-unstyled.margin-bottom-0
-          - links.each do |l|
-            %li.padding-vertical-10
-              %a.h4{:href => l.link_href, :target => "_blank"}
-                = l.link_text
