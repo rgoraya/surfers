@@ -25,7 +25,7 @@
       .col-sm-6.text-center.padding-vertical-20
         .padding-20.border-radius.bg-shadow
           %h3.font-32.margin-bottom-20 Our Sponsors
-          .glyphicon.glyphicon-envelope.font-48
+          .glyphicon.glyphicon-briefcase.font-48
           %p.font-20.margin-top-20.margin-bottom-20
             - sponsors = Sponsor.find(:all)
             - if !sponsors.nil?
@@ -37,7 +37,7 @@
       .col-sm-6.text-center.padding-vertical-20
         .padding-20.border-radius.bg-shadow
           %h3.font-32.margin-bottom-20 Useful Hockey sites
-          .glyphicon.glyphicon-earphone.font-48
+          .glyphicon.glyphicon-link.font-48
           %p.font-20.margin-top-20.margin-bottom-20
             - links = HelpfulLink.find(:all, :limit => 3)
             - if !links.nil?
