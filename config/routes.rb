@@ -12,7 +12,7 @@ Surfers::Application.routes.draw do
   match '/surfer-events',  :to => 'pages#surfer_events', :as => "surfer_events"
   match '/tournament-2014',   :to => 'pages#tournament', :as => 'tournament'
   match '/play-with-us', :to => 'pages#play', :as => 'play'
-  match '/:slug', :to => 'tournaments#show', :as => 'show'
+  # match '/:slug', :to => 'tournaments#show', :as => 'show'
 
   resources :tournament_feedbacks
   match '/tournament-feedback', :to => 'tournament_feedbacks#index'
