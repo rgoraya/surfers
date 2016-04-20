@@ -30,7 +30,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'jquery-rails', '2.3.0'
 gem 'underscore-rails'
-
+gem 'mail_form'
 
 # Heroku gem for producing and syncing error pages
 gem 'trackman'

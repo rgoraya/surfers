@@ -39,6 +39,10 @@ $(document).ready(function() {
         var tournamentFeedback = new S.tournamentFeedbackModal();
     }
 
+    if ($('body.tournaments_register').length > 0) {
+        var tournamentRegistration = new S.tournamentRegistration();
+    }
+
     // Bound events:
 
 });

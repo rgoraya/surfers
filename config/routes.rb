@@ -12,7 +12,9 @@ Surfers::Application.routes.draw do
   match '/surfer-events',  :to => 'pages#surfer_events', :as => "surfer_events"
   match '/tournament-2014',   :to => 'pages#tournament', :as => 'tournament'
   match '/play-with-us', :to => 'pages#play', :as => 'play'
-  # match '/:slug', :to => 'tournaments#show', :as => 'show'
+
+  resources :tournament_registrations
+  resources :registration_emails, only: [:new, :create]
 
   resources :tournament_feedbacks
   match '/tournament-feedback', :to => 'tournament_feedbacks#index'
@@ -20,6 +22,9 @@ Surfers::Application.routes.draw do
   match '/team-members', :to => 'team_members#index'
   get 'welcome', to: 'welcome#index'
 
+  resources :tournaments
+  match '/:slug', :to => 'tournaments#show', :as => 'show'
+  match '/:slug/register', :to => 'tournaments#register'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

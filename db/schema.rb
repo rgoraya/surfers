@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160412152000) do
+ActiveRecord::Schema.define(:version => 20160419112212) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20160412152000) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "divisions", :force => true do |t|
+    t.string   "name"
+    t.integer  "fee"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "helpful_links", :force => true do |t|
     t.string   "link_text",  :null => false
     t.string   "link_href",  :null => false
@@ -60,6 +67,24 @@ ActiveRecord::Schema.define(:version => 20160412152000) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "team_captains", :force => true do |t|
+    t.string   "name",         :null => false
+    t.string   "phone_number"
+    t.integer  "team_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "team_managers", :force => true do |t|
+    t.string   "name",         :null => false
+    t.string   "phone_number"
+    t.string   "email"
+    t.text     "address"
+    t.integer  "team_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "team_members", :force => true do |t|
     t.string   "first_name", :null => false
     t.string   "last_name",  :null => false
@@ -68,6 +93,35 @@ ActiveRecord::Schema.define(:version => 20160412152000) do
     t.text     "bio"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "team_players", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "team_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "team_voluntary_umpires", :force => true do |t|
+    t.string   "name",         :null => false
+    t.string   "phone_number"
+    t.integer  "team_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "teams", :force => true do |t|
+    t.text     "name",          :null => false
+    t.string   "uniform_color"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "tournament_divisions", :force => true do |t|
+    t.integer  "division_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "tournament_feedbacks", :force => true do |t|
@@ -84,15 +138,30 @@ ActiveRecord::Schema.define(:version => 20160412152000) do
     t.boolean  "will_recommend"
   end
 
+  create_table "tournament_registration_divisions", :force => true do |t|
+    t.integer  "division_id"
+    t.integer  "tournament_registration_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "tournament_registrations", :force => true do |t|
+    t.integer  "team_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "tournaments", :force => true do |t|
-    t.string   "slug",        :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "slug",                  :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.text     "name"
     t.text     "description"
     t.datetime "start_time"
     t.datetime "end_time"
     t.text     "location"
+    t.datetime "registration_deadline"
   end
 
 end

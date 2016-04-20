@@ -3,28 +3,28 @@
     .row.padding-vertical-20
       .padding-20
         %h2.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
-          Surfers Annual Tournament 2016
+          = @tournament.name
         %p.font-24.text-center.color-ghost-white.margin-bottom-40
-          Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their 11th annual Field Hockey tournament to be held on June 25th – June 26th in Orange, California.
+          Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
       #tournament_highlights
         .col-sm-4.text-center.padding-vertical-20
-          .padding-20.bg-shadow.border-radius
-            %h3.font-32.margin-bottom-20 Register Today
+          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
+            .h3.font-32.margin-bottom-20 Register Today
             .glyphicon.glyphicon-list-alt.font-48
             %p.font-20.margin-top-20.margin-bottom-20
-              Register your here or by emailing us at #{link_to("HBSurfers@hotmail.com", "mailto:HBSurfers@hotmail.com")} or call (714) 585-2511.
+              Register here or by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
         .col-sm-4.text-center.padding-vertical-20
           .padding-20.bg-shadow.border-radius
             %h3.font-32.margin-bottom-20 Mark your Calendar
             .glyphicon.glyphicon-calendar.font-48
             %p.font-20.margin-top-20.margin-bottom-20
-              Surfers' 11th annual Field Hockey tournament is scheduled for June 25th and June 26th, 2016.
+              Surfers' #{@tournament.name} is scheduled for #{@tournament.start_time.to_date.to_formatted_s(:short)} to #{@tournament.end_time.to_date.to_formatted_s(:rfc822)}.
         .col-sm-4.text-center.padding-vertical-20
-          .padding-20.bg-shadow.border-radius
+          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
             %h3.font-32.margin-bottom-20 Location of Event
             .glyphicon.glyphicon-map-marker.font-48
             %p.font-20.margin-top-20.margin-bottom-20
-              #{link_to "Arena Soccer Park", "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank" } of Orange (behind Orange mall) 2190 N Canal St, Orange, CA 92865.
+              #{@tournament.location}.
 
     .row#tournament_register_form.collapse.bg-shadow
       %form.form-horizontal.padding-vertical-20

@@ -1,0 +1,153 @@
+.container-fluid.padding-0.bg-goalie
+  .container.color-ghost-white.margin-bottom-20
+    .row.padding-vertical-20
+      .padding-20
+        %h1.font-40.font-light.margin-top-20
+          Register for Surfer's #{@tournament.name}
+
+    %form.form-horizontal.padding-vertical-20#tournament_register_form{:'data-tournament-id' => "#{@tournament.id}"}
+      .row.bg-shadow{:style => "position:relative"}
+        .bottom-dark-border.hidden-sm.hidden-xs
+        .middle-dark-border.hidden-sm.hidden-xs
+        .col-sm-6.padding-30
+          %h4.font-26.margin-bottom-30 Team Information
+          .form-group.has-feedback{:'data-form-section' => "team"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamName"} Team
+            .col-sm-7
+              %input#teamName.form-control{:type => "text", :placeholder => "Team Name", :name => "name", :'data-required' => 'true', :'data-error-after' => "name"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+          .form-group{:'data-form-section' => "team"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamUniform"} Uniform Color
+            .col-sm-7
+              %input#teamUniform.form-control{:type => "text", :name => "uniform_color", :placeholder => "Team Uniform Color", :'data-error-after' => "uniform_color"}
+          .form-group.has-feedback{:'data-form-section' => "team_captain"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "captainName"} Captain
+            .col-sm-7
+              %input#captainName.form-control{:type => "text", :placeholder => "Name", :name => "name", :'data-required' => 'true', :'data-error-after' => "name"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+          .form-group.has-feedback{:'data-form-section' => "team_captain"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "captainPhone"} Phone Number
+            .col-sm-7
+              %input#captainPhone.form-control.bfh-phone{:type => "text", :placeholder => "Team Captain's Phone", :name => "phone_number", :'data-country' => "US", :'data-required' => 'true', :'data-error-after' => "phone_number"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+          .form-group.has-feedback{:'data-form-section' => "division"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "division"} Division
+            .col-sm-7
+              - @tournament.divisions.each do |division|
+                %label.checkbox-inline.font-18
+                  %input{:type => "checkbox", :value => "competitive", :name => "#{division.name}", :id => "#{division.name}" }
+                    #{division.name}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-14.text-muted{:'data-error-after' => "division"}
+          %p.font-light.text-right
+            Fees:
+            - @tournament.divisions.each do |division|
+              %span $#{division.fee.to_s} #{division.name}
+
+        .col-sm-6.padding-30
+          %h4.font-26.margin-bottom-30 Team Staff
+          .form-group.has-feedback{:'data-form-section' => "team_manager"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerName"} Team Manager
+            .col-sm-7
+              %input#teamManagerName.form-control{:type => "text", :placeholder => "Name", :name => "name", :'data-required' => 'true', :'data-error-after' => "name"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+          .form-group{:'data-form-section' => "team_manager"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerAddress"} Address
+            .col-sm-7
+              %input#teamManagerAddress.form-control{:type => "text", :name => "address", :placeholder => "Team Manager's Address", :'data-error-after' => "address"}
+          .form-group.has-feedback{:'data-form-section' => "team_manager"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerAddress"} Email
+            .col-sm-7
+              %input#teamManagerEmail.form-control{:type => "email", :name => "email", :placeholder => "Team Manager's Email", :'data-required' => 'true', :'data-error-after' => "email"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+          .form-group.has-feedback{:'data-form-section' => "team_manager"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerPhone"}
+              Phone Number
+            .col-sm-7
+              %input#teamManagerPhone.form-control.bfh-phone{ :type => "text", :placeholder => "Team Manager's Phone", :name => "phone_number", :'data-country' => "US", :'data-required' => 'true', :'data-error-after' => "phone_number"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+          .form-group{:'data-form-section' => "team_voluntary_umpire"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "umpireName"} Voluntary Umpire
+            .col-sm-7
+              %input#umpireName.form-control{:type => "text", :placeholder => "Name", :name => "name", :'data-error-after' => "name"}
+          .form-group{:'data-form-section' => "team_voluntary_umpire"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "umpirePhone"} Phone Number
+            .col-sm-7
+              %input#umpirePhone.form-control.bfh-phone{:type => "text", :placeholder => "Voluntary Umpire's Phone", :name => "phone_number", :'data-country' => "US", :'data-error-after' => "phone_number"}
+
+      .row.bg-shadow.padding-vertical-30.padding-horizontal-15{:style => "position:relative"}
+        .bottom-dark-border.hidden-sm.hidden-xs
+        %h4.font-26.margin-bottom-30.padding-left-15 Player Information
+        .col-sm-4
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player1"} Player 1
+            .col-sm-8
+              %input#player1.form-control{:type => "text", :placeholder => "Name", :name => "player_1"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player2"} Player 2
+            .col-sm-8
+              %input#player2.form-control{:type => "text", :placeholder => "Name", :name => "player_2"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player3"} Player 3
+            .col-sm-8
+              %input#player3.form-control{:type => "text", :placeholder => "Name", :name => "player_3"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player4"} Player 4
+            .col-sm-8
+              %input#player4.form-control{:type => "text", :placeholder => "Name", :name => "player_4"}
+        .col-sm-4
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player5"} Player 5
+            .col-sm-8
+              %input#player5.form-control{:type => "text", :placeholder => "Name", :name => "player_5"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player6"} Player 6
+            .col-sm-8
+              %input#player6.form-control{:type => "text", :placeholder => "Name", :name => "player_6"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player7"} Player 7
+            .col-sm-8
+              %input#player7.form-control{:type => "text", :placeholder => "Name", :name => "player_7"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player8"} Player 8
+            .col-sm-8
+              %input#player8.form-control{:type => "text", :placeholder => "Name", :name => "player_8"}
+
+        .col-sm-4
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player9"} Player 9
+            .col-sm-8
+              %input#player9.form-control{:type => "text", :placeholder => "Name", :name => "player_9"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player10"} Player 10
+            .col-sm-8
+              %input#player10.form-control{:type => "text", :placeholder => "Name", :name => "player_10"}
+          .form-group{:'data-form-section' => "team_players"}
+            %label.col-sm-4.control-label.font-light.font-18{:for => "player11"} Player 11
+            .col-sm-8
+              %input#player11.form-control{:type => "text", :placeholder => "Name", :name => "player_11"}
+
+      .row.bg-shadow.padding-30.clearfix
+        .col-sm-6
+          %p.font-light.font-20.margin-top-10
+            %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk
+            Required Fields
+        .col-sm-6.text-right
+          %button#submitTournamentRegistration.btn.btn-success.btn-lg{:type => "submit"} Register Team
+        .col-sm-12
+          %p.font-light.font-20.margin-top-30
+            Note: Please make fees payable to HBFHC and mail it to HBFHC, 1195 Via Blairo Circle, Corona, CA 92879.
+            For additional information, please #{link_to "Contact us", contact_url}.
+
+      -##tournament_highlights
+      -#  .col-sm-6.text-center.padding-vertical-20
+      -#    .padding-20.bg-shadow.border-radius
+      -#      %h3.font-32.margin-bottom-20 Mark your Calendar
+      -#      .glyphicon.glyphicon-calendar.font-48
+      -#      %p.font-20.margin-top-20.margin-bottom-20
+      -#        Surfers' #{@tournament.name} is scheduled for #{@tournament.start_time.to_date.to_formatted_s(:short)} to #{@tournament.end_time.to_date.to_formatted_s(:rfc822)}.
+      -#  .col-sm-6.text-center.padding-vertical-20
+      -#    %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
+      -#      %h3.font-32.margin-bottom-20 Location of Event
+      -#      .glyphicon.glyphicon-map-marker.font-48
+      -#      %p.font-20.margin-top-20.margin-bottom-20
+      -#        #{@tournament.location}.

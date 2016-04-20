@@ -1,0 +1,14 @@
+- if !@tournament_registrations.nil?
+  %h3 2016 Tournament Registrations
+  - if @tournament_registrations.length > 0
+    - @tournament_registrations.each do |registration|
+      .well
+        %h5 Team: #{registration.team.name}
+        %p
+          Manager: #{registration.team.team_manager.name}
+          %br
+          Captain: #{registration.team.team_captain.name}
+
+  - else
+    .alert.alert-error
+      %h5 No registrations to show yet.
