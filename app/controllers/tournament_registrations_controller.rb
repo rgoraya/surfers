@@ -46,8 +46,14 @@ class TournamentRegistrationsController < ApplicationController
                   @team_player.save
                 end
                 @tournament_registration.save
-                # Success
-                render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
+
+                # send out registration email
+                @registration_email = RegistrationEmail.new(registration_email_params)
+                if @registration_email.deliver
+                  render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
+                else
+                  format.json { render json: @registration_email.errors, status: :unprocessable_entity }
+                end
               else
                 render :json => { :success => false, :errors => @tournament_registration.errors }, :status => 500
               end
@@ -67,6 +73,18 @@ class TournamentRegistrationsController < ApplicationController
       render :json => { :success => false, :form_section => "team", :errors => @team.errors }, :status => 500
     end
 
+  end
+
+  def registration_email_params
+    {
+        :team_name => params[:team][:name],
+        :team_manager_name => params[:team_manager][:name],
+        :team_captain_name => params[:team_captain][:name],
+        :team_manager_phone_number => params[:team_manager][:phone_number],
+        :team_captain_phone_number => params[:team_captain][:phone_number],
+        :team_manager_email => params[:team_manager][:email],
+        :tournament_name => true
+    }
   end
 
 end
