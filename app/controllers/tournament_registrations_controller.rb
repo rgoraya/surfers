@@ -40,7 +40,7 @@ class TournamentRegistrationsController < ApplicationController
                 @team_captain.save
                 @team_manager.save
                 @team_voluntary_umpire.save
-                params[:team_players].reject!(&:empty?).each do |player_name|
+                params[:team_players].reject(&:empty?).each do |player_name|
                   @team_player = TeamPlayer.new :name => player_name
                   @team_player.team = @team
                   @team_player.save
