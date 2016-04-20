@@ -38,7 +38,7 @@ S.tournamentRegistration = (function($, _) {
         },
 
         _handle_successful_registration : function (data) {
-            data = {registration_email : {
+            var reg_email = {registration_email : {
                     team_name : "Amazon Warriors",
                     team_manager_name: "Rick Clark",
                     team_captain_name: "Sarabjit Singh",
@@ -51,7 +51,7 @@ S.tournamentRegistration = (function($, _) {
             $.ajax({
                 url     : "/registration_emails",
                 type    : "POST",
-                data    : data,
+                data    : reg_email,
                 success : function(response){
                     console.log(response)
 
