@@ -42,6 +42,7 @@ S.tournamentRegistration = (function($, _) {
                     team_name : "Amazon Warriors",
                     team_manager_name: "Rick Clark",
                     team_captain_name: "Sarabjit Singh",
+                    team_captain_phone_number: "8374834783",
                     team_manager_phone_number: "9856783903",
                     team_manager_email: "rickc@amazwar.com",
                     tournament_name: "Surfers 11th Annual Hockey Tournament"

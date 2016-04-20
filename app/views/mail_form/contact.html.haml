@@ -1,23 +1,41 @@
 %div{:marginheight => "0", :marginwidth => "0", :style => "margin:0;padding:0;min-height:100%;width:100%"}
-  %table{:background => "grey.png", :border => "0", :cellpadding => "30", :cellspacing => "0", :width => "100%", :style => "background-color: #699699; border: 0; font-family: Verdana, Arial, sans-serif; color: #fcfcfc", :align => "center"}
+  %table{:background => "grey.png", :border => "0", :cellpadding => "5", :cellspacing => "0", :width => "100%", :style => "background-color: #699699; border: 0; font-family: Verdana, Arial, sans-serif; color: #fcfcfc", :align => "center"}
     %tr
       %td{:style => "line-height: 20px; font-size: 13px;"}
         %p Hi Raminder
     %tr
       %td{:style => "line-height: 20px; font-size: 13px;"}
-        %p #{@resource.team_name} just registered online for #{@resource.tournament_name}
+        "#{@resource.team_name}" just registered online for participating in the #{@resource.tournament_name}.
     %tr
       %td{:style => "line-height: 20px; font-size: 13px;"}
-        %p Here's their contact information for further communication:
+        Here's their contact information for further communication:
     %tr
-      %td{:style => "font-size:0; line-height:0;", :height => 40}
-    %table{:border => "0", :cellpadding => "30", :cellspacing => "0", :width => "50%"}
-      - @resource.mail_form_attributes.each do |attribute, value|
-      - next if value.blank?
-        %tr
-          %td{:style => "line-height: 20px; font-size: 13px; text-align: center"}
-            = @resource.class.human_attribute_name(attribute)
-          %td{:style => "line-height: 20px; font-size: 13px;; text-align: center"}
-            = value
+      %td{:style => "font-size:0; line-height:0;", :height => 20}
+    %table{:border => "0", :cellpadding => "5", :cellspacing => "0", :width => "90%"}
+      %tr
+        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+          #{@resource.class.human_attribute_name(@resource.team_manager_name)}:
+        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+          = @resource.team_manager_name
+      %tr
+        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+          #{@resource.class.human_attribute_name(@resource.team_manager_phone)}:
+        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+          = @resource.team_manager_phone_number
+      %tr
+        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+          #{@resource.class.human_attribute_name(@resource.team_manager_email)}:
+        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+          = @resource.team_manager_email
+      %tr
+        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+          #{@resource.class.human_attribute_name(@resource.team_captain_name)}:
+        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+          = @resource.team_captain_name
+      %tr
+        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+          #{@resource.class.human_attribute_name(@resource.team_captain_phone)}:
+        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+          = @resource.team_captain_phone_number
     %tr
       %td{:style => "font-size:0; line-height:0;", :colspan => 2, :height => 40}
