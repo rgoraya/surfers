@@ -12,7 +12,7 @@ class RegistrationEmail < MailForm::Base
     {
         :subject => %(Registration request for #{tournament_name}),
         :to => "ramindersingh.goraya@gmail.com",
-        :from => %("#{team_manager_name}" <#{team_mamager_email}>)
+        :from => %("#{team_manager_name}" <#{team_manager_email}>)
     }
   end
 end
