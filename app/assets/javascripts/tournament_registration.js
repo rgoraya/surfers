@@ -26,7 +26,7 @@ S.tournamentRegistration = (function($, _) {
                     success : function(response){
                         console.log(response)
 //                        that._handle_successful_registration(data.responseJSON);
-//                        console.log('success');
+                        console.log('success');
                     },
                     error: function(data) {
                         that._handle_server_errors(data.responseJSON);
@@ -162,7 +162,7 @@ S.tournamentRegistration = (function($, _) {
         
         _bind_events : function() {
             $('body')
-                .on('click', '#submitTournamentRegistration', _.bind(this._handle_successful_registration, this));
+                .on('click', '#submitTournamentRegistration', _.bind(this._submit_registration, this));
         }
     };
 
