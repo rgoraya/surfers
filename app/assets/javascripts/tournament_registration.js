@@ -38,10 +38,20 @@ S.tournamentRegistration = (function($, _) {
         },
 
         _handle_successful_registration : function (data) {
+            data = {registration_email : {
+                    team_name : "Amazon Warriors",
+                    team_manager_name: "Rick Clark",
+                    team_captain_name: "Sarabjit Singh",
+                    team_manager_phone_number: "9856783903",
+                    team_manager_email: "rickc@amazwar.com",
+                    tournament_name: "Surfers 11th Annual Hockey Tournament"
+                }
+            };
+
             $.ajax({
                 url     : "/registration_emails",
                 type    : "POST",
-                data    : {registration_email: {team_name: "test email team"}},
+                data    : data,
                 success : function(response){
                     console.log(response)
 
