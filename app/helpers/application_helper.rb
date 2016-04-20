@@ -20,4 +20,8 @@ module ApplicationHelper
     "Huntington Beach Field Hockey Club, fondly known as SURFERS, we are a 501(c)(7) nonprofit organization promoting youth, adult and veterans Field Hockey in Orange County"
   end
 
+  def image_url(source)
+    URI.join(root_url, image_path(source))
+  end
+
 end

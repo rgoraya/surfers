@@ -1,41 +1,84 @@
-%div{:marginheight => "0", :marginwidth => "0", :style => "margin:0;padding:0;min-height:100%;width:100%"}
-  %table{:background => "grey.png", :border => "0", :cellpadding => "5", :cellspacing => "0", :width => "100%", :style => "background-color: #699699; border: 0; font-family: Verdana, Arial, sans-serif; color: #fcfcfc", :align => "center"}
-    %tr
-      %td{:style => "line-height: 20px; font-size: 13px;"}
-        %p Hi Raminder
-    %tr
-      %td{:style => "line-height: 20px; font-size: 13px;"}
-        "#{@resource.team_name}" just registered online for participating in the #{@resource.tournament_name}.
-    %tr
-      %td{:style => "line-height: 20px; font-size: 13px;"}
-        Here's their contact information for further communication:
-    %tr
-      %td{:style => "font-size:0; line-height:0;", :height => 20}
-    %table{:border => "0", :cellpadding => "5", :cellspacing => "0", :width => "90%"}
-      %tr
-        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
-          #{@resource.class.human_attribute_name(@resource.team_manager_name)}:
-        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
-          = @resource.team_manager_name
-      %tr
-        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
-          #{@resource.class.human_attribute_name(@resource.team_manager_phone_number)}:
-        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
-          = @resource.team_manager_phone_number
-      %tr
-        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
-          #{@resource.class.human_attribute_name(@resource.team_manager_email)}:
-        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
-          = @resource.team_manager_email
-      %tr
-        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
-          #{@resource.class.human_attribute_name(@resource.team_captain_name)}:
-        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
-          = @resource.team_captain_name
-      %tr
-        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
-          #{@resource.class.human_attribute_name(@resource.team_captain_phone_number)}:
-        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
-          = @resource.team_captain_phone_number
-    %tr
-      %td{:style => "font-size:0; line-height:0;", :colspan => 2, :height => 40}
+%table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "99%"}
+  %tr
+    %td{:align => "center", :bgcolor => "#efefef", :valign => "top"}
+      / Second HTML table is the email itself
+      %table.email{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "500"}
+        %tr
+          %td{:align => "center", :valign => "top"}
+            %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 10px; line-height: 12px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+              A short sentence telling readers how you got their email address and where to unsubscribe.
+        %tr
+          %td{:align => "left", :bgcolor => "#ffffff", :valign => "top"}
+            %h1{:style => "font-family: Georgia, Times, serif; font-size: 48px; font-weight: normal; line-height: 48px; margin-top: 20px; margin-right: 0; margin-bottom: 10px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+              Hi Raminder
+            %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 0; margin-right: 0; margin-bottom: 10px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+              %a{:href => root_url, :style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0; text-decoration: none;", :target => "_blank"}
+                SURFER'S HOME
+              |
+              %a{:href => "http://surfersfieldhockey.com/annual-6-x-6-tournament-2016", :style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0; text-decoration: none;", :target => "_blank"}
+                TOURNAMENT HOME
+              |
+        %tr
+          %td{:bgcolor => "#999999", :valign => "top"}
+            / Third HTML table is the left column of content
+            %table.email-content{:align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "350"}
+              %tr
+                %td{:bgcolor => "#353535", :valign => "top"}
+                  %h2{:style => "color: #efefef; font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: normal; line-height: 24px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+                    "#{@resource.team_name}" just registered online for participating in the #{@resource.tournament_name}.
+                  %p{:style => "color: #efefef; font-family: Georgia, Times, serif; font-size: 15px; line-height: 22px; margin-top: 0; margin-right: 10px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+                    Please note that the online registration does not include the  registration fees. Below is their contact information for further communication and for the registration fees follow up.
+                    %table{:border => "0", :cellpadding => "5", :cellspacing => "0", :width => "90%"}
+                      %tr
+                        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+                          Team Manager:
+                        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+                          = @resource.team_manager_name
+                      %tr
+                        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+                          Team Manger Phone:
+                        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+                          = @resource.team_manager_phone_number
+                      %tr
+                        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+                          Team Manger Email:
+                        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+                          = @resource.team_manager_email
+                      %tr
+                        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+                          Team Captain:
+                        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+                          = @resource.team_captain_name
+                      %tr
+                        %td{:style => "line-height: 20px; font-size: 13px; text-align: right"}
+                          Team Captain Phone:
+                        %td{:style => "line-height: 20px; font-size: 13px;; text-align: left"}
+                          = @resource.team_captain_phone_number
+            / Close third HTML table
+            / Fourth HTML table is the right column of content
+            %table.email-content{:align => "right", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "150"}
+              %tr
+                %td{:bgcolor => "#999999", :valign => "top"}
+                  %h3{:style => "color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 14px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+                    Surfers Huntington Beach Field Hockey Club
+                  %p{:style => "color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+                    %img{:align => "left", :alt => "", :hspace => "0", :src => "#{image_url("surfers_logo_original_200.png")}", :vspace => "0", :width => "150", :height => 150}
+
+            / Close fourth HTML table
+        %tr
+          %td{:align => "left", :bgcolor => "#cccccc", :height => "100", :valign => "top"}
+            %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+              Footer text and links go here.
+        %tr
+          %td{:align => "left", :valign => "top"}
+            %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 10px; line-height: 16px; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+              CONTACT US:
+              %br
+                SURFERS
+                %br
+                  Huntington Beach Field Hockey Club
+                  %br
+                    1195 Via Blairo Circle
+                    %br
+                      Corona, CA 92879
+
