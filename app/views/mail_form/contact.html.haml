@@ -2,14 +2,13 @@
   %tr
     %td{:align => "center", :bgcolor => "#efefef", :valign => "top"}
       / Second HTML table is the email itself
-      %table.email{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "500"}
+      %table.email{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "900", :background => "#{URI.join(root_url, image_path("grey.png"))}"}
         %tr
           %td{:align => "center", :valign => "top"}
             %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 10px; line-height: 12px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
-              A short sentence telling readers how you got their email address and where to unsubscribe.
         %tr
-          %td{:align => "left", :bgcolor => "#ffffff", :valign => "top"}
-            %h1{:style => "font-family: Georgia, Times, serif; font-size: 48px; font-weight: normal; line-height: 48px; margin-top: 20px; margin-right: 0; margin-bottom: 10px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+          %td{:align => "left", :valign => "top"}
+            %h1{:style => "font-family: Georgia, Times, serif; font-size: 36px; font-weight: normal; line-height: 48px; margin-top: 20px; margin-right: 0; margin-bottom: 10px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
               Hi Raminder
             %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 0; margin-right: 0; margin-bottom: 10px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
               %a{:href => root_url, :style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0; text-decoration: none;", :target => "_blank"}
@@ -17,13 +16,12 @@
               |
               %a{:href => "http://surfersfieldhockey.com/annual-6-x-6-tournament-2016", :style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0; text-decoration: none;", :target => "_blank"}
                 TOURNAMENT HOME
-              |
         %tr
-          %td{:bgcolor => "#999999", :valign => "top"}
+          %td{:bgcolor => "#669999", :valign => "top"}
             / Third HTML table is the left column of content
-            %table.email-content{:align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "350"}
+            %table.email-content{:align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "650"}
               %tr
-                %td{:bgcolor => "#353535", :valign => "top"}
+                %td{:bgcolor => "#669999", :valign => "top"}
                   %h2{:style => "color: #efefef; font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: normal; line-height: 24px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
                     "#{@resource.team_name}" just registered online for participating in the #{@resource.tournament_name}.
                   %p{:style => "color: #efefef; font-family: Georgia, Times, serif; font-size: 15px; line-height: 22px; margin-top: 0; margin-right: 10px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
@@ -56,29 +54,27 @@
                           = @resource.team_captain_phone_number
             / Close third HTML table
             / Fourth HTML table is the right column of content
-            %table.email-content{:align => "right", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "150"}
+            %table.email-content{:align => "right", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "250"}
               %tr
-                %td{:bgcolor => "#999999", :valign => "top"}
-                  %h3{:style => "color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 14px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
+                %td{:bgcolor => "#669999", :valign => "top"}
+                  %h3{:style => "color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 14px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 0px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
                     Surfers Huntington Beach Field Hockey Club
                   %p{:style => "color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
-                    %img{:align => "left", :alt => "", :hspace => "0", :src => "#{URI.join(root_url, image_path("surfers_logo_original_200.png"))}", :vspace => "0", :width => "150", :height => 150}
+                    %img{:align => "left", :alt => "", :hspace => "0", :src => "#{URI.join(root_url, image_path("surfers_logo_original_200.png"))}", :vspace => "0", :width => "150", :height => "150"}
 
             / Close fourth HTML table
         %tr
-          %td{:align => "left", :bgcolor => "#cccccc", :height => "100", :valign => "top"}
+          %td{:align => "left", :height => "100", :valign => "top"}
             %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 12px; margin-top: 20px; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
-              Footer text and links go here.
+              SURFERS
+              %br
+                Huntington Beach Field Hockey Club
+                %br
+                  1195 Via Blairo Circle
+                  %br
+                    Corona, CA 92879
         %tr
           %td{:align => "left", :valign => "top"}
             %p{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 10px; line-height: 16px; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
-              CONTACT US:
-              %br
-                SURFERS
-                %br
-                  Huntington Beach Field Hockey Club
-                  %br
-                    1195 Via Blairo Circle
-                    %br
-                      Corona, CA 92879
+
 
