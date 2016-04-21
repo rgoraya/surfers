@@ -16,6 +16,9 @@ $(document).ready(function() {
         initTournamentFeedback = function() {
             return $('#tournamentFeedbackModal').length > 0;
         },
+
+        $flash_alert = $('#flash_notice').find('.alert'),
+
         carousel$el = $('#carousel_wrapper');
 
     $("#fb-root").bind("facebook:init", function() {
@@ -41,6 +44,14 @@ $(document).ready(function() {
 
     if ($('body.tournaments_register').length > 0) {
         var tournamentRegistration = new S.tournamentRegistration();
+    }
+
+    if ($flash_alert.length > 0) {
+        if ($flash_alert.html().length > 0) {
+            setTimeout(function(){
+                $('#flash_notice').collapse('show');
+            }, 1000);
+        }
     }
 
     // Bound events:

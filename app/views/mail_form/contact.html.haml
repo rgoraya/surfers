@@ -23,7 +23,7 @@
 
                   %p{:style => "color: #333333; font-family: Helvetica, Arial, Sans-Serif; font-size: 16px; line-height: 22px; margin-top: 0; margin-right: 30px; margin-bottom: 20px; margin-left: 30px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
                     Click
-                    %a{:href => "#{tournament_registration_url(@resource.registration.id)}", :style => "font-family: Helvetica, Arial, Sans-Serif; font-size: 14px; line-height: 20px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0; text-decoration: none; color: #669999", :target => "_blank"} here
+                    %a{:href => "#{tournament_registration_url(@resource.registration.id)}", :style => "text-decoration: none; color: #669999", :target => "_blank"} here
                     to view the registration details. They registered for the #{@resource.registration.divisions.map(&:name).to_sentence}
                     division(s) of the tournament. The total amount due is $#{@resource.registration.divisions.map(&:fee).sum}.
 

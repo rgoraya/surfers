@@ -24,9 +24,7 @@ S.tournamentRegistration = (function($, _) {
                     type    : "POST",
                     data    : that._form_sections,
                     success : function(response){
-                        console.log(response)
-//                        that._handle_successful_registration(data.responseJSON);
-                        console.log('success');
+                        window.location.replace("/annual-6-x-6-tournament-2016");
                     },
                     error: function(data) {
                         that._handle_server_errors(data.responseJSON);

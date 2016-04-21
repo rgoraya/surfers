@@ -12,6 +12,11 @@
 
       #content
         .yielded-content
+          #flash_notice.collapse
+            - flash.each do |key, value|
+              %div{:class => "alert alert-#{key} text-center bg-warning margin-bottom-0 font-20"}
+                = value
+                %span.font-14.pull-right.glyphicon.glyphicon-remove.text-muted.img-circle.padding-5.bg-success{"data-target" => "#flash_notice", "data-toggle" => "collapse", :type => "button"}
           = yield
 
       = render "shared/footer"
