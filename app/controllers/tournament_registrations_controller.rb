@@ -5,6 +5,10 @@ class TournamentRegistrationsController < ApplicationController
     @tournament_registrations = TournamentRegistration.all
   end
 
+  def show
+    @tournament_registration = TournamentRegistration.find(params[:id])
+  end
+
   def create
     @tournament = Tournament.find(params[:tournament][:id])
     @divisions  = []
@@ -77,13 +81,13 @@ class TournamentRegistrationsController < ApplicationController
 
   def registration_email_params
     {
-        :team_name => params[:team][:name],
+        :team => @team,
         :team_manager_name => params[:team_manager][:name],
         :team_captain_name => params[:team_captain][:name],
         :team_manager_phone_number => params[:team_manager][:phone_number],
         :team_captain_phone_number => params[:team_captain][:phone_number],
         :team_manager_email => params[:team_manager][:email],
-        :tournament_name => true
+        :tournament_name => @tournament.name
     }
   end
 

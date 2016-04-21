@@ -1,0 +1,58 @@
+.container-fluid.padding-0.bg-goalie
+  .container.color-ghost-white.margin-bottom-20
+    .row.padding-vertical-20
+      .padding-20
+        %h1.font-40.font-light.margin-top-20
+          "#{@tournament_registration.team.name}"'s registration for Surfer's #{@tournament_registration.tournament.name}
+
+    .padding-vertical-20
+      .row.bg-shadow{:style => "position:relative"}
+        .bottom-dark-border.hidden-sm.hidden-xs
+        .middle-dark-border.hidden-sm.hidden-xs
+        .col-sm-6.padding-30
+          %h4.font-26.margin-bottom-30 Team Information
+          .row
+            .col-sm-5.font-light.font-18 Team
+            .col-sm-7 #{@tournament_registration.team.name}
+          .row
+            .col-sm-5.font-light.font-18 Uniform Color
+            .col-sm-7 #{@tournament_registration.team.uniform_color} 
+          .row
+            .col-sm-5.font-light.font-18 Captain
+            .col-sm-7 #{@tournament_registration.team.team_captain.name}
+          .row
+            .col-sm-5.font-light.font-18 Phone Number
+            .col-sm-7 #{@tournament_registration.team.team_captain.phone_number}
+          .row
+            .col-sm-5.font-light.font-18 Division(s)
+            .col-sm-7
+              - @tournament_registration.divisions.each do |division|
+                #{division.name}
+
+        .col-sm-6.padding-30
+          %h4.font-26.margin-bottom-30 Team Staff
+          .row
+            .col-sm-5.font-light.font-18 Team Manager
+            .col-sm-7 #{@tournament_registration.team.team_manager.name}
+          .row
+            .col-sm-5.font-light.font-18 Address
+            .col-sm-7 #{@tournament_registration.team.team_manager.address}
+          .row
+            .col-sm-5.font-light.font-18 Email
+            .col-sm-7 #{@tournament_registration.team.team_manager.email}
+          .row
+            .col-sm-5.font-light.font-18 Phone Number
+            .col-sm-7 #{@tournament_registration.team.team_manager.phone_number}
+          .row
+            .col-sm-5.font-light.font-18 Voluntary Umpire
+            .col-sm-7 #{@tournament_registration.team.team_voluntary_umpire.name}
+          .row{:'data-form-section' => "team_voluntary_umpire"}
+            .col-sm-5.font-light.font-18{:for => "umpirePhone"} Phone Number
+            .col-sm-7 #{@tournament_registration.team.team_voluntary_umpire.phone_number}
+
+      .row.bg-shadow.padding-vertical-30.padding-horizontal-15
+        %h4.font-26.margin-bottom-30.padding-left-15 Player Information
+        - @tournament_registration.team.team_players.each_slice(4) do |column|
+          .col-sm-4
+            - column.each do |player|
+              .font-light.font-18 #{player.name}

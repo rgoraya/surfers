@@ -1,5 +1,5 @@
 class RegistrationEmail < MailForm::Base
-  attribute :team_name,                 :validate => true
+  attribute :team,                      :validate => true
   attribute :team_manager_name,         :validate => true
   attribute :team_captain_name,         :validate => true
   attribute :team_manager_phone_number, :validate => true
