@@ -82,12 +82,10 @@ class TournamentRegistrationsController < ApplicationController
   def registration_email_params
     {
         :team => @team,
-        :team_manager_name => params[:team_manager][:name],
-        :team_captain_name => params[:team_captain][:name],
-        :team_manager_phone_number => params[:team_manager][:phone_number],
-        :team_captain_phone_number => params[:team_captain][:phone_number],
-        :team_manager_email => params[:team_manager][:email],
-        :tournament_name => @tournament.name
+        :team_manager => @team_manager,
+        :team_captain => @team_captain,
+        :tournament => @tournament,
+        :registration => @tournament_registration
     }
   end
 
