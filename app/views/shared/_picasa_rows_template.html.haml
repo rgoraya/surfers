@@ -3,7 +3,8 @@
     .col-sm-12.padding-20-40
       %h2.margin-top-20 #{"{{title.$t}}"}
     {{#entry}}
-    .col-sm-3.padding-vertical-20
-      %img.max-width-100{ :src => "{{content.src}}" }
-      %p.font-16.margin-bottom-0.margin-top-10 #{"{{title.$t}}"}
+    .col-sm-4.padding-vertical-20
+      .padding-20.border-radius.bg-shadow
+        .img.max-width-100.position-relative{ :style => 'background-image:url("{{content.src}}"); background-size: cover; min-height: 250px;' }
+          .bg-shadow.font-12.padding-10.position-absolute.border-box.width100p.bottom-0.left-0 #{"{{title.$t}}"}
     {{/entry}}

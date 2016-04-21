@@ -1,24 +1,36 @@
-.container-fluid.padding-0.bg-penalty-corner
-  .container.color-ghost-white.margin-bottom-20
-    .row.padding-vertical-20
-      .padding-20
-        %h2.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
+.container.color-ghost-white.margin-bottom-20
+  .row.padding-vertical-20
+    .padding-20
+      %h2.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
+        - if current_page?(root_url)
+          %a.color-ghost-white{:href => "/#{@tournament.slug}"}
+            = @tournament.name
+        - else
           = @tournament.name
-        %p.font-24.text-center.color-ghost-white.margin-bottom-40
-          Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
+      %p.font-24.text-center.color-ghost-white.margin-bottom-40
+        Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
+    - if @tournament.end_time > Time.now.to_datetime
       #tournament_highlights
         .col-sm-4.text-center.padding-vertical-20
           %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
             .h3.font-32.margin-bottom-20 Register Today
             .glyphicon.glyphicon-list-alt.font-48
             %p.font-20.margin-top-20.margin-bottom-20
-              Register here or by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
-        .col-sm-4.text-center.padding-vertical-20
-          .padding-20.bg-shadow.border-radius
-            %h3.font-32.margin-bottom-20 Mark your Calendar
-            .glyphicon.glyphicon-calendar.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              Surfers' #{@tournament.name} is scheduled for #{@tournament.start_time.to_date.to_formatted_s(:short)} to #{@tournament.end_time.to_date.to_formatted_s(:rfc822)}.
+              Register online or by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
+        - if current_page?(root_url)
+          .col-sm-4.text-center.padding-vertical-20
+            %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}"}
+              .h3.font-32.margin-bottom-20 Learn More
+              .glyphicon.glyphicon-info-sign.font-48
+              %p.font-20.margin-top-20.margin-bottom-20
+                Find out more about Surfers' #{@tournament.name} rules and registration.
+        - else
+          .col-sm-4.text-center.padding-vertical-20
+            .padding-20.bg-shadow.border-radius
+              %h3.font-32.margin-bottom-20 Mark your Calendar
+              .glyphicon.glyphicon-calendar.font-48
+              %p.font-20.margin-top-20.margin-bottom-20
+                Surfers' #{@tournament.name} is scheduled for #{@tournament.start_time.to_date.to_formatted_s(:short)} to #{@tournament.end_time.to_date.to_formatted_s(:rfc822)}.
         .col-sm-4.text-center.padding-vertical-20
           %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
             %h3.font-32.margin-bottom-20 Location of Event
@@ -26,101 +38,4 @@
             %p.font-20.margin-top-20.margin-bottom-20
               #{@tournament.location}.
 
-    .row#tournament_register_form.collapse.bg-shadow
-      %form.form-horizontal.padding-vertical-20
-        .row-table
-          .col-sm-4.padding-vertical-10
-            .padding-horizontal-20
-              %h4.font-24.margin-bottom-20 Team Information
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamName"} Team Name
-                .col-sm-7
-                  %input#teamName.form-control{:type => "text"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamName"} Uniform Color
-                .col-sm-7
-                  %input#teamName.form-control{:type => "text"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamName"} Captain
-                .col-sm-7
-                  %input#teamName.form-control{:type => "text"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamName"} Phone Number
-                .col-sm-7
-                  %input#teamName.form-control{:type => "text"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "division"} Division
-                .col-sm-7
-                  %label.checkbox-inline
-                    %input#competitive{:type => "checkbox", :value => "competitive"}
-                      Competitive
-                  %label.checkbox-inline
-                    %input#social{:type => "checkbox", :value => "social"}
-                      Social
-              %p.font-light.text-right{:for => "division"} Fees: $350 Competitive, $350 Social
-
-          .col-sm-4.padding-vertical-10
-            .padding-horizontal-20
-              %h4.font-24.margin-bottom-20 Team Manager
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamManagerName"} Name
-                .col-sm-7
-                  %input#teamManagerName.form-control{:type => "text"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamManagerAddress"} Address
-                .col-sm-7
-                  %input#teamManagerAddress.form-control{:type => "text"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamManagerAddress"} Email
-                .col-sm-7
-                  %input#teamManagerEmail.form-control{:type => "email"}
-              .form-group
-                %label.col-sm-5.control-label{:for => "teamManagerPhone"} Phone Number
-                .col-sm-7
-                  %input#teamManagerPhone.form-control{:type => "text"}
-              %h4.font-24.margin-bottom-20 Voluntary Umpire
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#umpireName.form-control{:type => "text", :placeholder => "Name"}
-                .col-sm-6.margin-bottom-15
-                  %input#umpirePhone.form-control{:type => "text", :placeholder => "Phone Number"}
-
-          .col-sm-4.padding-vertical-10
-            .padding-horizontal-20
-              %h4.font-24.margin-bottom-20 Players
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 1"}
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 2"}
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 3"}
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 4"}
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 5"}
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 6"}
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 7"}
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 8"}
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 9"}
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 10"}
-              .form-group.margin-bottom-0
-                .col-sm-6.margin-bottom-15
-                  %input#player1.form-control{:type => "text", :placeholder => "Player 11"}
-
-        .col-sm-12.text-right.padding-vertical-20{:style => "border-top: 1px solid rgba(255,255,255,0.3)"}
-          %button.btn.btn-success.btn-lg{:type => "submit"} Register Team
-
-          %p.font-light.font-18.margin-top-20
-            Note: Please mail completed registration form and fees made payable to HBFHC to: HBFHC, 1195 Via Blairo Circle, Corona, CA 92879.
-            For additional information, please #{link_to "Contact us", contact_url}.
 

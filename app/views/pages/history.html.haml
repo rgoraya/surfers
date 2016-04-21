@@ -1,20 +1,45 @@
-.container-fluid.bg-astroturf.padding-0
-  .container.color-ghost-white
+.container-fluid.padding-0.bg-goalie-fall.color-ghost-white
+  .container.margin-bottom-20
     .row.padding-vertical-20
-      .col-sm-6.col-md-8.padding-vertical-20
-        %h1.margin-top-0
+      .col-sm-12.padding-vertical-20
+        %h1.font-44.font-bold.margin-top-20.margin-bottom-10
           History of Field Hockey
-        %p.font-16
-          The origins of field hockey have been traced to ancient Egypt and Persia and even to the Aztec Indians. Certainly, stick-and-ball games that resemble field hockey have been played by many peoples all over the world, but there's no way to draw up a family tree incorporating all, or even most of them.
-        %p.font-16.margin-bottom-0
-          Indian history says that a sport similar to present day field hockey was played in 17th century in Punjab, under the name 'Khido Khundi'. 'Khido' is a woolen ball and 'Khundi' is stick.
+
+      .col-sm-6.col-md-8.padding-vertical-20
+        %p.font-20
+          The origins of field hockey have been traced to ancient Egypt and Persia and even to the Aztec Indians.
+          Certainly, stick-and-ball games that resemble field hockey have been played by many peoples all over the
+          world, but there's no way to draw up a family tree incorporating all, or even most of them.
+
+        %p.font-20
+          Indian history says that a sport similar to present day field hockey was played in 17th century in Punjab,
+          under the name 'Khido Khundi'. 'Khido' is a woolen ball and 'Khundi' is stick.
+
       .col-sm-6.col-md-4.padding-vertical-20
-        .well.text-center.margin-bottom-0
-          = image_tag('static/history.jpg', :class => "max-width-100 ")
+        .padding-20.border-radius.bg-shadow.text-center
+          = image_tag('static/history.jpg', :class => "max-width-100")
 
-#picasa_rows.container
+  #picasa_rows.container
 
-= render 'shared/picasa_rows_template'
+  = render 'shared/picasa_rows_template'
+-#
+-#.container-fluid.bg-astroturf.padding-0
+-#  .container.color-ghost-white
+-#    .row.padding-vertical-20
+-#      .col-sm-6.col-md-8.padding-vertical-20
+-#        %h1.margin-top-0
+-#          History of Field Hockey
+-#        %p.font-16
+-#          The origins of field hockey have been traced to ancient Egypt and Persia and even to the Aztec Indians. Certainly, stick-and-ball games that resemble field hockey have been played by many peoples all over the world, but there's no way to draw up a family tree incorporating all, or even most of them.
+-#        %p.font-16.margin-bottom-0
+-#          Indian history says that a sport similar to present day field hockey was played in 17th century in Punjab, under the name 'Khido Khundi'. 'Khido' is a woolen ball and 'Khundi' is stick.
+-#      .col-sm-6.col-md-4.padding-vertical-20
+-#        .well.text-center.margin-bottom-0
+-#          = image_tag('static/history.jpg', :class => "max-width-100 ")
+-#
+-##picasa_rows.container
+-#
+-#= render 'shared/picasa_rows_template'
 
 :javascript
   picasa_album_id = '#{@picasa_album_id}';

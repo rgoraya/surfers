@@ -6,7 +6,7 @@
           Register for Surfer's #{@tournament.name}
 
     %form.form-horizontal.padding-vertical-20#tournament_register_form{:'data-tournament-id' => "#{@tournament.id}"}
-      .row.bg-shadow{:style => "position:relative"}
+      .row.bg-shadow.position-relative
         .bottom-dark-border.hidden-sm.hidden-xs
         .middle-dark-border.hidden-sm.hidden-xs
         .col-sm-6.padding-30
@@ -74,7 +74,7 @@
             .col-sm-7
               %input#umpirePhone.form-control.bfh-phone{:type => "text", :placeholder => "Voluntary Umpire's Phone", :name => "phone_number", :'data-country' => "US", :'data-error-after' => "phone_number"}
 
-      .row.bg-shadow.padding-vertical-30.padding-horizontal-15{:style => "position:relative"}
+      .row.bg-shadow.padding-vertical-30.padding-horizontal-15.position-relative
         .bottom-dark-border.hidden-sm.hidden-xs
         %h4.font-26.margin-bottom-30.padding-left-15 Player Information
         .col-sm-4
@@ -137,17 +137,3 @@
           %p.font-light.font-20.margin-top-30
             Note: Please make fees payable to HBFHC and mail it to HBFHC, 1195 Via Blairo Circle, Corona, CA 92879.
             For additional information, please #{link_to "Contact us", contact_url}.
-
-      -##tournament_highlights
-      -#  .col-sm-6.text-center.padding-vertical-20
-      -#    .padding-20.bg-shadow.border-radius
-      -#      %h3.font-32.margin-bottom-20 Mark your Calendar
-      -#      .glyphicon.glyphicon-calendar.font-48
-      -#      %p.font-20.margin-top-20.margin-bottom-20
-      -#        Surfers' #{@tournament.name} is scheduled for #{@tournament.start_time.to_date.to_formatted_s(:short)} to #{@tournament.end_time.to_date.to_formatted_s(:rfc822)}.
-      -#  .col-sm-6.text-center.padding-vertical-20
-      -#    %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
-      -#      %h3.font-32.margin-bottom-20 Location of Event
-      -#      .glyphicon.glyphicon-map-marker.font-48
-      -#      %p.font-20.margin-top-20.margin-bottom-20
-      -#        #{@tournament.location}.
