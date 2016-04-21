@@ -10,7 +10,7 @@ class RegistrationEmail < MailForm::Base
   def headers
     {
         :subject => %(Registration request for Surfer's #{tournament.name}),
-        :to => "ramindersingh.goraya@gmail.com, samiehundal@gmail.com",
+        :to => "ramindersingh.goraya@gmail.com, hbsurfers@hotmail.com, hs_guron@yahoo.com",
         :from => %("#{team_manager.name}" <#{team_manager.email}>)
     }
   end
