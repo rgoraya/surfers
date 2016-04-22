@@ -57,14 +57,18 @@ class TournamentRegistrationsController < ApplicationController
                 # send out registration email to Team Manager
                 @registration_confirmation = RegistrationEmail.new(registration_email_params(true))
 
-                if @registration_email.deliver && @registration_confirmation.deliver
-                  flash[:notice] = "You have successfully registered for Surfer's #{@tournament.name}. A confirmation has been sent to #{@team_manager.email}"
-                  render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
+                if @registration_email.deliver
+                  if @registration_confirmation.deliver
+                    flash[:notice] = "You have successfully registered for Surfer's #{@tournament.name}. A confirmation has been sent to #{@team_manager.email}"
+                    render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
+                  else
+                    render :json => {:success => false, :form_section => nil, :errors => @registration_confirmation.errors}, status: :unprocessable_entity
+                  end
                 else
-                  format.json { render json: @registration_email.errors, status: :unprocessable_entity }
+                  render :json => {:success => false, :form_section => nil, :errors => @registration_email.errors}, status: :unprocessable_entity
                 end
               else
-                render :json => { :success => false, :errors => @tournament_registration.errors }, :status => 500
+                render :json => { :success => false, :form_section => nil, :errors => @tournament_registration.errors }, :status => 500
               end
             else
               render :json => { :success => false, :form_section => "team_voluntary_umpire", :errors => @team_voluntary_umpire.errors }, :status => 500
