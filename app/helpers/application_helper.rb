@@ -24,4 +24,12 @@ module ApplicationHelper
     URI.join(root_url, image_path(source))
   end
 
+  def latest_tournament
+    Tournament.last
+  end
+
+  def tournament_upcoming
+    latest_tournament && (latest_tournament.end_time > Time.now.to_datetime)
+  end
+
 end

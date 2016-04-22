@@ -1,11 +1,9 @@
-- upcoming_tournament = Tournament.last
-
 %ul.nav.navbar-nav.navbar-right.margin-0
   = nav_link 'Home', root_path
   = nav_link 'About', about_path
   = nav_link 'Contacts', contact_path
-  - if upcoming_tournament && (upcoming_tournament.end_time > Time.now.to_datetime)
-    = nav_link 'Tournament', "/#{upcoming_tournament.slug}"
+  - if tournament_upcoming
+    = nav_link 'Tournament', "/#{latest_tournament.slug}"
   - else
     = nav_link 'Events', surfer_events_path
   = nav_link 'History', history_path
