@@ -95,7 +95,7 @@ class TournamentRegistrationsController < ApplicationController
         :team_captain => @team_captain,
         :tournament => @tournament,
         :registration => @tournament_registration,
-        :confirmation => type
+        :type => type
     }
   end
 
