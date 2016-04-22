@@ -13,52 +13,30 @@ S.tournamentRegistration = (function($, _) {
         _submit_registration : function(e) {
             e.preventDefault();
 
-            var that      = this;
-
+            var that    = this,
+                $submit = $(e.target);
             this._remove_all_errors();
             this._map_form_sections();
 
             if (! this._errors.length) {
+                $submit.addClass('disabled');
                 $.ajax({
                     url     : "/tournament_registrations",
                     type    : "POST",
                     data    : that._form_sections,
                     success : function(response){
+                        $submit.removeClass('disabled');
                         window.location.replace("/annual-6-x-6-tournament-2016");
                     },
                     error: function(data) {
+                        $submit.removeClass('disabled');
                         that._handle_server_errors(data.responseJSON);
                     }
                 });
             } else {
                 this._$form.find('input.error').first().focus();
+                this._$error_notice.collapse("show");
             }
-        },
-
-        _handle_successful_registration : function (data) {
-            var reg_email = {registration_email : {
-                    team_name : "Amazon Warriors",
-                    team_manager_name: "Rick Clark",
-                    team_captain_name: "Sarabjit Singh",
-                    team_captain_phone_number: "8374834783",
-                    team_manager_phone_number: "9856783903",
-                    team_manager_email: "rickc@amazwar.com",
-                    tournament_name: "Surfers 11th Annual Hockey Tournament"
-                }
-            };
-
-            $.ajax({
-                url     : "/registration_emails",
-                type    : "POST",
-                data    : reg_email,
-                success : function(response){
-                    console.log(response)
-
-                },
-                error: function(data) {
-                    console.log(data.responseJSON);
-                }
-            });
         },
 
         _handle_server_errors : function (response) {
@@ -71,12 +49,16 @@ S.tournamentRegistration = (function($, _) {
                     .focus()
                     .after('<div class="help-block">' + error + '</div>');
             });
+            this._$error_notice.collapse("show");
         },
 
         _remove_all_errors : function () {
             this._errors  = [];
             this._$form.find('.help-block').remove();
             this._$form_groups.removeClass('has-error');
+            this._$error_notice
+                .removeClass("in")
+                    .collapse("hide");
         },
         
         _validate_data : function(element) {
@@ -101,26 +83,6 @@ S.tournamentRegistration = (function($, _) {
             this._validate_data(el)
         },
 
-
-        _reset_modal : function() {
-            this._errors  = [];
-            $("form#tournamentFeedbackForm")
-                .find('input')
-                .val('')
-                .end()
-                .find('.control-group')
-                .removeClass('error')
-                .end()
-                .find('.btn')
-                .removeClass('active')
-                .end()
-                .find('input:text')
-                .first()
-                .focus()
-                .end();
-            $('#tournamentRegistration')
-                .removeClass('submitted');
-        },
 
         _map_form_sections : function () {
             var that = this,
@@ -154,12 +116,13 @@ S.tournamentRegistration = (function($, _) {
         _build_context : function () {
             this._$form = $('form#tournament_register_form');
             this._$form_groups = this._$form.find('.form-group');
+            this._$error_notice = this._$form.find('#errorNotice');
             this._form_sections = {};
             this._errors  = [];
         },
         
         _bind_events : function() {
-            $('body')
+            this._$form
                 .on('click', '#submitTournamentRegistration', _.bind(this._submit_registration, this));
         }
     };

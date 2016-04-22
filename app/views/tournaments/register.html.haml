@@ -15,7 +15,7 @@
             %label.col-sm-5.control-label.font-light.font-18{:for => "teamName"} Team
             .col-sm-7
               %input#teamName.form-control{:type => "text", :placeholder => "Team Name", :name => "name", :'data-required' => 'true', :'data-error-after' => "name"}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
           .form-group{:'data-form-section' => "team"}
             %label.col-sm-5.control-label.font-light.font-18{:for => "teamUniform"} Uniform Color
             .col-sm-7
@@ -24,12 +24,12 @@
             %label.col-sm-5.control-label.font-light.font-18{:for => "captainName"} Captain
             .col-sm-7
               %input#captainName.form-control{:type => "text", :placeholder => "Name", :name => "name", :'data-required' => 'true', :'data-error-after' => "name"}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
           .form-group.has-feedback{:'data-form-section' => "team_captain"}
             %label.col-sm-5.control-label.font-light.font-18{:for => "captainPhone"} Phone Number
             .col-sm-7
               %input#captainPhone.form-control.bfh-phone{:type => "text", :placeholder => "Team Captain's Phone", :name => "phone_number", :'data-country' => "US", :'data-required' => 'true', :'data-error-after' => "phone_number"}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
           .form-group.has-feedback{:'data-form-section' => "division"}
             %label.col-sm-5.control-label.font-light.font-18{:for => "division"} Division
             .col-sm-7
@@ -37,8 +37,9 @@
                 %label.checkbox-inline.font-18
                   %input{:type => "checkbox", :value => "competitive", :name => "#{division.name}", :id => "#{division.name}" }
                     #{division.name}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-14.text-muted{:'data-error-after' => "division"}
-          %p.font-light.text-right
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted{:'data-error-after' => "division"}
+          %p.text-right.text-warning.font-14
+            %i.glyphicon.glyphicon-info-sign
             Fees:
             - @tournament.divisions.each do |division|
               %span $#{division.fee.to_s} #{division.name}
@@ -49,22 +50,25 @@
             %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerName"} Team Manager
             .col-sm-7
               %input#teamManagerName.form-control{:type => "text", :placeholder => "Name", :name => "name", :'data-required' => 'true', :'data-error-after' => "name"}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
           .form-group{:'data-form-section' => "team_manager"}
             %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerAddress"} Address
             .col-sm-7
               %input#teamManagerAddress.form-control{:type => "text", :name => "address", :placeholder => "Team Manager's Address", :'data-error-after' => "address"}
           .form-group.has-feedback{:'data-form-section' => "team_manager"}
-            %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerAddress"} Email
-            .col-sm-7
-              %input#teamManagerEmail.form-control{:type => "email", :name => "email", :placeholder => "Team Manager's Email", :'data-required' => 'true', :'data-error-after' => "email"}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
-          .form-group.has-feedback{:'data-form-section' => "team_manager"}
             %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerPhone"}
               Phone Number
             .col-sm-7
               %input#teamManagerPhone.form-control.bfh-phone{ :type => "text", :placeholder => "Team Manager's Phone", :name => "phone_number", :'data-country' => "US", :'data-required' => 'true', :'data-error-after' => "phone_number"}
-              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.text-muted
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
+          .form-group.has-feedback{:'data-form-section' => "team_manager"}
+            %label.col-sm-5.control-label.font-light.font-18{:for => "teamManagerAddress"} Email
+            .col-sm-7
+              %input#teamManagerEmail.form-control{:type => "email", :name => "email", :placeholder => "Team Manager's Email", :'data-required' => 'true', :'data-error-after' => "email"}
+              %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
+          %p.text-right.text-warning.font-14
+            %i.glyphicon.glyphicon-info-sign
+            We'll send the confirmation on Team Manager's Email
           .form-group{:'data-form-section' => "team_voluntary_umpire"}
             %label.col-sm-5.control-label.font-light.font-18{:for => "umpireName"} Voluntary Umpire
             .col-sm-7
@@ -127,11 +131,15 @@
               %input#player11.form-control{:type => "text", :placeholder => "Name", :name => "player_11"}
 
       .row.bg-shadow.padding-30.clearfix
-        .col-sm-6
-          %p.font-light.font-20.margin-top-10
-            %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk
+        .col-sm-6.col-md-8
+          %p.text-warning.font-20.margin-top-10
+            %i.glyphicon.glyphicon.glyphicon-asterisk.font-14
             Required Fields
-        .col-sm-6.text-right
+        .col-sm-6.text-right.col-md-4
+          #errorNotice.collapse
+            %p.text-danger.font-20.margin-top-10
+              %i.glyphicon.glyphicon-exclamation-sign
+              Please fix errors above
           %button#submitTournamentRegistration.btn.btn-success.btn-lg{:type => "submit"} Register Team
         .col-sm-12
           %p.font-light.font-20.margin-top-30

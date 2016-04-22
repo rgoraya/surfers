@@ -51,10 +51,14 @@ class TournamentRegistrationsController < ApplicationController
                 end
                 @tournament_registration.save
 
-                # send out registration email
-                @registration_email = RegistrationEmail.new(registration_email_params)
-                if @registration_email.deliver
-                  flash[:notice] = "You have successfully registered for Surfer's #{@tournament.name}. We'll contact you soon."
+                # send out registration email to surfer recipients
+                @registration_email = RegistrationEmail.new(registration_email_params(false))
+
+                # send out registration email to Team Manager
+                @registration_confirmation = RegistrationEmail.new(registration_email_params(true))
+
+                if @registration_email.deliver && @registration_confirmation.deliver
+                  flash[:notice] = "You have successfully registered for Surfer's #{@tournament.name}. A confirmation has been sent to #{@team_manager.email}"
                   render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
                 else
                   format.json { render json: @registration_email.errors, status: :unprocessable_entity }
@@ -80,13 +84,14 @@ class TournamentRegistrationsController < ApplicationController
 
   end
 
-  def registration_email_params
+  def registration_email_params(is_confirmation)
     {
         :team => @team,
         :team_manager => @team_manager,
         :team_captain => @team_captain,
         :tournament => @tournament,
-        :registration => @tournament_registration
+        :registration => @tournament_registration,
+        :confirmation => is_confirmation
     }
   end
 
