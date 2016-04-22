@@ -52,10 +52,10 @@ class TournamentRegistrationsController < ApplicationController
                 @tournament_registration.save
 
                 # send out registration email to surfer recipients
-                @registration_email = RegistrationEmail.new(registration_email_params(false))
+                @registration_email = RegistrationEmail.new(registration_email_params("Notification"))
 
                 # send out registration email to Team Manager
-                @registration_confirmation = RegistrationEmail.new(registration_email_params(true))
+                @registration_confirmation = RegistrationEmail.new(registration_email_params("Confirmation"))
 
                 if @registration_email.deliver
                   if @registration_confirmation.deliver
@@ -88,14 +88,14 @@ class TournamentRegistrationsController < ApplicationController
 
   end
 
-  def registration_email_params(is_confirmation)
+  def registration_email_params(type)
     {
         :team => @team,
         :team_manager => @team_manager,
         :team_captain => @team_captain,
         :tournament => @tournament,
         :registration => @tournament_registration,
-        :confirmation => is_confirmation
+        :confirmation => type
     }
   end
 

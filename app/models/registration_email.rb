@@ -4,18 +4,18 @@ class RegistrationEmail < MailForm::Base
   attribute :team_captain,  :validate => true
   attribute :tournament,    :validate => true
   attribute :registration,  :validate => true
-  attribute :confirmation,  :validate => true
+  attribute :type,          :validate => ["Notification", "Confirmation"]
 
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
-    if confirmation
+    if type == "Confirmation"
       {
           :subject => %(Registration confirmation for Surfer's #{tournament.name}) ,
           :to => "#{team_manager.email}",
           :from => %("Surfers Field Hockey Club" <"hbsurfers@hotmail.com">)
       }
-    else
+    elsif type == "Notification"
       {
           :subject => %(Registration request for Surfer's #{tournament.name}) ,
           :to => "ramindersingh.goraya@gmail.com",
