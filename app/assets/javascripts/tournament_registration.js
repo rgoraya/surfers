@@ -26,7 +26,7 @@ S.tournamentRegistration = (function($, _) {
                     data    : that._form_sections,
                     success : function(response){
                         $submit.removeClass('disabled');
-                        //window.location.replace("/annual-6-x-6-tournament-2016");
+                        window.location.replace("/annual-6-x-6-tournament-2016");
                     },
                     error: function(data) {
                         $submit.removeClass('disabled');
@@ -34,8 +34,11 @@ S.tournamentRegistration = (function($, _) {
                     }
                 });
             } else {
-                this._$form.find('input.error').first().focus();
-                this._$error_notice.collapse("show");
+                this._$form.find('.form-group.has-error')
+                    .first()
+                        .find('input')
+                            .first()
+                                .focus();
             }
         },
 
@@ -49,16 +52,12 @@ S.tournamentRegistration = (function($, _) {
                     .focus()
                     .after('<div class="help-block">' + error + '</div>');
             });
-            this._$error_notice.collapse("show");
         },
 
         _remove_all_errors : function () {
             this._errors  = [];
             this._$form.find('.help-block').remove();
             this._$form_groups.removeClass('has-error');
-            this._$error_notice
-                .removeClass("in")
-                    .collapse("hide");
         },
         
         _validate_data : function(element) {
@@ -116,7 +115,6 @@ S.tournamentRegistration = (function($, _) {
         _build_context : function () {
             this._$form = $('form#tournament_register_form');
             this._$form_groups = this._$form.find('.form-group');
-            this._$error_notice = this._$form.find('#errorNotice');
             this._form_sections = {};
             this._errors  = [];
         },
