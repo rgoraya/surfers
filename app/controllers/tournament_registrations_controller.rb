@@ -54,10 +54,10 @@ class TournamentRegistrationsController < ApplicationController
                 # send out registration email to surfer recipients
                 @registration_email = RegistrationEmail.new(registration_email_params("Notification"))
 
-                # send out registration email to Team Manager
-                @registration_confirmation = RegistrationEmail.new(registration_email_params("Confirmation"))
-
                 if @registration_email.deliver
+                  # send out registration email to Team Manager
+                  @registration_confirmation = RegistrationEmail.new(registration_email_params("Confirmation"))
+
                   if @registration_confirmation.deliver
                     flash[:notice] = "You have successfully registered for Surfer's #{@tournament.name}. A confirmation has been sent to #{@team_manager.email}"
                     render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
