@@ -26,7 +26,7 @@ S.tournamentRegistration = (function($, _) {
                     data    : that._form_sections,
                     success : function(response){
                         $submit.removeClass('disabled');
-                        window.location.replace("/annual-6-x-6-tournament-2016");
+                        //window.location.replace("/annual-6-x-6-tournament-2016");
                     },
                     error: function(data) {
                         $submit.removeClass('disabled');

@@ -12,7 +12,7 @@
           %td{:align => "left", :valign => "top"}
             %h1{:style => "font-family: Georgia ,Serif; font-size: 24px; font-weight: normal; font-style: italic; line-height: 30px; margin-top: 10px; margin-right: 30px; margin-bottom: 10px; margin-left: 30px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-right: 0;"}
               - if @resource.type == "Confirmation"
-                Dear @resource.team_manager.name
+                Dear #{@resource.team_manager.name}
               - elsif @resource.type == "Notification"
                 Hi Surfers!
         %tr
