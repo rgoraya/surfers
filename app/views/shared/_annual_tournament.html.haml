@@ -24,18 +24,48 @@
               .glyphicon.glyphicon-info-sign.font-48
               %p.font-20.margin-top-20.margin-bottom-20
                 Find out more about Surfers' #{@tournament.name} rules and registration.
+          .col-sm-4.text-center.padding-vertical-20
+            %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
+              %h3.font-32.margin-bottom-20 Location of Event
+              .glyphicon.glyphicon-map-marker.font-48
+              %p.font-20.margin-top-20.margin-bottom-20
+                #{@tournament.location}.
         - else
           .col-sm-4.text-center.padding-vertical-20
-            .padding-20.bg-shadow.border-radius
-              %h3.font-32.margin-bottom-20 Mark your Calendar
-              .glyphicon.glyphicon-calendar.font-48
+            %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/forms/registration_form_2016.pdf"}
+              .h3.font-32.margin-bottom-20 Registration Form
+              .glyphicon.glyphicon-download-alt.font-48
               %p.font-20.margin-top-20.margin-bottom-20
-                Surfers' #{@tournament.name} is scheduled for #{@tournament.start_time.to_date.to_formatted_s(:short)} to #{@tournament.end_time.to_date.to_formatted_s(:rfc822)}.
-        .col-sm-4.text-center.padding-vertical-20
-          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
-            %h3.font-32.margin-bottom-20 Location of Event
-            .glyphicon.glyphicon-map-marker.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              #{@tournament.location}.
+                Click to download the Surfers' #{@tournament.name} registration form.
+          .col-sm-4.text-center.padding-vertical-20
+            %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/forms/tournament_rules_2016.pdf"}
+              .h3.font-32.margin-bottom-20 Tournament Rules
+              .glyphicon.glyphicon-question-sign.font-48
+              %p.font-20.margin-top-20.margin-bottom-20
+                Click to download the Surfers' #{@tournament.name} Rules.
+  .row.padding-vertical-20
+    %h3.font-32.font-light.text-center.margin-bottom-30
+      Proud Sponsors
+    #tournament_sponsors
+      .col-sm-3.text-center.padding-vertical-20
+        %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://www.gillelectric.com/", :target => "_blank"}
+          .h4.font-24.margin-bottom-20 Harry Gill
+          %p.font-20.margin-top-20.margin-bottom-20
+            Gill Electric
+      .col-sm-3.text-center.padding-vertical-20
+        %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://www.sycr.com/shivbir-s-grewal", :target => "_blank"}
+          .h4.font-24.margin-bottom-20 Shiv Grewal
+          %p.font-20.margin-top-20.margin-bottom-20
+            www.sycr.com
+      .col-sm-3.text-center.padding-vertical-20
+        .padding-20.bg-shadow
+          %h4.font-24.margin-bottom-20 West Coast FOA
+          %p.font-20.margin-top-20.margin-bottom-20
+            7/11 stores
+      .col-sm-3.text-center.padding-vertical-20
+        %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://singh-cpa.com/", :target => "_blank"}
+          %h4.font-24.margin-bottom-20 Baljinder S Rakkar
+          %p.font-20.margin-top-20.margin-bottom-20
+            Singh CPA
 
 
