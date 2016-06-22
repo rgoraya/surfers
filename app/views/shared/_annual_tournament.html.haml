@@ -11,61 +11,248 @@
         Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
     - if @tournament.end_time > Time.now.to_datetime
       #tournament_highlights
-        .col-sm-4.text-center.padding-vertical-20
-          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
-            .h3.font-32.margin-bottom-20 Register Today
-            .glyphicon.glyphicon-list-alt.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              Register online or by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
+        -#.col-sm-4.text-center.padding-vertical-20
+        -#  %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
+        -#    .h3.font-32.margin-bottom-20 Register Today
+        -#    .glyphicon.glyphicon-list-alt.font-48
+        -#    %p.font-20.margin-top-20.margin-bottom-20
+        -#      Register online or by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
         - if current_page?(root_url)
           .col-sm-4.text-center.padding-vertical-20
             %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}"}
-              .h3.font-32.margin-bottom-20 Learn More
-              .glyphicon.glyphicon-info-sign.font-48
+              .h3.font-32.margin-bottom-20 Tournament Home
+              .glyphicon.glyphicon-home.font-48
               %p.font-20.margin-top-20.margin-bottom-20
-                Find out more about Surfers' #{@tournament.name} rules and registration.
+                Find out more about Surfers' #{@tournament.name}. Download Forms. View Schedule and Standings.
           .col-sm-4.text-center.padding-vertical-20
             %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
               %h3.font-32.margin-bottom-20 Location of Event
               .glyphicon.glyphicon-map-marker.font-48
               %p.font-20.margin-top-20.margin-bottom-20
-                #{@tournament.location}.
+                View Google Map and directions for #{@tournament.location}.
+          .col-sm-4.padding-vertical-20.text-center
+            .padding-20.bg-shadow.border-radius
+              .h3.font-32.margin-bottom-20 Proud Sponsors
+              .glyphicon.glyphicon-briefcase.font-48
+              %ul.font-20.margin-top-20.margin-bottom-20.text-left.padding-left-15
+                %li
+                  %a.h4.font-20{ :href => "http://www.gillelectric.com/", :target => "_blank"}
+                    Harry Gill - Gill Electric
+                %li
+                  %a.h4.font-20{ :href => "http://www.sycr.com/shivbir-s-grewal", :target => "_blank"}
+                    Shiv Grewal
+                %li
+                  %a.h4.font-20
+                    West Coast FOA - 7/11 stores
+                %li
+                  %a.h4.font-20{ :href => "http://singh-cpa.com/", :target => "_blank"}
+                    Baljinder S Rakkar - Singh CPA
+
         - else
-          .col-sm-4.text-center.padding-vertical-20
-            %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/forms/registration_form_2016.pdf"}
-              .h3.font-32.margin-bottom-20 Registration Form
+          .col-md-8.col-sm-12.text-center.padding-vertical-20
+            .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+              .h3.font-32.margin-bottom-20
+                .glyphicon.glyphicon-time
+                Tournament Schedule
+              %table.table.margin-top-20.table-bordered.bg-shadow
+                %tr
+                  %th.text-center Dates
+                  %th.text-center{ :colspan => 2 } Game Time
+                  %th.text-center{ :colspan => 2 } Teams
+                  -#%th.text-center{ :colspan => 2 } Umpires
+                  -#%th.text-center{ :colspan => 2 } Result
+                %tr.font-bold
+                  %td.text-center Saturday June 25
+                  %td.text-center Start
+                  %td.text-center End
+                  %td.text-center Home
+                  %td.text-center Guest
+                %tr.bg-success.text-success
+                  %td.text-center Game # 1
+                  %td.text-center 8:30
+                  %td.text-center 9:17
+                  %td.text-center Monarcas
+                  %td.text-center Surfers Red
+                %tr.bg-info.text-info
+                  %td.text-center Game # 2
+                  %td.text-center 9:20
+                  %td.text-center 10:07
+                  %td.text-center Surfers Blue
+                  %td.text-center Warriors
+                %tr.bg-info.text-info
+                  %td.text-center Game # 3
+                  %td.text-center 10:10
+                  %td.text-center 10:57
+                  %td.text-center LA Tigers
+                  %td.text-center Kings
+                %tr.bg-success.text-success
+                  %td.text-center Game # 4
+                  %td.text-center 11:00
+                  %td.text-center 11:47
+                  %td.text-center Oh Yeah!
+                  %td.text-center Monarcas
+                %tr.bg-success.text-success
+                  %td.text-center Game # 5
+                  %td.text-center 11:50
+                  %td.text-center 12:37
+                  %td.text-center Scorpions
+                  %td.text-center Surfers Red
+                %tr.bg-info.text-info
+                  %td.text-center Game # 6
+                  %td.text-center 12:40
+                  %td.text-center 13:27
+                  %td.text-center Surfers Blue
+                  %td.text-center LA Tigers
+                %tr.bg-info.text-info
+                  %td.text-center Game # 7
+                  %td.text-center 13:30
+                  %td.text-center 14:17
+                  %td.text-center Warriors
+                  %td.text-center Kings
+                %tr.bg-success.text-success
+                  %td.text-center Game # 8
+                  %td.text-center 14:20
+                  %td.text-center 15:07
+                  %td.text-center Oh Yeah!
+                  %td.text-center Scorpions
+                %tr.bg-info.text-info
+                  %td.text-center Game # 9
+                  %td.text-center 15:10
+                  %td.text-center 15:57
+                  %td.text-center Kings
+                  %td.text-center Surfers Blue
+                %tr.bg-success.text-success
+                  %td.text-center Game # 10
+                  %td.text-center 16:00
+                  %td.text-center 16:47
+                  %td.text-center Monarcas
+                  %td.text-center Scorpions
+                %tr.bg-success.text-success
+                  %td.text-center Game # 11
+                  %td.text-center 16:50
+                  %td.text-center 17:37
+                  %td.text-center Surfers Red
+                  %td.text-center Oh Yeah!
+                %tr.font-bold
+                  %td.text-center Sunday June 26
+                  %td.text-center Start
+                  %td.text-center End
+                  %td.text-center Home
+                  %td.text-center Guest
+                %tr.bg-info.text-info
+                  %td.text-center Game # 12
+                  %td.text-center 8:30
+                  %td.text-center 9:17
+                  %td.text-center LA Tigers
+                  %td.text-center Warriors
+                %tr.bg-success.text-success
+                  %td.text-center Game # 13
+                  %td.text-center 9:20
+                  %td.text-center 10:07
+                  %td.text-center{ :colspan => 2 } Social third spot
+                %tr.bg-info.text-info
+                  %td.text-center Game # 14
+                  %td.text-center 10:10
+                  %td.text-center 10:57
+                  %td.text-center{ :colspan => 2 } Competition third spot
+                %tr.bg-success.text-success
+                  %td.text-center Game # 15
+                  %td.text-center 11:00
+                  %td.text-center 11:47
+                  %td.text-center{ :colspan => 2 } Social Final
+                %tr.bg-info.text-info
+                  %td.text-center Game # 16
+                  %td.text-center 11:50
+                  %td.text-center 12:37
+                  %td.text-center{ :colspan => 2 } Competition Final
+                %tr.bg-warning.text-warning
+                  %td.text-center
+                  %td.text-center 13:40
+                  %td.text-center 13:00
+                  %td.text-center{ :colspan => 2 } Prize Distribution
+
+              .row
+                .col-sm-6
+                  %table.table.margin-top-20.table-bordered.bg-shadow
+                    %tr
+                      %th.text-center{ :colspan => 2 } Divisions
+                    %tr.font-bold
+                      %td.bg-success.text-success
+                        Social
+                      %td.bg-info.text-info
+                        Competition
+                    %tr
+                      %td.bg-success.text-success
+                        %ul.list-unstyled
+                          %li Monarcas
+                          %li Surfers Red
+                          %li Oh Yeah!
+                          %li Scorpions
+                      %td.bg-info.text-info
+                        %ul.list-unstyled
+                          %li LA Tigers
+                          %li Kings
+                          %li Surfers Blue
+                          %li Warriors
+                .col-sm-6
+                  %table.table.margin-top-20.table-bordered.bg-shadow
+                    %tr
+                      %th.text-center{ :colspan => 2 } Game time breakdown
+                    %tr
+                      %td.font-bold
+                        Game - each half
+                      %td
+                        22 minutes
+                    %tr
+                      %td.font-bold
+                        half time interval
+                      %td
+                        3 minutes
+                    %tr
+                      %td.font-bold
+                        interchange time
+                      %td
+                        3 minutes
+          .col-md-4.col-sm-12.padding-vertical-20
+            .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+              .h3.font-32.margin-bottom-20 Download Forms
               .glyphicon.glyphicon-download-alt.font-48
-              %p.font-20.margin-top-20.margin-bottom-20
-                Click to download the Surfers' #{@tournament.name} registration form.
-          .col-sm-4.text-center.padding-vertical-20
-            %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/forms/tournament_rules_2016.pdf"}
-              .h3.font-32.margin-bottom-20 Tournament Rules
-              .glyphicon.glyphicon-question-sign.font-48
-              %p.font-20.margin-top-20.margin-bottom-20
-                Click to download the Surfers' #{@tournament.name} Rules.
+              %ul.font-20.margin-top-20.margin-bottom-20.text-left
+                %li
+                  %a.h4.font-20{ :href => "/forms/registration_form_2016.pdf" }
+                    Registration Form
+                %li
+                  %a.h4.font-20{ :href => "/forms/waiver_form.pdf" }
+                    Waiver Form (required filled)
+                %li
+                  %a.h4.font-20{ :href => "/forms/tournament_rules_2016.pdf" }
+                    Tournament Rules
+                %li
+                  %a.h4.font-20{ :href => "/forms/tournament_schedule_2016.pdf" }
+                    Schedule PDF
+
+            %a.padding-20.bg-shadow.border-radius.block-link.margin-bottom-30{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
+              .map-container
+                %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
+
+            .padding-20.bg-shadow.border-radius.text-center
+              .h3.font-32.margin-bottom-20 Proud Sponsors
+              .glyphicon.glyphicon-briefcase.font-48
+              %ul.font-20.margin-top-20.margin-bottom-20.text-left
+                %li
+                  %a.h4.font-20{ :href => "http://www.gillelectric.com/", :target => "_blank"}
+                    Harry Gill - Gill Electric
+                %li
+                  %a.h4.font-20{ :href => "http://www.sycr.com/shivbir-s-grewal", :target => "_blank"}
+                    Shiv Grewal
+                %li
+                  %a.h4.font-20
+                    West Coast FOA - 7/11 stores
+                %li
+                  %a.h4.font-20{ :href => "http://singh-cpa.com/", :target => "_blank"}
+                    Baljinder S Rakkar - Singh CPA
+
   .row.padding-vertical-20
-    %h3.font-32.font-light.text-center.margin-bottom-30
-      Proud Sponsors
-    #tournament_sponsors
-      .col-sm-3.text-center.padding-vertical-20
-        %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://www.gillelectric.com/", :target => "_blank"}
-          .h4.font-24.margin-bottom-20 Harry Gill
-          %p.font-20.margin-top-20.margin-bottom-20
-            Gill Electric
-      .col-sm-3.text-center.padding-vertical-20
-        %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://www.sycr.com/shivbir-s-grewal", :target => "_blank"}
-          .h4.font-24.margin-bottom-20 Shiv Grewal
-          %p.font-20.margin-top-20.margin-bottom-20
-            www.sycr.com
-      .col-sm-3.text-center.padding-vertical-20
-        .padding-20.bg-shadow
-          %h4.font-24.margin-bottom-20 West Coast FOA
-          %p.font-20.margin-top-20.margin-bottom-20
-            7/11 stores
-      .col-sm-3.text-center.padding-vertical-20
-        %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://singh-cpa.com/", :target => "_blank"}
-          %h4.font-24.margin-bottom-20 Baljinder S Rakkar
-          %p.font-20.margin-top-20.margin-bottom-20
-            Singh CPA
+
 
 
