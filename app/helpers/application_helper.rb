@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def tournament_upcoming
-    latest_tournament && (latest_tournament.end_time > Time.now.to_datetime)
+    latest_tournament && ((latest_tournament.end_time + 1.week) > Time.now.to_datetime)
   end
 
 end
