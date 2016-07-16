@@ -1,15 +1,8 @@
 - if tournament_upcoming
   .container-fluid.padding-0.bg-hit
     = render :partial => "shared/annual_tournament"
-.container-fluid.padding-0.bg-hit
-  .container.color-ghost-white.margin-bottom-20
-    .row.padding-vertical-20
-      .padding-20
-        %h2.font-44.font-bold.text-center.margin-top-30.margin-bottom-30
-          Surfers and #{link_to 'Monarcas', 'https://www.facebook.com/Monarcas-Field-Hockey-Club-109606002473593/'} combined Summer league starting on July 17th.
-        %p.margin-bottom-40.font-28.text-center
-          %span.color-hot-pink.glyphicon.glyphicon-info-sign
-          More info coming soon!
+
+= render :partial => "shared/summer_league"
 
 .container-fluid.padding-0.bg-goalie.color-ghost-white
   .container.margin-bottom-20
