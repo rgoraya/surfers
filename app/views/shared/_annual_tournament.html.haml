@@ -11,12 +11,12 @@
         Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
     - if tournament_upcoming
       #tournament_highlights
-        -#.col-sm-4.text-center.padding-vertical-20
-        -#  %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
-        -#    .h3.font-32.margin-bottom-20 Register Today
-        -#    .glyphicon.glyphicon-list-alt.font-48
-        -#    %p.font-20.margin-top-20.margin-bottom-20
-        -#      Register online or by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
+        .col-sm-4.text-center.padding-vertical-20
+          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
+            .h3.font-32.margin-bottom-20 Register Today
+            .glyphicon.glyphicon-list-alt.font-48
+            %p.font-20.margin-top-20.margin-bottom-20
+              Register online by clicking here. You can also register by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
         - if current_page?(root_url)
           .col-sm-4.text-center.padding-vertical-20
             %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}"}
@@ -30,291 +30,273 @@
               .glyphicon.glyphicon-map-marker.font-48
               %p.font-20.margin-top-20.margin-bottom-20
                 View Google Map and directions for #{@tournament.location}.
-          .col-sm-4.padding-vertical-20.text-center
-            .padding-20.bg-shadow.border-radius
-              .h3.font-32.margin-bottom-20 Proud Sponsors
-              .glyphicon.glyphicon-briefcase.font-48
-              %ul.font-20.margin-top-20.margin-bottom-20.text-left.padding-left-15
-                %li
-                  %a.h4.font-20{ :href => "http://www.gillelectric.com/", :target => "_blank"}
-                    Harry Gill - Gill Electric
-                %li
-                  %a.h4.font-20{ :href => "http://www.sycr.com/shivbir-s-grewal", :target => "_blank"}
-                    Shiv Grewal
-                %li
-                  %a.h4.font-20
-                    West Coast FOA - 7/11 stores
-                %li
-                  %a.h4.font-20{ :href => "http://singh-cpa.com/", :target => "_blank"}
-                    Baljinder S Rakkar - Singh CPA
-
         - else
-          .col-md-8.col-sm-12.text-center.padding-vertical-20
-            .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
-              .h3.font-32.margin-bottom-20
-                .glyphicon.glyphicon-stats
-                Standings
-
-              .row
-                .col-sm-6
-                  %h4 Social Division
-                  %table.table.margin-top-20.table-bordered.bg-shadow
-                    %tr
-                      %th.text-center Team
-                      %th.text-center Played
-                      %th.text-center Won
-                      %th.text-center Lost
-                      %th.text-center Points
-                    %tr.bg-success.text-success
-                      %td.text-center Oh Yeah!
-                      %td.text-center 3
-                      %td.text-center 3
-                      %td.text-center 0
-                      %td.text-center 9
-                    %tr.bg-success.text-success
-                      %td.text-center Monarcas
-                      %td.text-center 3
-                      %td.text-center 2
-                      %td.text-center 1
-                      %td.text-center 6
-                    %tr.bg-success.text-success
-                      %td.text-center Scorpions
-                      %td.text-center 3
-                      %td.text-center 1
-                      %td.text-center 2
-                      %td.text-center 3
-                    %tr.bg-success.text-success
-                      %td.text-center Surfers Red
-                      %td.text-center 3
-                      %td.text-center 0
-                      %td.text-center 3
-                      %td.text-center 0
-
-                .col-sm-6
-                  %h4 Competition Division
-                  %table.table.margin-top-20.table-bordered.bg-shadow
-                    %tr
-                      %th.text-center Team
-                      %th.text-center Played
-                      %th.text-center Won
-                      %th.text-center Lost
-                      %th.text-center Points
-                    %tr.bg-info.text-info
-                      %td.text-center LA Tigers
-                      %td.text-center 3
-                      %td.text-center 3
-                      %td.text-center 0
-                      %td.text-center 9
-                    %tr.bg-info.text-info
-                      %td.text-center Surfers Blue
-                      %td.text-center 3
-                      %td.text-center 2
-                      %td.text-center 1
-                      %td.text-center 6
-                    %tr.bg-info.text-info
-                      %td.text-center Kings
-                      %td.text-center 3
-                      %td.text-center 1
-                      %td.text-center 2
-                      %td.text-center 3
-                    %tr.bg-info.text-info
-                      %td.text-center Warriors
-                      %td.text-center 3
-                      %td.text-center 0
-                      %td.text-center 3
-                      %td.text-center 0
-
-
-              .h3.font-32.margin-bottom-20
-                .glyphicon.glyphicon-time
-                Schedule
-              %table.table.margin-top-20.table-bordered.bg-shadow
-                %tr
-                  %th.text-center Dates
-                  %th.text-center{ :colspan => 2 } Game Time
-                  %th.text-center{ :colspan => 2 } Teams
-                  %th
-                  %th.text-center{ :colspan => 2 }
-                %tr.font-bold
-                  %td.text-center Saturday June 25
-                  %td.text-center Start
-                  %td.text-center End
-                  %td.text-center Home
-                  %td.text-center Guest
-                  %td.text-center Umpires
-                  %td.text-center{ :colspan => 2 } Result
-                %tr.bg-success.text-success
-                  %td.text-center Game # 1
-                  %td.text-center 8:30
-                  %td.text-center 9:17
-                  %td.text-center Monarcas
-                  %td.text-center Surfers Red
-                  %td.text-center Ravi K, Manjot
-                  %td.text-center 24
-                  %td.text-center 9
-                %tr.bg-info.text-info
-                  %td.text-center Game # 2
-                  %td.text-center 9:20
-                  %td.text-center 10:07
-                  %td.text-center Surfers Blue
-                  %td.text-center Warriors
-                  %td.text-center Elisa, Mohan C
-                  %td.text-center 31
-                  %td.text-center 27
-                %tr.bg-info.text-info
-                  %td.text-center Game # 3
-                  %td.text-center 10:10
-                  %td.text-center 10:57
-                  %td.text-center LA Tigers
-                  %td.text-center Kings
-                  %td.text-center Ravi K, Manjot
-                  %td.text-center 23
-                  %td.text-center 20
-                %tr.bg-success.text-success
-                  %td.text-center Game # 4
-                  %td.text-center 11:00
-                  %td.text-center 11:47
-                  %td.text-center Oh Yeah!
-                  %td.text-center Monarcas
-                  %td.text-center Moni, Sarb
-                  %td.text-center 23
-                  %td.text-center 18
-                %tr.bg-success.text-success
-                  %td.text-center Game # 5
-                  %td.text-center 11:50
-                  %td.text-center 12:37
-                  %td.text-center Scorpions
-                  %td.text-center Surfers Red
-                  %td.text-center Peru Bajwa, Elisa
-                  %td.text-center 29
-                  %td.text-center 12
-                %tr.bg-info.text-info
-                  %td.text-center Game # 6
-                  %td.text-center 12:40
-                  %td.text-center 13:27
-                  %td.text-center Surfers Blue
-                  %td.text-center LA Tigers
-                  %td.text-center Ravi K, Riaz
-                  %td.text-center 20
-                  %td.text-center 22
-                %tr.bg-info.text-info
-                  %td.text-center Game # 7
-                  %td.text-center 13:30
-                  %td.text-center 14:17
-                  %td.text-center Warriors
-                  %td.text-center Kings
-                  %td.text-center Ravi K, Manjot
-                  %td.text-center 14
-                  %td.text-center 34
-                %tr.bg-success.text-success
-                  %td.text-center Game # 8
-                  %td.text-center 14:20
-                  %td.text-center 15:07
-                  %td.text-center Oh Yeah!
-                  %td.text-center Scorpions
-                  %td.text-center Hark, Moni
-                  %td.text-center 14
-                  %td.text-center 12
-                %tr.bg-info.text-info
-                  %td.text-center Game # 9
-                  %td.text-center 15:10
-                  %td.text-center 15:57
-                  %td.text-center Kings
-                  %td.text-center Surfers Blue
-                  %td.text-center Ravi K, Bobby K
-                  %td.text-center 0
-                  %td.text-center 10
-                %tr.bg-success.text-success
-                  %td.text-center Game # 10
-                  %td.text-center 16:00
-                  %td.text-center 16:47
-                  %td.text-center Monarcas
-                  %td.text-center Scorpions
-                  %td.text-center Mohan C, Rinku
-                  %td.text-center 18
-                  %td.text-center 9
-                %tr.bg-success.text-success
-                  %td.text-center Game # 11
-                  %td.text-center 16:50
-                  %td.text-center 17:37
-                  %td.text-center Surfers Red
-                  %td.text-center Oh Yeah!
-                  %td.text-center Ravi K, Riaz
-                  %td.text-center 9
-                  %td.text-center 21
-                %tr.font-bold
-                  %td.text-center Sunday June 26
-                  %td.text-center Start
-                  %td.text-center End
-                  %td.text-center Home
-                  %td.text-center Guest
-                  %td.text-center Umpires
-                  %td.text-center{ :colspan => 2 } Result
-                %tr.bg-info.text-info
-                  %td.text-center Game # 12
-                  %td.text-center 8:30
-                  %td.text-center 9:17
-                  %td.text-center LA Tigers
-                  %td.text-center Warriors
-                  %td.text-center Ravi K, TBD
-                  %td.text-center 31
-                  %td.text-center 12
-                %tr.bg-success.text-success
-                  %td.text-center.font-bold Social third spot
-                  %td.text-center 9:20
-                  %td.text-center 10:07
-                  %td.text-center.font-bold
-                    .glyphicon.glyphicon-star-empty
-                    Scorpions
-                  %td.text-center Surfers Red
-                  %td.text-center Ravi K, TBD
-                  %td.text-center 20
-                  %td.text-center 14
-                %tr.bg-success.text-success
-                  %td.text-center.font-bold Social Final
-                  %td.text-center 11:00
-                  %td.text-center 11:47
-                  %td.text-center Oh Yeah!
-                  %td.text-center.font-bold
-                    .glyphicon.glyphicon-star-empty
-                    Monarcas
-                  %td.text-center Ravi K, Manjot
-                  %td.text-center 3
-                  %td.text-center 14
-                %tr.bg-info.text-info
-                  %td.text-center.font-bold Competition Final
-                  %td.text-center 11:50
-                  %td.text-center 12:37
-                  %td.text-center.font-bold
-                    .glyphicon.glyphicon-star-empty
-                    LA Tigers
-                  %td.text-center Surfers Blue
-                  %td.text-center Ravi K, Manjot
-                  %td.text-center 21
-                  %td.text-center 9
-                %tr.bg-warning.text-warning
-                  %td.text-center.font-bold Prize Distribution
-                  %td.text-center 13:40
-                  %td.text-center 13:00
-                  %td.text-center{ :colspan => 5 }
-
-              %h4 Game time breakdown
-              %table.table.margin-top-20.table-bordered.bg-shadow
-                %tr
-                  %td.font-bold
-                    Game - each half
-                  %td
-                    22 minutes
-                %tr
-                  %td.font-bold
-                    half time interval
-                  %td
-                    3 minutes
-                %tr
-                  %td.font-bold
-                    interchange time
-                  %td
-                    3 minutes
+          -#.col-md-8.col-sm-12.text-center.padding-vertical-20
+          -#  .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+          -#    .h3.font-32.margin-bottom-20
+          -#      .glyphicon.glyphicon-stats
+          -#      Standings
+          -#
+          -#    .row
+          -#      .col-sm-6
+          -#        %h4 Social Division
+          -#        %table.table.margin-top-20.table-bordered.bg-shadow
+          -#          %tr
+          -#            %th.text-center Team
+          -#            %th.text-center Played
+          -#            %th.text-center Won
+          -#            %th.text-center Lost
+          -#            %th.text-center Points
+          -#          %tr.bg-success.text-success
+          -#            %td.text-center Oh Yeah!
+          -#            %td.text-center 3
+          -#            %td.text-center 3
+          -#            %td.text-center 0
+          -#            %td.text-center 9
+          -#          %tr.bg-success.text-success
+          -#            %td.text-center Monarcas
+          -#            %td.text-center 3
+          -#            %td.text-center 2
+          -#            %td.text-center 1
+          -#            %td.text-center 6
+          -#          %tr.bg-success.text-success
+          -#            %td.text-center Scorpions
+          -#            %td.text-center 3
+          -#            %td.text-center 1
+          -#            %td.text-center 2
+          -#            %td.text-center 3
+          -#          %tr.bg-success.text-success
+          -#            %td.text-center Surfers Red
+          -#            %td.text-center 3
+          -#            %td.text-center 0
+          -#            %td.text-center 3
+          -#            %td.text-center 0
+          -#
+          -#      .col-sm-6
+          -#        %h4 Competition Division
+          -#        %table.table.margin-top-20.table-bordered.bg-shadow
+          -#          %tr
+          -#            %th.text-center Team
+          -#            %th.text-center Played
+          -#            %th.text-center Won
+          -#            %th.text-center Lost
+          -#            %th.text-center Points
+          -#          %tr.bg-info.text-info
+          -#            %td.text-center LA Tigers
+          -#            %td.text-center 3
+          -#            %td.text-center 3
+          -#            %td.text-center 0
+          -#            %td.text-center 9
+          -#          %tr.bg-info.text-info
+          -#            %td.text-center Surfers Blue
+          -#            %td.text-center 3
+          -#            %td.text-center 2
+          -#            %td.text-center 1
+          -#            %td.text-center 6
+          -#          %tr.bg-info.text-info
+          -#            %td.text-center Kings
+          -#            %td.text-center 3
+          -#            %td.text-center 1
+          -#            %td.text-center 2
+          -#            %td.text-center 3
+          -#          %tr.bg-info.text-info
+          -#            %td.text-center Warriors
+          -#            %td.text-center 3
+          -#            %td.text-center 0
+          -#            %td.text-center 3
+          -#            %td.text-center 0
+          -#
+          -#
+          -#    .h3.font-32.margin-bottom-20
+          -#      .glyphicon.glyphicon-time
+          -#      Schedule
+          -#    %table.table.margin-top-20.table-bordered.bg-shadow
+          -#      %tr
+          -#        %th.text-center Dates
+          -#        %th.text-center{ :colspan => 2 } Game Time
+          -#        %th.text-center{ :colspan => 2 } Teams
+          -#        %th
+          -#        %th.text-center{ :colspan => 2 }
+          -#      %tr.font-bold
+          -#        %td.text-center Saturday June 25
+          -#        %td.text-center Start
+          -#        %td.text-center End
+          -#        %td.text-center Home
+          -#        %td.text-center Guest
+          -#        %td.text-center Umpires
+          -#        %td.text-center{ :colspan => 2 } Result
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center Game # 1
+          -#        %td.text-center 8:30
+          -#        %td.text-center 9:17
+          -#        %td.text-center Monarcas
+          -#        %td.text-center Surfers Red
+          -#        %td.text-center Ravi K, Manjot
+          -#        %td.text-center 24
+          -#        %td.text-center 9
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center Game # 2
+          -#        %td.text-center 9:20
+          -#        %td.text-center 10:07
+          -#        %td.text-center Surfers Blue
+          -#        %td.text-center Warriors
+          -#        %td.text-center Elisa, Mohan C
+          -#        %td.text-center 31
+          -#        %td.text-center 27
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center Game # 3
+          -#        %td.text-center 10:10
+          -#        %td.text-center 10:57
+          -#        %td.text-center LA Tigers
+          -#        %td.text-center Kings
+          -#        %td.text-center Ravi K, Manjot
+          -#        %td.text-center 23
+          -#        %td.text-center 20
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center Game # 4
+          -#        %td.text-center 11:00
+          -#        %td.text-center 11:47
+          -#        %td.text-center Oh Yeah!
+          -#        %td.text-center Monarcas
+          -#        %td.text-center Moni, Sarb
+          -#        %td.text-center 23
+          -#        %td.text-center 18
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center Game # 5
+          -#        %td.text-center 11:50
+          -#        %td.text-center 12:37
+          -#        %td.text-center Scorpions
+          -#        %td.text-center Surfers Red
+          -#        %td.text-center Peru Bajwa, Elisa
+          -#        %td.text-center 29
+          -#        %td.text-center 12
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center Game # 6
+          -#        %td.text-center 12:40
+          -#        %td.text-center 13:27
+          -#        %td.text-center Surfers Blue
+          -#        %td.text-center LA Tigers
+          -#        %td.text-center Ravi K, Riaz
+          -#        %td.text-center 20
+          -#        %td.text-center 22
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center Game # 7
+          -#        %td.text-center 13:30
+          -#        %td.text-center 14:17
+          -#        %td.text-center Warriors
+          -#        %td.text-center Kings
+          -#        %td.text-center Ravi K, Manjot
+          -#        %td.text-center 14
+          -#        %td.text-center 34
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center Game # 8
+          -#        %td.text-center 14:20
+          -#        %td.text-center 15:07
+          -#        %td.text-center Oh Yeah!
+          -#        %td.text-center Scorpions
+          -#        %td.text-center Hark, Moni
+          -#        %td.text-center 14
+          -#        %td.text-center 12
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center Game # 9
+          -#        %td.text-center 15:10
+          -#        %td.text-center 15:57
+          -#        %td.text-center Kings
+          -#        %td.text-center Surfers Blue
+          -#        %td.text-center Ravi K, Bobby K
+          -#        %td.text-center 0
+          -#        %td.text-center 10
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center Game # 10
+          -#        %td.text-center 16:00
+          -#        %td.text-center 16:47
+          -#        %td.text-center Monarcas
+          -#        %td.text-center Scorpions
+          -#        %td.text-center Mohan C, Rinku
+          -#        %td.text-center 18
+          -#        %td.text-center 9
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center Game # 11
+          -#        %td.text-center 16:50
+          -#        %td.text-center 17:37
+          -#        %td.text-center Surfers Red
+          -#        %td.text-center Oh Yeah!
+          -#        %td.text-center Ravi K, Riaz
+          -#        %td.text-center 9
+          -#        %td.text-center 21
+          -#      %tr.font-bold
+          -#        %td.text-center Sunday June 26
+          -#        %td.text-center Start
+          -#        %td.text-center End
+          -#        %td.text-center Home
+          -#        %td.text-center Guest
+          -#        %td.text-center Umpires
+          -#        %td.text-center{ :colspan => 2 } Result
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center Game # 12
+          -#        %td.text-center 8:30
+          -#        %td.text-center 9:17
+          -#        %td.text-center LA Tigers
+          -#        %td.text-center Warriors
+          -#        %td.text-center Ravi K, TBD
+          -#        %td.text-center 31
+          -#        %td.text-center 12
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center.font-bold Social third spot
+          -#        %td.text-center 9:20
+          -#        %td.text-center 10:07
+          -#        %td.text-center.font-bold
+          -#          .glyphicon.glyphicon-star-empty
+          -#          Scorpions
+          -#        %td.text-center Surfers Red
+          -#        %td.text-center Ravi K, TBD
+          -#        %td.text-center 20
+          -#        %td.text-center 14
+          -#      %tr.bg-success.text-success
+          -#        %td.text-center.font-bold Social Final
+          -#        %td.text-center 11:00
+          -#        %td.text-center 11:47
+          -#        %td.text-center Oh Yeah!
+          -#        %td.text-center.font-bold
+          -#          .glyphicon.glyphicon-star-empty
+          -#          Monarcas
+          -#        %td.text-center Ravi K, Manjot
+          -#        %td.text-center 3
+          -#        %td.text-center 14
+          -#      %tr.bg-info.text-info
+          -#        %td.text-center.font-bold Competition Final
+          -#        %td.text-center 11:50
+          -#        %td.text-center 12:37
+          -#        %td.text-center.font-bold
+          -#          .glyphicon.glyphicon-star-empty
+          -#          LA Tigers
+          -#        %td.text-center Surfers Blue
+          -#        %td.text-center Ravi K, Manjot
+          -#        %td.text-center 21
+          -#        %td.text-center 9
+          -#      %tr.bg-warning.text-warning
+          -#        %td.text-center.font-bold Prize Distribution
+          -#        %td.text-center 13:40
+          -#        %td.text-center 13:00
+          -#        %td.text-center{ :colspan => 5 }
+          -#
+          -#    %h4 Game time breakdown
+          -#    %table.table.margin-top-20.table-bordered.bg-shadow
+          -#      %tr
+          -#        %td.font-bold
+          -#          Game - each half
+          -#        %td
+          -#          22 minutes
+          -#      %tr
+          -#        %td.font-bold
+          -#          half time interval
+          -#        %td
+          -#          3 minutes
+          -#      %tr
+          -#        %td.font-bold
+          -#          interchange time
+          -#        %td
+          -#          3 minutes
 
           .col-md-4.col-sm-12.padding-vertical-20
             .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
@@ -333,14 +315,15 @@
                 %li
                   %a.h4.font-20{ :href => "/forms/umpires_advisory.pdf" }
                     Umpires Advisory
-                %li
-                  %a.h4.font-20{ :href => "/forms/tournament_schedule_2016.pdf" }
-                    Schedule PDF
+                -#%li
+                -#  %a.h4.font-20{ :href => "/forms/tournament_schedule_2016.pdf" }
+                -#    Schedule PDF
 
-            %a.padding-20.bg-shadow.border-radius.block-link.margin-bottom-30{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
-              .map-container
-                %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
+            -#%a.padding-20.bg-shadow.border-radius.block-link.margin-bottom-30{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
+            -#  .map-container
+            -#    %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
 
+          .col-md-4.col-sm-12.padding-vertical-20
             .padding-20.bg-shadow.border-radius.text-center
               .h3.font-32.margin-bottom-20 Proud Sponsors
               .glyphicon.glyphicon-briefcase.font-48
@@ -356,9 +339,27 @@
                     West Coast FOA - 7/11 stores
                 %li
                   %a.h4.font-20{ :href => "http://singh-cpa.com/", :target => "_blank"}
-                    Baljinder S Rakkar - Singh CPA
+                    Singh CPA
 
-  .row.padding-vertical-20
+  - if !current_page?(root_url)
+    .row.padding-vertical-20
+      .col-sm-6.col-md-8.padding-vertical-20
+        %h3.font-32.margin-bottom-20
+          Venue
+        %p.font-20.margin-top-20.margin-bottom-20
+          = "#{@tournament.location}."
+        %p.font-20.margin-top-20.margin-bottom-20
+          The field is a regulation sized indoor soccer field with full sized goals. The turf field is walled so the ball is in play all the time (no side-line or corner hits). The venue allows a unique fast/indoor hockey experience in an outdoor setting.
+        %h3.font-32.margin-bottom-20
+          Additional Information
+        %p.font-20.margin-top-20.margin-bottom-20
+          The host club will provide refreshments and food for guest team members throughout the tournament, and a casual dinner is planned for Saturday night. Dinner event participation is free for registered team members. Additional persons are $15 each.
+
+      .col-sm-6.col-md-4.padding-vertical-20
+        %a.padding-20.bg-shadow.border-radius.block-link.margin-bottom-30{ :href => "http://maps.google.com/?q=#{@tournament.location}", :target => "_blank"}
+          .map-container
+            %iframe{:frameborder => "0", :height => "300", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=2190+North+Canal+Street,+Orange,+CA+92865&aq=0&oq=2190+North+Canal+Street+Orange,+CA+92865&sll=33.759491,-117.968702&sspn=0.032789,0.066047&ie=UTF8&hq=&hnear=2190+N+Canal+St,+Orange,+California+92865&t=m&ll=33.824009,-117.842188&spn=0.022817,0.039396&z=14&iwloc=near&output=embed", :width => "480"}
+
 
 
 

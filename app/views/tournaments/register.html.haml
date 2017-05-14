@@ -31,18 +31,18 @@
               %input#captainPhone.form-control.bfh-phone{:type => "text", :placeholder => "Team Captain's Phone", :name => "phone_number", :'data-country' => "US", :'data-required' => 'true', :'data-error-after' => "phone_number"}
               %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted
           .form-group.has-feedback{:'data-form-section' => "division"}
-            %label.col-sm-5.control-label.font-light.font-18{:for => "division"} Division
+            %label.col-sm-5.control-label.font-light.font-18{:for => "division"}
+              Division
             .col-sm-7
               - @tournament.divisions.each do |division|
-                %label.checkbox-inline.font-18
-                  %input{:type => "checkbox", :value => "competitive", :name => "#{division.name}", :id => "#{division.name}" }
+                .font-18.font-light
+                  %label.checkbox-inline{:for => "#{division.name}"}
+                    %input{:type => "checkbox", :value => "#{division.name}", :name => "#{division.name}", :id => "#{division.name}" }
                     #{division.name}
+                .text-warning.font-14
+                  %i.glyphicon.glyphicon-info-sign
+                  Fees: $#{division.fee.to_s}
               %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted{:'data-error-after' => "division"}
-          %p.text-right.text-warning.font-14
-            %i.glyphicon.glyphicon-info-sign
-            Fees:
-            - @tournament.divisions.each do |division|
-              %span $#{division.fee.to_s} #{division.name}
 
         .col-sm-6.padding-30
           %h4.font-26.margin-bottom-30 Team Staff
