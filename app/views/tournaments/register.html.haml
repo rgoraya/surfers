@@ -39,11 +39,12 @@
                   %label.checkbox-inline{:for => "#{division.name}"}
                     %input{:type => "checkbox", :value => "#{division.name}", :name => "#{division.name}", :id => "#{division.name}" }
                     #{division.name}
-                .text-warning.font-14
-                  %i.glyphicon.glyphicon-info-sign
-                  Fees: $#{division.fee.to_s}
+                    %span.text-warning.font-14
+                      (Fees: $#{division.fee.to_s})
               %i.glyphicon.form-control-feedback.glyphicon.glyphicon-asterisk.font-12.text-muted{:'data-error-after' => "division"}
-
+              .text-warning.font-14.margin-top-15
+                %i.glyphicon.glyphicon-info-sign
+                A social/mixed team must have at least 2 women players on the field or the team shall play short of women player(s). Women may participate in Men/Competition division.
         .col-sm-6.padding-30
           %h4.font-26.margin-bottom-30 Team Staff
           .form-group.has-feedback{:'data-form-section' => "team_manager"}
@@ -80,7 +81,11 @@
 
       .row.bg-shadow.padding-vertical-30.padding-horizontal-15.position-relative
         .bottom-dark-border.hidden-sm.hidden-xs
-        %h4.font-26.margin-bottom-30.padding-left-15 Player Information
+        %h4.font-26.margin-bottom-30.padding-left-15
+          Player Information
+          %span.text-right.text-warning.font-14
+            %i.glyphicon.glyphicon-info-sign
+            A team may have up to 11 players on the roster.
         .col-sm-4
           .form-group{:'data-form-section' => "team_players"}
             %label.col-sm-4.control-label.font-light.font-18{:for => "player1"} Player 1
