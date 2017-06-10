@@ -1,14 +1,19 @@
-- if !@tournament_registrations.nil?
-  %h3 2016 Tournament Registrations
-  - if @tournament_registrations.length > 0
-    - @tournament_registrations.each do |registration|
-      .well
-        %h5 Team: #{registration.team.name}
-        %p
-          Manager: #{registration.team.team_manager.name}
-          %br
-          Captain: #{registration.team.team_captain.name}
+- if tournament_upcoming
+  - tournament = latest_tournament
+  - if !tournament.nil?
+    - tournament_registrations = tournament.tournament_registrations
+    - if tournament_registrations.length > 0
+      .container.margin-bottom-20
+        .row.padding-vertical-20
+          %h3 #{tournament.name} Registrations
+          - tournament_registrations.each do |registration|
+            .well
+              %h5 Team: #{registration.team.name}
+              %p
+                Manager: #{registration.team.team_manager.name}
+                %br
+                Captain: #{registration.team.team_captain.name}
 
-  - else
-    .alert.alert-error
-      %h5 No registrations to show yet.
+    - else
+      .alert.alert-error
+        %h5 No registrations to show yet.
