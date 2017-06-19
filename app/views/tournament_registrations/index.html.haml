@@ -11,12 +11,22 @@
             - tournament_registrations.each_with_index do |registration, index|
               .col-sm-4.padding-vertical-20
                 .padding-20.bg-shadow.border-radius.block-link
-                  %h3.font-24
+                  %h3.font-20
                     #{index + 1}. #{registration.team.name}
-                  %p.font-18
-                    Manager: #{registration.team.team_manager.name}
-                    %br
-                    Captain: #{registration.team.team_captain.name}
+
+                  %table.table.margin-top-20.table-bordered.bg-shadow.font-16
+                    %tr
+                      %td Manager
+                      %td #{registration.team.team_manager.name}
+                    %tr
+                      %td Captain
+                      %td #{registration.team.team_captain.name}
+                    %tr
+                      %td Division(s)
+                      %td #{registration.divisions.map(&:name).to_sentence}
+                    %tr
+                      %td Amount Due
+                      %td #{registration.divisions.map(&:fee).sum}
 
         - else
           .alert.alert-error
