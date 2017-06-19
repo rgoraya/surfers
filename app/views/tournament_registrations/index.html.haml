@@ -9,12 +9,12 @@
             %h1.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
               #{tournament.name} Registrations
             - tournament_registrations.each_with_index do |registration, index|
-              .col-sm-4.padding-vertical-20
+              .col-sm-6.padding-vertical-20
                 .padding-20.bg-shadow.border-radius.block-link
-                  %h3.font-20
+                  %h3.font-24
                     #{index + 1}. #{registration.team.name}
 
-                  %table.table.margin-top-20.table-bordered.bg-shadow.font-16
+                  %table.table.margin-top-20.table-bordered.bg-shadow.font-18
                     %tr
                       %td Manager
                       %td #{registration.team.team_manager.name}
