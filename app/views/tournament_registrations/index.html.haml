@@ -1,19 +1,23 @@
-- if tournament_upcoming
-  - tournament = latest_tournament
-  - if !tournament.nil?
-    - tournament_registrations = tournament.tournament_registrations
-    - if tournament_registrations.length > 0
-      .container.margin-bottom-20
-        .row.padding-vertical-20
-          %h3 #{tournament.name} Registrations
-          - tournament_registrations.each do |registration|
-            .well
-              %h5 Team: #{registration.team.name}
-              %p
-                Manager: #{registration.team.team_manager.name}
-                %br
-                Captain: #{registration.team.team_captain.name}
+.container-fluid.padding-0.bg-hit
+  .container.color-ghost-white.margin-bottom-20
+    - if tournament_upcoming
+      - tournament = latest_tournament
+      - if !tournament.nil?
+        - tournament_registrations = tournament.tournament_registrations
+        - if tournament_registrations.length > 0
+          .row.padding-20
+            %h1.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
+              #{tournament.name} Registrations
+            - tournament_registrations.each_with_index do |registration, index|
+              .col-sm-4.padding-vertical-20
+                .padding-20.bg-shadow.border-radius.block-link
+                  %h3.font-24
+                    #{index + 1}. #{registration.team.name}
+                  %p.font-18
+                    Manager: #{registration.team.team_manager.name}
+                    %br
+                    Captain: #{registration.team.team_captain.name}
 
-    - else
-      .alert.alert-error
-        %h5 No registrations to show yet.
+        - else
+          .alert.alert-error
+          %h5 No registrations to show yet.
