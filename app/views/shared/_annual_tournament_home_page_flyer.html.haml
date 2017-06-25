@@ -6,6 +6,7 @@
           = @tournament.name
       %p.font-24.text-center.color-ghost-white.margin-bottom-40
         Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
+    = render :partial => "shared/annual_tournament_schedule_points"
     - if tournament_upcoming
       #tournament_highlights
         .col-sm-4.text-center.padding-vertical-20
