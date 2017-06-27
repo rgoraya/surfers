@@ -6,24 +6,37 @@
           = @tournament.name
       %p.font-24.text-center.color-ghost-white.margin-bottom-40
         Huntington Beach Field Hockey Club of Orange County, California would like to cordially invite your club to their #{@tournament.name} to be held on #{@tournament.start_time.to_date.to_formatted_s(:long)} – #{@tournament.end_time.to_date.to_formatted_s(:long)} in Orange, California.
-    = render :partial => "shared/annual_tournament_schedule_points"
-    - if tournament_upcoming
-      #tournament_highlights
-        .col-sm-4.text-center.padding-vertical-20
-          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
-            .h3.font-32.margin-bottom-20 Register Today
-            .glyphicon.glyphicon-list-alt.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              Register online by clicking here. You can also register by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
-        .col-sm-4.text-center.padding-vertical-20
-          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}"}
-            .h3.font-32.margin-bottom-20 Tournament Home
-            .glyphicon.glyphicon-home.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              Find out more about Surfers' #{@tournament.name}. Download Forms. View Schedule and Standings.
-        .col-sm-4.text-center.padding-vertical-20
-          %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
-            %h3.font-32.margin-bottom-20 Location of Event
-            .glyphicon.glyphicon-map-marker.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              View Google Map and directions for #{@tournament.location}.
+    .col-md-8.col-sm-12.text-center.padding-vertical-20
+      = render :partial => "shared/annual_tournament_schedule_points"
+
+    .col-md-4.col-sm-12.padding-vertical-20
+      .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+        = image_tag('static/la_kings.jpg', :alt => "LA Kings", :class => "center-aligned max-width-100")
+        %h4 Congratulations LA Kings for winning Comp Div
+      .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+        = image_tag('static/la_kings_champs.jpg', :alt => "LA Kings Champs", :class => "center-aligned max-width-100")
+        %h4 LA Kings pose with the prize
+      .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+        = image_tag('static/sd_riptides.jpg', :alt => "SD Riptides", :class => "center-aligned max-width-100")
+        %h4 SD Riptides Social Champions
+
+    -#- if tournament_upcoming
+    -#  #tournament_highlights
+    -#    .col-sm-4.text-center.padding-vertical-20
+    -#      %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}/register"}
+    -#        .h3.font-32.margin-bottom-20 Register Today
+    -#        .glyphicon.glyphicon-list-alt.font-48
+    -#        %p.font-20.margin-top-20.margin-bottom-20
+    -#          Register online by clicking here. You can also register by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
+    -#    .col-sm-4.text-center.padding-vertical-20
+    -#      %a.padding-20.bg-shadow.border-radius.block-link{ :href => "/#{@tournament.slug}"}
+    -#        .h3.font-32.margin-bottom-20 Tournament Home
+    -#        .glyphicon.glyphicon-home.font-48
+    -#        %p.font-20.margin-top-20.margin-bottom-20
+    -#          Find out more about Surfers' #{@tournament.name}. Download Forms. View Schedule and Standings.
+    -#    .col-sm-4.text-center.padding-vertical-20
+    -#      %a.padding-20.bg-shadow.border-radius.block-link{ :href => "http://maps.google.com/?q=2190 N Canal St, Orange, CA 92865", :target => "_blank"}
+    -#        %h3.font-32.margin-bottom-20 Location of Event
+    -#        .glyphicon.glyphicon-map-marker.font-48
+    -#        %p.font-20.margin-top-20.margin-bottom-20
+    -#          View Google Map and directions for #{@tournament.location}.
