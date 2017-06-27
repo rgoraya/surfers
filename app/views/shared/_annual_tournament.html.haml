@@ -11,28 +11,40 @@
           = render :partial => "shared/annual_tournament_schedule_points"
 
         .col-md-4.col-sm-12.padding-vertical-20
-          %a.padding-20.bg-shadow.border-radius.block-link.text-center.margin-bottom-30{ :href => "/#{@tournament.slug}/register"}
-            .h3.font-32.margin-bottom-20 Register Today
-            .glyphicon.glyphicon-list-alt.font-48
-            %p.font-20.margin-top-20.margin-bottom-20
-              Register online by clicking here. You can also register by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
-
           .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
-            .h3.font-32.margin-bottom-20 Download Forms
-            .glyphicon.glyphicon-download-alt.font-48
-            %ul.font-20.margin-top-20.margin-bottom-20.text-left
-              %li
-                %a.h4.font-20{ :href => "/forms/registration_form_2016.pdf" }
-                  Registration Form
-              %li
-                %a.h4.font-20{ :href => "/forms/waiver_form.pdf" }
-                  Waiver Form (required filled)
-              %li
-                %a.h4.font-20{ :href => "/forms/tournament_rules_2017.pdf" }
-                  Tournament Rules
-              %li
-                %a.h4.font-20{ :href => "/forms/umpires_advisory.pdf" }
-                  Umpires Advisory
+            = image_tag('static/la_kings.jpg', :alt => "LA Kings", :class => "center-aligned max-width-100")
+            %h4 Congratulations LA Kings for winning Comp Div
+          .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+            = image_tag('static/la_kings_champs.jpg', :alt => "LA Kings Champs", :class => "center-aligned max-width-100")
+            %h4 LA Kings pose with the prize
+          .padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+            = image_tag('static/sd_riptides.jpg', :alt => "SD Riptides", :class => "center-aligned max-width-100")
+            %h4 SD Riptides Social Champions
+
+
+
+          -#%a.padding-20.bg-shadow.border-radius.block-link.text-center.margin-bottom-30{ :href => "/#{@tournament.slug}/register"}
+          -#  .h3.font-32.margin-bottom-20 Register Today
+          -#  .glyphicon.glyphicon-list-alt.font-48
+          -#  %p.font-20.margin-top-20.margin-bottom-20
+          -#    Register online by clicking here. You can also register by emailing us at HBSurfers@hotmail.com or call (714) 585-2511.
+
+          -#.padding-20.bg-shadow.border-radius.text-center.margin-bottom-30
+          -#  .h3.font-32.margin-bottom-20 Download Forms
+          -#  .glyphicon.glyphicon-download-alt.font-48
+          -#  %ul.font-20.margin-top-20.margin-bottom-20.text-left
+          -#    %li
+          -#      %a.h4.font-20{ :href => "/forms/registration_form_2016.pdf" }
+          -#        Registration Form
+          -#    %li
+          -#      %a.h4.font-20{ :href => "/forms/waiver_form.pdf" }
+          -#        Waiver Form (required filled)
+          -#    %li
+          -#      %a.h4.font-20{ :href => "/forms/tournament_rules_2017.pdf" }
+          -#        Tournament Rules
+          -#    %li
+          -#      %a.h4.font-20{ :href => "/forms/umpires_advisory.pdf" }
+          -#        Umpires Advisory
 
 
           .padding-20.bg-shadow.border-radius.text-center

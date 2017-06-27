@@ -35,6 +35,12 @@ static/find_us_on_fb.png: static/find_us_on_fb-a5a6edeac623f2412e8c23e02cbc3158.
 static/find_us_on_fb/index.png: static/find_us_on_fb-a5a6edeac623f2412e8c23e02cbc3158.png
 static/history.jpg: static/history-291010c89a658305d0e3539968d63cc6.jpg
 static/history/index.jpg: static/history-291010c89a658305d0e3539968d63cc6.jpg
+static/la_kings.jpg: static/la_kings-84b882c408f837b5e25602c1356e30fe.jpg
+static/la_kings/index.jpg: static/la_kings-84b882c408f837b5e25602c1356e30fe.jpg
+static/la_kings_champs.jpg: static/la_kings_champs-715edfb398dd6ff33827f06c58115e12.jpg
+static/la_kings_champs/index.jpg: static/la_kings_champs-715edfb398dd6ff33827f06c58115e12.jpg
+static/sd_riptides.jpg: static/sd_riptides-d804d02bde91061d74471b2511f6ed48.jpg
+static/sd_riptides/index.jpg: static/sd_riptides-d804d02bde91061d74471b2511f6ed48.jpg
 studs.jpg: studs-c8170938ba6d878eaf700c80622347e9.jpg
 studs/index.jpg: studs-c8170938ba6d878eaf700c80622347e9.jpg
 surfers_logo_200.png: surfers_logo_200-8e8b6f7685b02d57a866a20efc949337.png
