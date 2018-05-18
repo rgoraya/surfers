@@ -23,7 +23,7 @@ gem 'json'
 # http://haml-lang.com/
 gem 'haml'
 # needed for using haml in rails generators
-gem 'haml-rails', '~> 1.0'
+gem 'haml-rails'
 
 # https://github.com/thomas-mcdonald/bootstrap-sass
 gem 'bootstrap-sass', '~> 3.1.1'
