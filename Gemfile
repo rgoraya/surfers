@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.3.1"
+
 gem 'rails', '3.2.13'
 
 #sqlite for dev
@@ -23,7 +23,7 @@ gem 'json'
 # http://haml-lang.com/
 gem 'haml'
 # needed for using haml in rails generators
-gem 'haml-rails'
+gem 'haml-rails', '~> 1.0'
 
 # https://github.com/thomas-mcdonald/bootstrap-sass
 gem 'bootstrap-sass', '~> 3.1.1'
