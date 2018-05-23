@@ -53,7 +53,7 @@ class TournamentRegistrationsController < ApplicationController
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info(@tournament_registration)
+                Rails.logger.info(@tournament_registration.to_s)
                 Rails.logger.info('########################')
                 Rails.logger.info('########################')
                 Rails.logger.info('########################')
