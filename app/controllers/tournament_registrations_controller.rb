@@ -38,12 +38,6 @@ class TournamentRegistrationsController < ApplicationController
               @tournament_registration.tournament = @tournament
               @tournament_registration.divisions << @divisions
 
-              Rails.logger.info('$$$$$$$$$$$$$$$$')
-              Rails.logger.info('$$$$$$$$$$$$$$$$')
-              Rails.logger.info('$$$$$$$$$$$$$$$$')
-              Rails.logger.info('$$$$$$$$$$$$$$$$')
-              Rails.logger.info("#{__LINE__}")
-
               if @tournament_registration.valid?
                 # save the sh** out of everything now that we know it's all validated
                 @team.save
@@ -52,14 +46,17 @@ class TournamentRegistrationsController < ApplicationController
                 @team_voluntary_umpire.save
                 
                 params[:team_players].reject(&:empty?).each do |player_name|
-                  Rails.logger.info('########################')
-                  Rails.logger.info(player_name)
-                  Rails.logger.info('########################')
-                  Rails.logger.info('########################')
                   @team_player = TeamPlayer.new :name => player_name
                   @team_player.team = @team
                   @team_player.save
                 end
+                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
+                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
+                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
+                Rails.logger.info(@tournament_registration)
+                Rails.logger.info('########################')
+                Rails.logger.info('########################')
+                Rails.logger.info('########################')
                 @tournament_registration.save
 
                 # send out registration email to Team Manager
