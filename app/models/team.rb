@@ -7,10 +7,10 @@ class Team < ActiveRecord::Base
 
   has_many :team_players
 
-  has_many  :tournament_registrations
-  has_many  :tournaments, :through => :tournament_registrations, :readonly => false
+  has_one  :tournament_registration
+  has_one  :tournament, :through => :tournament_registration, :readonly => false
 
   validates_presence_of :name
-  validates_uniqueness_of :name
+  #validates_uniqueness_of :name
 
 end
