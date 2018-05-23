@@ -38,17 +38,24 @@ class TournamentRegistrationsController < ApplicationController
               @tournament_registration.tournament = @tournament
               @tournament_registration.divisions << @divisions
 
+              Rails.logger.info('$$$$$$$$$$$$$$$$')
+              Rails.logger.info('$$$$$$$$$$$$$$$$')
+              Rails.logger.info('$$$$$$$$$$$$$$$$')
+              Rails.logger.info('$$$$$$$$$$$$$$$$')
+              Rails.logger.info("#{__LINE__}")
+
               if @tournament_registration.valid?
                 # save the sh** out of everything now that we know it's all validated
                 @team.save
                 @team_captain.save
                 @team_manager.save
                 @team_voluntary_umpire.save
+                
                 params[:team_players].reject(&:empty?).each do |player_name|
-                  rails.logger.info('########################')
-                  rails.logger.info(player_name)
-                  rails.logger.info('########################')
-                  rails.logger.info('########################')
+                  Rails.logger.info('########################')
+                  Rails.logger.info(player_name)
+                  Rails.logger.info('########################')
+                  Rails.logger.info('########################')
                   @team_player = TeamPlayer.new :name => player_name
                   @team_player.team = @team
                   @team_player.save
