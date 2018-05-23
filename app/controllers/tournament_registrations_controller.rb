@@ -1,5 +1,7 @@
 class TournamentRegistrationsController < ApplicationController
-
+  
+  require 'json'
+  
   def index
     @page_title = "Tournament Registration"
     @tournament_registrations = TournamentRegistration.all
@@ -53,7 +55,9 @@ class TournamentRegistrationsController < ApplicationController
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info(@tournament_registration.to_s)
+                Rails.logger.info(@tournament_registration.to_json)
+                Rails.logger.info(@tournament_registration.team.to_json)
+                Rails.logger.info(@tournament_registration.tournament.to_json)
                 Rails.logger.info('########################')
                 Rails.logger.info('########################')
                 Rails.logger.info('########################')
