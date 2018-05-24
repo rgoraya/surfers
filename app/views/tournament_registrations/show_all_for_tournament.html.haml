@@ -10,11 +10,11 @@
               .padding-20.bg-shadow.border-radius.block-link
                 %h3.font-24
                   #{index + 1}. #{registration.team.name}
-              .font-14.clearfix
-                .pull-left
-                  #{time_ago_in_words(registration.created_at)} ago
-                .pull-right
-                  = link_to 'detailed view', tournament_registration_path(registration)
+                .font-14.clearfix
+                  .pull-left
+                    #{time_ago_in_words(registration.created_at)} ago
+                  .pull-right
+                    = link_to 'detailed view', tournament_registration_path(registration)
                 %table.table.margin-top-20.table-bordered.bg-shadow.font-18
                   %tr
                     %td Manager
