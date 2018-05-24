@@ -64,7 +64,7 @@ class TournamentRegistrationsController < ApplicationController
 
                 if @registration_email.deliver
                     flash[:notice] = "You have successfully registered for Surfer's #{@tournament.name}. A confirmation has been sent to #{@team_manager.email}."
-                    render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :registration => @tournament_registration.id} }
+                    render :json => { :success => true, :tournament_registration => {:tournament => @tournament.name, :slug => @tournament.slug, } }
                   else
                     render :json => {:success => false, :form_section => nil, :errors => @registration_confirmation.errors}, status: :unprocessable_entity
                   end
