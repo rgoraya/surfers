@@ -53,15 +53,6 @@ class TournamentRegistrationsController < ApplicationController
                   @team_player.save
                 end
 
-                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info(@tournament_registration.valid?)
-                Rails.logger.info(@tournament_registration.errors.full_messages)
-                Rails.logger.info(@tournament_registration.changes)
-                Rails.logger.info('########################')
-                Rails.logger.info('########################')
-                Rails.logger.info('########################')
                 @tournament_registration.save!
 
                 # send out registration email to Team Manager
