@@ -42,16 +42,6 @@ class TournamentRegistrationsController < ApplicationController
 
               if @tournament_registration.valid?
                 # save the sh** out of everything now that we know it's all validated
-                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
-                Rails.logger.info(@tournament_registration.valid?)
-                Rails.logger.info(@tournament_registration.errors.full_messages)
-                Rails.logger.info(@tournament_registration.changes)
-                Rails.logger.info('########################')
-                Rails.logger.info('########################')
-                Rails.logger.info('########################')
-                @tournament_registration.save
                 @team.save
                 @team_captain.save
                 @team_manager.save
@@ -62,6 +52,17 @@ class TournamentRegistrationsController < ApplicationController
                   @team_player.team = @team
                   @team_player.save
                 end
+
+                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
+                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
+                Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
+                Rails.logger.info(@tournament_registration.valid?)
+                Rails.logger.info(@tournament_registration.errors.full_messages)
+                Rails.logger.info(@tournament_registration.changes)
+                Rails.logger.info('########################')
+                Rails.logger.info('########################')
+                Rails.logger.info('########################')
+                @tournament_registration.save!
 
                 # send out registration email to Team Manager
                 @registration_confirmation = RegistrationEmail.new(registration_email_params("Confirmation"))
