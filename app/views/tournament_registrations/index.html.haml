@@ -1,34 +1,30 @@
 .container-fluid.padding-0.bg-hit
   .container.color-ghost-white.margin-bottom-20
-    - if tournament_upcoming
-      - tournament = latest_tournament
-      - if !tournament.nil?
-        - tournament_registrations = tournament.tournament_registrations
-        - if tournament_registrations.length > 0
-          .row.padding-20
-            %h1.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
-              #{tournament.name} Registrations
-            - tournament_registrations.each_with_index do |registration, index|
-              .col-sm-6.padding-vertical-20
-                .padding-20.bg-shadow.border-radius.block-link
-                  %h3.font-24
-                    #{index + 1}. #{registration.team.name}
-                  %p.font-14
-                    #{time_ago_in_words(registration.created_at)} ago
-                  %table.table.margin-top-20.table-bordered.bg-shadow.font-18
-                    %tr
-                      %td Manager
-                      %td #{registration.team.team_manager.name}
-                    %tr
-                      %td Captain
-                      %td #{registration.team.team_captain.name}
-                    %tr
-                      %td Division(s)
-                      %td #{registration.divisions.map(&:name).to_sentence}
-                    %tr
-                      %td Amount Due
-                      %td #{registration.divisions.map(&:fee).sum}
+    - if @tournament_registrations.length > 0
+      .row.padding-20
+        %h1.font-44.font-bold.text-center.margin-top-20.margin-bottom-30
+          Tournament Registrations 
+        - @tournament_registrations.each_with_index do |registration, index|
+          .col-sm-6.padding-vertical-20
+            .padding-20.bg-shadow.border-radius.block-link
+              %h3.font-24
+                #{index + 1}. #{registration.team.name}
+              %p.font-14
+                #{time_ago_in_words(registration.created_at)} ago
+              %table.table.margin-top-20.table-bordered.bg-shadow.font-18
+                %tr
+                  %td Manager
+                  %td #{registration.team.team_manager.name}
+                %tr
+                  %td Captain
+                  %td #{registration.team.team_captain.name}
+                %tr
+                  %td Division(s)
+                  %td #{registration.divisions.map(&:name).to_sentence}
+                %tr
+                  %td Amount Due
+                  %td #{registration.divisions.map(&:fee).sum}
 
-        - else
-          .alert.alert-error
-          %h5 No registrations to show yet.
+    - else
+      .alert.alert-error
+      %h5 No registrations to show yet.
