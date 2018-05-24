@@ -18,7 +18,7 @@ class RegistrationEmail < MailForm::Base
     elsif type == "Notification"
       {
           :subject => %(Registration request for Surfer's #{tournament.name}) ,
-          :to => "ramindersingh.goraya@gmail.com", #, hbsurfers@hotmail.com, hs_guron@yahoo.com
+          :to => "ramindersingh.goraya@gmail.com, hbsurfers@hotmail.com, hs_guron@yahoo.com",
           :from => %("#{team_manager.name}" <#{team_manager.email}>)
       }
     end
