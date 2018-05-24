@@ -42,16 +42,6 @@ class TournamentRegistrationsController < ApplicationController
 
               if @tournament_registration.valid?
                 # save the sh** out of everything now that we know it's all validated
-                @team.save
-                @team_captain.save
-                @team_manager.save
-                @team_voluntary_umpire.save
-                
-                params[:team_players].reject(&:empty?).each do |player_name|
-                  @team_player = TeamPlayer.new :name => player_name
-                  @team_player.team = @team
-                  @team_player.save
-                end
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
                 Rails.logger.info('$$$$$$$$$$$$$$$$$$$$$$$$')
@@ -62,6 +52,16 @@ class TournamentRegistrationsController < ApplicationController
                 Rails.logger.info('########################')
                 Rails.logger.info('########################')
                 @tournament_registration.save
+                @team.save
+                @team_captain.save
+                @team_manager.save
+                @team_voluntary_umpire.save
+                
+                params[:team_players].reject(&:empty?).each do |player_name|
+                  @team_player = TeamPlayer.new :name => player_name
+                  @team_player.team = @team
+                  @team_player.save
+                end
 
                 # send out registration email to Team Manager
                 @registration_confirmation = RegistrationEmail.new(registration_email_params("Confirmation"))
