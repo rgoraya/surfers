@@ -14,6 +14,7 @@ Surfers::Application.routes.draw do
   match '/play-with-us', :to => 'pages#play', :as => 'play'
 
   resources :tournament_registrations
+  match '/:slug/registrations', :to => 'tournament_registrations#show_all_for_tournament'
   resources :registration_emails, only: [:new, :create, :show]
 
   resources :tournament_feedbacks

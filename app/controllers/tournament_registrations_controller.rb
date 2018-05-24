@@ -10,7 +10,14 @@ class TournamentRegistrationsController < ApplicationController
   def show
     @tournament_registration = TournamentRegistration.find(params[:id])
   end
-
+  
+  def show_all_for_tournament 
+    @slug = params[:slug].to_s
+    @tournament = Tournament.find_by_slug(@slug)
+    @page_title = "#{@tournament.name} Registrations"
+    @tournament_registrations = @tournament.tournament_registrations
+  end
+  
   def create
     @tournament = Tournament.find(params[:tournament][:id])
     @divisions  = []
