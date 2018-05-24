@@ -9,9 +9,15 @@
             .padding-20.bg-shadow.border-radius.block-link
               %h3.font-24
                 #{index + 1}. #{registration.team.name}
-              %p.font-14
-                #{time_ago_in_words(registration.created_at)} ago
+              .font-14.clearfix
+                .pull-left
+                  #{time_ago_in_words(registration.created_at)} ago
+                .pull-right
+                  = link_to 'detailed view', tournament_registration_path(registration)
               %table.table.margin-top-20.table-bordered.bg-shadow.font-18
+                %tr
+                  %td Tournament
+                  %td #{registration.tournament.name}, #{registration.tournament.start_time.strftime('%B %Y')}.
                 %tr
                   %td Manager
                   %td #{registration.team.team_manager.name}
